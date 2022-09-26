@@ -4,6 +4,7 @@
   "private": true,
   "description": "website",
   "author": "Felix Hoffmann",
+  "license": "MIT",
   "keywords": [
     "gatsby"
   ],
@@ -14,6 +15,11 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "lint": "npx eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -39,6 +45,8 @@
     "eslint-plugin-react": "^7.31.8",
     "gatsby-plugin-eslint": "^4.0.2",
     "gh-pages": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
   }
