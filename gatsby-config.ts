@@ -1,10 +1,22 @@
 import type { GatsbyConfig } from "gatsby";
 
+import path from "path";
+
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+);
+
 const config: GatsbyConfig = {
-  pathPrefix: "/website",
   siteMetadata: {
-    title: "website",
+    title: "Portfolio",
+    description: "Portfolio",
     siteUrl: "https://portfolio.felixemmanuel.de",
+    author: "Felix Hoffmann",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -20,26 +32,24 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: `${__dirname}/src/images/`,
       },
     },
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-mantine",
     {
       resolve: "gatsby-plugin-eslint",
       options: {
-        test: /\.js$|\.jsx$|\.ts$|\.tsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        rulePaths: [gatsbyRequiredRules],
         stages: ["develop"],
-        options: {
-          emitWarning: true,
-          failOnError: false,
-        },
+        extensions: ["js", "jsx", "ts", "tsx"],
+        exclude: ["node_modules", "bower_components", ".cache", "public"],
       },
     },
   ],

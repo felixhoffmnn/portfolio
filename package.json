@@ -1,22 +1,30 @@
 {
-  "name": "website",
+  "name": "portfolio",
   "version": "1.0.0",
-  "repository": "felixhoffmnn/wbsite",
+  "repository": "felixhoffmnn/website",
   "private": false,
   "description": "website",
-  "author": "Felix Hoffmann",
+  "author": "Felix Hoffmann <felix.emmanuel.hoffmann@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "portfolio"
   ],
   "engines": {
     "node": "~=18"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^5.4.1",
+    "@mantine/hooks": "^5.4.1",
+    "@mantine/notifications": "^5.4.1",
+    "@mantine/prism": "^5.4.1",
     "eslint-formatter-friendly": "^7.0.0",
     "gatsby": "^4.23.1",
     "gatsby-plugin-google-analytics": "^4.23.0",
     "gatsby-plugin-image": "^2.23.1",
+    "gatsby-plugin-mantine": "^5.0.0",
     "gatsby-plugin-sharp": "^4.23.1",
     "gatsby-plugin-sitemap": "^5.23.1",
     "gatsby-source-filesystem": "^4.23.0",
@@ -42,7 +50,7 @@
     "eslint-plugin-react": "^7.31.8",
     "gatsby-plugin-eslint": "^4.0.2",
     "gh-pages": "^4.0.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "node-actionlint": "^1.2.2",
     "npm-run-all": "^4.1.5",
