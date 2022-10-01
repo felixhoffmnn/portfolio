@@ -67,7 +67,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "run-p lint:*",
     "lint:typecheck": "tsc --noEmit",
-    "lint:eslint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --format friendly",
+    "lint:eslint": "eslint . --format friendly",
     "lint:prettier": "prettier . --check",
     "lint:spellcheck": "cspell '**/*.{txt,js,jsx,ts,tsx,yml,yaml,json,md}' --no-progress --relative --dot --gitignore",
     "lint:actionlint": "node-actionlint",

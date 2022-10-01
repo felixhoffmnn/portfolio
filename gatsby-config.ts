@@ -2,14 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 import path from "path";
 
-const gatsbyRequiredRules = path.join(
-  process.cwd(),
-  "node_modules",
-  "gatsby",
-  "dist",
-  "utils",
-  "eslint-rules"
-);
+const gatsbyRequiredRules = path.join(process.cwd(), "node_modules", "gatsby", "dist", "utils", "eslint-rules");
 
 const config: GatsbyConfig = {
   siteMetadata: {

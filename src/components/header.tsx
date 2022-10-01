@@ -1,10 +1,4 @@
-import {
-  Box,
-  Button,
-  Title,
-  Image,
-  useMantineColorScheme,
-} from "@mantine/core";
+import { Box, Button, Title, Image, useMantineColorScheme } from "@mantine/core";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
@@ -49,11 +43,7 @@ const Header = ({ siteTitle = "Felix Hoffmann" }: HeaderProps) => {
         radius="md"
         width={200}
         height={80}
-        src={
-          colorScheme === "light"
-            ? "../images/logo_lang.png"
-            : "../images/logo_lang_dunkel.png"
-        }
+        src={colorScheme === "light" ? "../images/logo_lang.png" : "../images/logo_lang_dunkel.png"}
         alt="Random Logo"
       />
       <Title order={1}>

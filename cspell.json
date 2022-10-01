@@ -27,7 +27,11 @@
     "github",
     "tsbuildinfo",
     "typecheck",
-    "Typegen"
+    "Typegen",
+    "mantine",
+    "doesn",
+    "galerie",
+    "Mantine"
   ],
   "ignorePaths": [
     ".git",

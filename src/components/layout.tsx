@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Box,
-  ColorScheme,
-  ColorSchemeProvider,
-  MantineProvider,
-} from "@mantine/core";
+import { Box, ColorScheme, ColorSchemeProvider, MantineProvider } from "@mantine/core";
 import { graphql, useStaticQuery } from "gatsby";
 import Header from "./header";
 import { useHotkeys } from "@mantine/hooks";
@@ -31,10 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider
         theme={{
           // Override any other properties from default theme
