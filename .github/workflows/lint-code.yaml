@@ -1,0 +1,41 @@
+name: Lint Code
+
+on:
+  push:
+    branches: main
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check JSDoc Types
+        run: npm run lint:typecheck
+
+      - name: Lint ESLint
+        run: npm run lint:eslint
+
+      - name: Lint Prettier
+        run: npm run lint:prettier
+
+      - name: Spellcheck
+        run: npm run lint:spellcheck
+
+      - name: Lint workflow files
+        run: npm run lint:actionlint
+
+      - name: Print changed files
+        run: echo "Listing changed files:" && git diff --name-only --exit-code && echo "No files changed during lint."
