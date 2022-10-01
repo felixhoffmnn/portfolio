@@ -10,12 +10,7 @@
     "**/public": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
 }
