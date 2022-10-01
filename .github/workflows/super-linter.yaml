@@ -4,16 +4,16 @@
 # You can adjust the behavior by modifying this file.
 # For more information, see:
 # https://github.com/github/super-linter
-name: Lint Code Base
+name: Super Linter
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
-    
+    branches: [main]
+
 jobs:
-  run-lint:
+  run-super-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
