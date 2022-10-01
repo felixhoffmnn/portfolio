@@ -2,8 +2,8 @@
 
 # Personal Website
 
-- [Personal Website](#personal-website)
-  - [Introduction](#introduction)
+-   [Personal Website](#personal-website)
+    -   [Introduction](#introduction)
 
 ## Introduction
 
