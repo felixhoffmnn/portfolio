@@ -2,8 +2,9 @@ name: Lint Code
 
 on:
   push:
-    branches: main
+    branches: ["main"]
   pull_request:
+    branches: ["main"]
 
 jobs:
   lint:
@@ -34,8 +35,8 @@ jobs:
       - name: Spellcheck
         run: npm run lint:spellcheck
 
-      - name: Lint workflow files
-        run: npm run lint:actionlint
+      # - name: Lint workflow files
+      #   run: npm run lint:actionlint
 
       - name: Print changed files
         run: echo "Listing changed files:" && git diff --name-only --exit-code && echo "No files changed during lint."
