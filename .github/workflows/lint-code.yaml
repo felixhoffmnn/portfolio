@@ -37,6 +37,7 @@ jobs:
       - name: Spellcheck
         run: npm run lint:spellcheck
 
+      # TODO: Check if actionlint is updated
       # - name: Lint workflow files
       #   run: npm run lint:actionlint
 
