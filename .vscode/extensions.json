@@ -2,6 +2,8 @@
   "recommendations": [
     "streetsidesoftware.code-spell-checker-german",
     "streetsidesoftware.code-spell-checker",
-    "seatonjiang.gitmoji-vscode"
+    "seatonjiang.gitmoji-vscode",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
   ]
 }

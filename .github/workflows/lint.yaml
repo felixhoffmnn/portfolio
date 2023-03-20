@@ -1,0 +1,30 @@
+name: Lint Code
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: npm
+
+      - name: Check JSDoc Types
+        run: npm run check
+
+      - name: Lint ESLint
+        run: npm run lint
+
+      - name: Lint Prettier
+        run: npm run prettier
