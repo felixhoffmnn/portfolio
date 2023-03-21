@@ -1,9 +1,8 @@
 {
   "recommendations": [
-    "streetsidesoftware.code-spell-checker-german",
-    "streetsidesoftware.code-spell-checker",
+    "astro-build.astro-vscode",
     "seatonjiang.gitmoji-vscode",
-    "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint"
-  ]
+  ],
+  "unwantedRecommendations": []
 }

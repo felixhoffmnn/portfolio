@@ -1,11 +1,7 @@
 {
-  "search.exclude": {
-    "**/.cache": true,
-    "**/node_modules": true,
-    "**/public": true
-  },
+  "prettier.documentSelectors": ["**/*.astro"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
+  "[asto]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
