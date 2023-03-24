@@ -2,76 +2,97 @@ export const info = {
   baseUrl: "https://felix-hoffmann.dev",
   name: "Felix Hoffmann",
   jobDescription: "Bachelorstudent Informatik",
-  about: `I'm a software engineer based in Karachi, Pakistan.
-   I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.
-   I have been working for 3 year, with a demonstrated history of working in the Computer Software industry. Skilled in Front-end Development.
-   I have 3 years of experience in HTML, CSS, SCSS, JavaScript, Bootstrap, tailwind CSS, StyledComponent, React JS and Next JS. Hence,
-   I have successfully completed several web projects from scratch.
-   Yet, I learn continuously and never stop exploring new technologies.
-   So, I have also gained knowledge of Node JS, Express JS, Mongo DB, Python,
-   firebase and React Native with time.
-  `,
+  about: [
+    "Ich bin Bachelorstudent an der Duale Hochschule Baden-Württemberg Stuttgart und arbeite bei Hewlett Packard Enterprise. Geboren und aufgewachsen in Buckow - Brandenburg, lebe ich seit Mitte 2020 in Stuttgart - Baden-Württemberg.",
+    "Ich habe mich auf Data Science und Web Design spezialisiert und arbeite derzeit NLP-Projekten und Performanz-Optimierung von einer React-Application, bei dem ich mein Wissen in diesen Bereichen anwenden kann.",
+    "Zu meinen Fähigkeiten gehören die Arbeit mit Datenbanken wie Postgres und MySQL, Programmiersprachen wie Python, TypeScript und Java, sowie Tools und Frameworks im Bereich Data Science wie Pandas, Scikit, spaCy, Streamlit und TensorFlow. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien wie Hadoop, Pyspark, Airflow und HDFS sowie im Bereich Webdesign mit Figma und Adobe XD und in der Fotobearbeitung mit Photoshop und Lightroom.",
+  ],
 
   experience: [
     {
-      name: "InterNative Labs, LLC",
-      location: "Karāchi, Sindh, Pakistan",
-      startDate: "Apr 2022",
-      endDate: "Present",
+      name: "Pointnext Services",
+      location: "Böblingen, Baden-Württemberg, Deutschland",
+      startDate: "Jan 2023",
+      endDate: "Feb 2023",
       description: [
-        "- Developing screens and UI components for the web application using React and Tailwind.",
-        "- Fixing UI issues and integrating backend APIs with Redux Saga.",
+        "Ladezeiten-Optimierung eines React-Frontends mittels Server-Side Pagination und Backend-Filtering.",
       ],
+      skills: ["React", "TypeScript", "Performanz Optimierung"],
     },
 
     {
-      name: "Coupon Approve (Remote)",
-      location: "Amsterdam, North Holland, Netherlands",
-      startDate: "Nov 2020",
-      endDate: "Apr 2022",
+      name: "Hewlett Packard Labs",
+      location: "Milpitas, Kalifornien, USA",
+      startDate: "Jun 2022",
+      endDate: "Sep 2022",
       description: [
-        "✓ Developing code in accordance with appropriate design and architectural rules",
-        "✓ Documenting, testing, deployment, maintenance, support of platforms, applications, databases and solutions",
-        "✓ Help and training of other colleagues",
-        "✓ Others tasks connected to the nature of the job",
-        "✓ Code Improvements and Refactoring ",
-        "✓ Best Practices and Rules Maintainer",
+        "Benchmarking von Algorithmen (z. B. Parameter Server und Ring All-Reduce) zum Trainieren von Machine Learning Modellen auf verteilten Systemen. Das Trainieren erfolgte auf der Maschine Learning Plattform „Determined AI“ mittels Kubernetes und Docker Containern.",
       ],
+      skills: ["Determined AI", "Kubernetes", "Machine Learning", "Python"],
     },
 
     {
-      name: "Interns Pakistan",
-      location: "Pakistan",
-      startDate: "Oct 2020",
+      name: "Digital Edge Ratingen",
+      location: "Ratingen, Nordrhein-Westfalen, Deutschland",
+      startDate: "Dez 2021",
+      endDate: "Mär 2022",
+      description: [
+        "Umsetzung eines React Frontends zur 3D-Visualisierung von Diagrammen und Prozessen. State-management erfolgte mittels Zustand und 3D Interaktion mittels React Three Fiber.",
+      ],
+      skills: ["React", "Three.js", "3D Visualisierung"],
+    },
+
+    {
+      name: "Digital Service Innovation",
+      location: "Böblingen, Baden-Württemberg, Deutschland",
+      startDate: "Mär 2021",
+      endDate: "Mai 2021",
+      description: [
+        "Umsetzung einer zentralen Speicherlösung mittels einer Microsoft PowerApp. Interaktion anhand REST APIs mit Java Spring Backend.",
+      ],
+      skills: ["Power Apps", "Knowledge Management"],
+    },
+
+    {
+      name: "Pointnext Services",
+      location: "Böblingen, Baden-Württemberg, Deutschland",
+      startDate: "Okt 2020",
       endDate: "Nov 2020",
       description: [
-        "An Immersive Internship Program that prepares me for the world's most in-demand career. A six weeks program completely based on learning and challenges.",
-        "The internship track is built by an industry expert that let develop the skills in the areas most important ",
+        "Analyse von Open Source Monitoring Tools wie zum Beispiel Nagios und Zabbix. Die Erkenntnisse wurden in einer Tabelle und Projektarbeit dokumentiert.",
       ],
+      skills: ["Monitoring", "Open Source"],
     },
   ],
 
   education: [
     {
-      name: "Pakistan Institute of Professional Science & Technology (PIPS-TECH)",
-      location: "Karāchi, Sindh, Pakistan",
-      startDate: "2019",
-      endDate: "2022",
-      description: ["Diploma of Associate Engineering,  Computer Information Technology (CIT)"],
+      name: "Bachelor of Science, Informatik",
+      location: "Stuttgart, Baden-Württemberg, Deutschland",
+      startDate: "2020",
+      endDate: "2023",
+      description: [
+        "Duale Hochschule Baden-Württemberg Stuttgart",
+        "Studienrichtung: Informatik mit Vertiefung Data Science",
+      ],
     },
     {
-      name: "Govt. Degree Boys College Buffer Zone",
-      location: "Karāchi, Sindh, Pakistan",
-      startDate: "2018",
+      name: "Abitur",
+      location: "Strausberg, Brandenburg, Deutschland",
+      startDate: "2017",
       endDate: "2020",
-      description: ["Intermediate, Pre-Engineering"],
+      description: [
+        "Abitur in 3 Jahren",
+        "Schwerpunkt: Maschinen- und Kommunikationstechnik",
+        "Oberstufenzentrum Märkisch-Oderland",
+      ],
     },
     {
-      name: "Ghazi Foundation Schools & Colleges",
-      location: "Karāchi, Sindh, Pakistan",
-      startDate: "2016",
-      endDate: "2018",
-      description: ["Matriculation,  Computer Science"],
+      name: "Mittlerer Schulabschluss",
+      location: "Strausberg, Brandenburg, Deutschland",
+      startDate: "2006",
+      endDate: "2017",
+      description: ["bundtStift Schulen", "Grundschule und Gymnasium mit kreativem Schwerpunkt"],
     },
   ],
 
@@ -83,10 +104,10 @@ export const info = {
 
   projects: [
     {
-      title: "Astro Portfolio",
+      title: "GePart",
       isFeatured: true,
-      thumbnail: "/assets/images/astro-portfolio.png",
-      githubUrl: "https://github.com/felixhoffmnn",
+      thumbnail: "/assets/images/deutscher_bundestag.jpg",
+      githubUrl: "https://github.com/felixhoffmnn/gepart",
       liveUrl: "https://felixemmanuel.de/",
     },
   ],
