@@ -1,62 +1,42 @@
 ---
-import { info } from "@data";
-
-import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-import MetaHead from "@components/general/MetaHead.astro";
 import Layout from "@layouts/Layout.astro";
-
-const Projects = info.projects.map((project) => project);
 ---
 
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <MetaHead
-      title={"Impressum"}
-      description={"Impressum für felix-hoffmann.dev"}
-      ogImageUrl={"/assets/images/profile.png"}
-    />
-  </head>
+<Layout title={"Impressum"} description={"Impressum für felix-hoffmann.dev"}>
+  <h1 style="line-height: 1.2;">Impressum</h1>
 
-  <body>
-    <Layout>
-      <h1 style="line-height: 1.2;">Impressum</h1>
+  <h2 class="dark:text-light mb-2">Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+  <p class="text-lg mb-8">
+    Felix Hoffmann<br />
+    Ernsthaldenstra&szlig;e 43<br />
+    B407<br />
+    70565 Stuttgart
+  </p>
 
-      <h2 class="dark:text-light mb-2">Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-      <p class="dark:text-light text-lg mb-8">
-        Felix Hoffmann<br />
-        Ernsthaldenstra&szlig;e 43<br />
-        B407<br />
-        70565 Stuttgart
-      </p>
+  <h2 class="dark:text-light mb-2">Kontakt</h2>
+  <p class="text-lg mb-8">
+    Telefon: <a class="dark:text-light" href="tel:+4917621470118">+49 176 214 70118</a><br />
+    E-Mail: <a class="dark:text-light" href="mailto:post@felixemmanuel.de"> post@felixemmanuel.de</a>
+  </p>
 
-      <h2 class="dark:text-light mb-2">Kontakt</h2>
-      <p class="dark:text-light text-lg mb-8">
-        Telefon: <a class="dark:text-light" href="tel:+4917621470118">+49 176 214 70118</a><br />
-        E-Mail: <a class="dark:text-light" href="mailto:post@felixemmanuel.de"> post@felixemmanuel.de</a>
-      </p>
+  <h2 class="dark:text-light mb-2">EU-Streitschlichtung</h2>
+  <p class="text-lg mb-8">
+    Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a
+      href="https://ec.europa.eu/consumers/odr/"
+      target="_blank"
+      rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a
+    >.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
+  </p>
 
-      <h2 class="dark:text-light mb-2">EU-Streitschlichtung</h2>
-      <p class="dark:text-light text-lg mb-8">
-        Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a
-          class="dark:text-light"
-          href="https://ec.europa.eu/consumers/odr/"
-          target="_blank"
-          rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a
-        >.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
-      </p>
+  <h2 class="dark:text-light mb-2">Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+  <p class="text-lg mb-8">
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+    teilzunehmen.
+  </p>
 
-      <h2 class="dark:text-light mb-2">Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
-      <p class="dark:text-light text-lg mb-8">
-        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-        teilzunehmen.
-      </p>
-
-      <p class="dark:text-light text-lg mb-8">
-        Quelle: <a class="dark:text-light" href="https://www.e-recht24.de/impressum-generator.html"
-          >https://www.e-recht24.de/impressum-generator.html</a
-        >
-      </p>
-    </Layout>
-  </body>
-</html>
+  <p class="text-lg mb-8">
+    Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank" rel="noopener noreferrer"
+      >https://www.e-recht24.de/impressum-generator.html</a
+    >
+  </p>
+</Layout>

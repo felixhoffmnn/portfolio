@@ -3,7 +3,7 @@ import { IProjectDetails } from "@types";
 import { Image } from "@astrojs/image/components";
 
 const { projectDetail } = Astro.props as IProjectDetails;
-const { title, thumbnail, liveUrl, githubUrl } = projectDetail;
+const { title, blogUrl, thumbnail, liveUrl, githubUrl } = projectDetail;
 ---
 
 <article class="w-full max-h-[25rem] overflow-hidden relative group">
@@ -61,19 +61,21 @@ const { title, thumbnail, liveUrl, githubUrl } = projectDetail;
       )
     }
   </div>
-  <Image
-    src={thumbnail}
-    class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]"
-    loading="lazy"
-    width={640}
-    height={480}
-    format="webp"
-    quality={80}
-    alt="featureImage"
-  />
-  <div
-    class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700"
-  >
-    <h3 class="mr-2 text-xl">{title}</h3>
-  </div>
+  <a href={blogUrl} class="w-full h-full block">
+    <Image
+      src={thumbnail}
+      class="w-full h-auto scale-100 hover:scale-110 transition duration-[1.5s]"
+      loading="lazy"
+      width={600}
+      height={400}
+      format="webp"
+      quality={80}
+      alt="featureImage"
+    />
+    <div
+      class="absolute w-full bottom-0 left-0 backdrop-blur-md dark:text-white text-white bg-black/50 p-4 translate-y-[100%] group-hover:translate-y-0 transition duration-700"
+    >
+      <h3 class="mr-2 text-xl">{title}</h3>
+    </div>
+  </a>
 </article>

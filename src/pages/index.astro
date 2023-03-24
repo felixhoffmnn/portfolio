@@ -5,7 +5,6 @@ import Layout from "@layouts/Layout.astro";
 import Hero from "@components/home/Hero.astro";
 import Experience from "@components/home/Experience.astro";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-import MetaHead from "@components/general/MetaHead.astro";
 
 const featureProjects = info.projects.map((project, index) => {
   if (project.isFeatured && index < 6) {
@@ -14,21 +13,12 @@ const featureProjects = info.projects.map((project, index) => {
 });
 ---
 
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <MetaHead title={"Portfolio"} description={info.about} ogImageUrl={"/assets/images/profile.png"} />
-  </head>
-
-  <body>
-    <Layout>
-      <Hero name={info.name} about={info.about} />
-      <Experience title={"ERFAHRUNG"} details={info.experience} />
-      <Experience title={"AUSBILDUNG"} details={info.education} />
-      <section>
-        <h2 class="w-[15rem] dark:text-light mt-16">AKTUELLE PROJEKTE</h2>
-        <ProjectsWrapper projects={featureProjects} />
-      </section>
-    </Layout>
-  </body>
-</html>
+<Layout title={"Portfolio"} description={info.about[0]}>
+  <Hero name={info.name} about={info.about} />
+  <Experience title={"ERFAHRUNG"} details={info.experience} />
+  <Experience title={"AUSBILDUNG"} details={info.education} />
+  <section>
+    <h2 class="w-[15rem] dark:text-light mt-16">AKTUELLE PROJEKTE</h2>
+    <ProjectsWrapper projects={featureProjects} />
+  </section>
+</Layout>

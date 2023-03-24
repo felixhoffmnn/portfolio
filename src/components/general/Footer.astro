@@ -3,7 +3,7 @@ import { info } from "@data";
 ---
 
 <footer class="container flex sm:flex-row flex-col justify-between items-center mb-8 sm:mb-4">
-  <a class="dark:text-light text-right my-8" href="/imprint">
+  <a class="text-right my-8" href="/imprint">
     <strong>Impressum</strong>
   </a>
   <div class="grid grid-cols-3 gap-4">
@@ -43,7 +43,7 @@ import { info } from "@data";
           height="12"></rect><circle cx="4" cy="4" r="2"></circle>
       </svg>
     </a>
-    <a aria-label="Social Media" href={info.socialMedia.email} target="_blank" class="footer-icons">
+    <a aria-label="Social Media" href={`mailto:${info.socialMedia.email}`} target="_blank" class="footer-icons">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18"

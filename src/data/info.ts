@@ -7,7 +7,6 @@ export const info = {
     "Ich habe mich auf Data Science und Web Design spezialisiert und arbeite derzeit NLP-Projekten und Performanz-Optimierung von einer React-Application, bei dem ich mein Wissen in diesen Bereichen anwenden kann.",
     "Zu meinen Fähigkeiten gehören die Arbeit mit Datenbanken wie Postgres und MySQL, Programmiersprachen wie Python, TypeScript und Java, sowie Tools und Frameworks im Bereich Data Science wie Pandas, Scikit, spaCy, Streamlit und TensorFlow. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien wie Hadoop, Pyspark, Airflow und HDFS sowie im Bereich Webdesign mit Figma und Adobe XD und in der Fotobearbeitung mit Photoshop und Lightroom.",
   ],
-
   experience: [
     {
       name: "Pointnext Services",
@@ -19,52 +18,51 @@ export const info = {
       ],
       skills: ["React", "TypeScript", "Performanz Optimierung"],
     },
-
     {
       name: "Hewlett Packard Labs",
       location: "Milpitas, Kalifornien, USA",
       startDate: "Jun 2022",
       endDate: "Sep 2022",
       description: [
-        "Benchmarking von Algorithmen (z. B. Parameter Server und Ring All-Reduce) zum Trainieren von Machine Learning Modellen auf verteilten Systemen. Das Trainieren erfolgte auf der Maschine Learning Plattform „Determined AI“ mittels Kubernetes und Docker Containern.",
+        "Benchmarking von Algorithmen (z. B. Parameter Server und Ring All-Reduce) zum Trainieren von Machine Learning Modellen auf verteilten Systemen.",
+        "Das Trainieren erfolgte auf der Maschine Learning Plattform „Determined AI“ mittels Kubernetes und Docker Containern.",
       ],
       skills: ["Determined AI", "Kubernetes", "Machine Learning", "Python"],
     },
-
     {
       name: "Digital Edge Ratingen",
       location: "Ratingen, Nordrhein-Westfalen, Deutschland",
       startDate: "Dez 2021",
       endDate: "Mär 2022",
       description: [
-        "Umsetzung eines React Frontends zur 3D-Visualisierung von Diagrammen und Prozessen. State-management erfolgte mittels Zustand und 3D Interaktion mittels React Three Fiber.",
+        "Umsetzung eines React Frontends zur 3D-Visualisierung von Diagrammen und Prozessen.",
+        "State-management erfolgte mittels Zustand und 3D Interaktion mittels React Three Fiber.",
       ],
       skills: ["React", "Three.js", "3D Visualisierung"],
     },
-
     {
       name: "Digital Service Innovation",
       location: "Böblingen, Baden-Württemberg, Deutschland",
       startDate: "Mär 2021",
       endDate: "Mai 2021",
       description: [
-        "Umsetzung einer zentralen Speicherlösung mittels einer Microsoft PowerApp. Interaktion anhand REST APIs mit Java Spring Backend.",
+        "Umsetzung einer zentralen Speicherlösung mittels einer Microsoft PowerApp.",
+        "Interaktion anhand REST APIs mit Java Spring Backend.",
       ],
       skills: ["Power Apps", "Knowledge Management"],
     },
-
     {
       name: "Pointnext Services",
       location: "Böblingen, Baden-Württemberg, Deutschland",
       startDate: "Okt 2020",
       endDate: "Nov 2020",
       description: [
-        "Analyse von Open Source Monitoring Tools wie zum Beispiel Nagios und Zabbix. Die Erkenntnisse wurden in einer Tabelle und Projektarbeit dokumentiert.",
+        "Analyse von Open Source Monitoring Tools wie zum Beispiel Nagios und Zabbix.",
+        "Die Erkenntnisse wurden in einer Tabelle und Projektarbeit dokumentiert.",
       ],
       skills: ["Monitoring", "Open Source"],
     },
   ],
-
   education: [
     {
       name: "Bachelor of Science, Informatik",
@@ -82,9 +80,9 @@ export const info = {
       startDate: "2017",
       endDate: "2020",
       description: [
+        "Oberstufenzentrum Märkisch-Oderland",
         "Abitur in 3 Jahren",
         "Schwerpunkt: Maschinen- und Kommunikationstechnik",
-        "Oberstufenzentrum Märkisch-Oderland",
       ],
     },
     {
@@ -95,20 +93,19 @@ export const info = {
       description: ["bundtStift Schulen", "Grundschule und Gymnasium mit kreativem Schwerpunkt"],
     },
   ],
-
   socialMedia: {
     github: "https://github.com/felixhoffmnn",
     email: "post@felixemmanuel.de",
     linkedin: "https://www.linkedin.com/in/felix-hoffmnn/",
   },
-
   projects: [
     {
       title: "GePart",
+      blogUrl: "/projects/gepart",
       isFeatured: true,
       thumbnail: "/assets/images/deutscher_bundestag.jpg",
       githubUrl: "https://github.com/felixhoffmnn/gepart",
-      liveUrl: "https://felixemmanuel.de/",
+      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
     },
   ],
 };

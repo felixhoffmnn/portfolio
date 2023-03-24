@@ -24,6 +24,7 @@ export interface IExperiences {
 
 export interface IProject {
   title: string;
+  blogUrl: string;
   isFeatured: boolean;
   thumbnail: string;
   githubUrl: string;

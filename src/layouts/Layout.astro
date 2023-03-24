@@ -1,12 +1,25 @@
 ---
 import Footer from "@components/general/Footer.astro";
 import Navbar from "@components/general/Navbar.astro";
+import MetaHead from "@components/general/MetaHead.astro";
 
 import "../styles/style.css";
+
+const { title, description } = Astro.props;
 ---
 
-<Navbar />
-<main class="container">
-  <slot />
-</main>
-<Footer />
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <MetaHead title={title} description={description} ogImageUrl={"/assets/images/profile.png"} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+
+  <body>
+    <Navbar />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
