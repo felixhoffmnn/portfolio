@@ -117,6 +117,7 @@ export const info = {
   projects: [
     {
       title: "GePart",
+      description: "Parteiklassifikation mittels Machine Learning",
       blogUrl: "/projects/gepart",
       isFeatured: true,
       thumbnail: "/assets/images/deutscher_bundestag.jpg",
@@ -125,6 +126,7 @@ export const info = {
     },
     {
       title: "HiBuddy",
+      description: "Sprachassistent für den tagtäglichen Gebrauch",
       // blogUrl: "/projects/gepart",
       isFeatured: false,
       thumbnail: "/assets/images/amazon_alexa.jpg",
@@ -133,6 +135,7 @@ export const info = {
     },
     {
       title: "Spurerkennung",
+      description: "Spurerkennung mittels OpenCV",
       // blogUrl: "/projects/gepart",
       isFeatured: false,
       thumbnail: "/assets/images/auto_auf_straße.jpg",
