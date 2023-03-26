@@ -1,12 +1,10 @@
 ---
-import { info } from "@data";
+import { info } from "@data/info";
 
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/home/Hero.astro";
 import Experience from "@components/home/Experience.astro";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-
-const featureProjects = info.projects.filter((project) => project.isFeatured).slice(0, 6);
 ---
 
 <Layout title={"Portfolio"} description={info.about[0]}>
@@ -15,7 +13,7 @@ const featureProjects = info.projects.filter((project) => project.isFeatured).sl
   <Experience title={"AUSBILDUNG"} details={info.education} />
   <Experience title={"ENGAGEMENT"} details={info.aboard} />
   <section>
-    <h2 class="w-[15rem] dark:text-light mt-16">AKTUELLE PROJEKTE</h2>
-    <ProjectsWrapper projects={featureProjects} />
+    <h2 class="mt-16 w-[15rem] dark:text-light">AKTUELLE PROJEKTE</h2>
+    <ProjectsWrapper onlyFeatured />
   </section>
 </Layout>

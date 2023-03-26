@@ -114,33 +114,4 @@ export const info = {
     email: "post@felixemmanuel.de",
     linkedin: "https://www.linkedin.com/in/felix-hoffmnn/",
   },
-  projects: [
-    {
-      title: "GePart",
-      description: "Parteiklassifikation mittels Machine Learning",
-      blogUrl: "/projects/gepart",
-      isFeatured: true,
-      thumbnail: "/assets/images/deutscher_bundestag.jpg",
-      githubUrl: "https://github.com/felixhoffmnn/gepart",
-      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
-    },
-    {
-      title: "HiBuddy",
-      description: "Sprachassistent für den tagtäglichen Gebrauch",
-      // blogUrl: "/projects/gepart",
-      isFeatured: false,
-      thumbnail: "/assets/images/amazon_alexa.jpg",
-      githubUrl: "https://github.com/felixhoffmnn/aswe",
-      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
-    },
-    {
-      title: "Spurerkennung",
-      description: "Spurerkennung mittels OpenCV",
-      // blogUrl: "/projects/gepart",
-      isFeatured: false,
-      thumbnail: "/assets/images/auto_auf_straße.jpg",
-      githubUrl: "https://github.com/felixhoffmnn/digitale-bildverarbeitung",
-      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
-    },
-  ],
 };

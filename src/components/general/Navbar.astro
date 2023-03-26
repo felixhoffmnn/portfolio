@@ -1,17 +1,17 @@
 ---
-import { info } from "@data";
-import { createLogo } from "@utils";
+import { info } from "@data/info";
+import { createLogo } from "@utils/index";
 ---
 
-<header class="container flex items-center justify-between h-[80px] sm:h-[123px]">
-  <a class="!no-underline text-2xl font-semibold dark:font-semibold font-outfit" href="/">{createLogo(info.name)}.</a>
+<header class="container flex h-[80px] items-center justify-between sm:h-[123px]">
+  <a class="font-outfit text-2xl font-semibold !no-underline dark:font-semibold" href="/">{createLogo(info.name)}.</a>
   <nav>
     <ul class="flex items-center">
       <li>
-        <a class="!no-underline p-4 block text-lg" href="/projects">Projekte</a>
+        <a class="block p-4 text-lg !no-underline" href="/projects">Projekte</a>
       </li>
       <li>
-        <button aria-label="theme-button" id="theme-button" class="rounded-lg p-4 ml-2 bg-slate-100 dark:bg-[#202020]"
+        <button aria-label="theme-button" id="theme-button" class="ml-2 rounded-lg bg-slate-100 p-4 dark:bg-[#202020]"
         ></button>
       </li>
     </ul>

@@ -21,20 +21,3 @@ export interface IExperiences {
   title: string;
   details: IExperience[];
 }
-
-export interface IProject {
-  title: string;
-  description: string;
-  blogUrl?: string;
-  isFeatured: boolean;
-  thumbnail: string;
-  githubUrl: string;
-  liveUrl?: string;
-}
-export interface IProjects {
-  projects: IProject[];
-}
-
-export interface IProjectDetails {
-  projectDetail: IProject;
-}

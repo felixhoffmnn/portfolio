@@ -1,11 +1,9 @@
 ---
-import { info } from "@data";
-
-import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 import Layout from "@layouts/Layout.astro";
+import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 ---
 
 <Layout title="Projekte" description="Übersicht über meine Projekte.">
   <h1 style="line-height: 1.2;">Projekte</h1>
-  <ProjectsWrapper projects={info.projects} />
+  <ProjectsWrapper />
 </Layout>

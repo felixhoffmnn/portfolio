@@ -3,5 +3,9 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[asto]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  },
+  "files.associations": {
+    "*.mdx": "markdown"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"]
 }

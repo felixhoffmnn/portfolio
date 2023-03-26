@@ -4,28 +4,28 @@ import { IExperiences } from "@types";
 const { title, details } = Astro.props as IExperiences;
 ---
 
-<section class="flex items-start justify-between flex-col sm:flex-row dark:text-light">
-  <h2 class="w-[15rem] mt-16">{title}</h2>
+<section class="flex flex-col items-start justify-between dark:text-light sm:flex-row">
+  <h2 class="mt-16 w-[15rem]">{title}</h2>
   <div class="w-full">
     {
       details.map((item) => (
         <div class="my-16">
-          <div class="flex justify-between items-center flex-wrap">
+          <div class="flex flex-wrap items-center justify-between">
             <h3 class="text-xl font-semibold">{item.name}</h3>
             <p class="text-sm dark:text-gray">
               {item.startDate} - {item.endDate}
             </p>
           </div>
-          <p class="text-sm mt-3 !text-blue">{item.location}</p>
-          <ul class="mt-3 list-disc list-inside">
+          <p class="mt-3 text-sm !text-blue">{item.location}</p>
+          <ul class="mt-3 list-inside list-disc">
             {item.description.map((item) => (
               <li class="dark:text-gray">{item}</li>
             ))}
           </ul>
           {item.skills && (
-            <div class="flex flex-wrap mt-3">
+            <div class="mt-3 flex flex-wrap">
               {item.skills.map((item) => (
-                <span class="text-sm bg-zinc-200 dark:bg-zinc-800 dark:text-gray rounded-full px-2 py-1 mr-2 mb-2">
+                <span class="mr-2 mb-2 rounded-full bg-zinc-200 px-2 py-1 text-sm dark:bg-zinc-800 dark:text-gray">
                   {item}
                 </span>
               ))}

@@ -14,7 +14,7 @@
     @apply bg-light dark:bg-dark;
   }
   .container {
-    @apply max-w-[1112px] mx-auto px-4;
+    @apply mx-auto max-w-[1112px] px-4;
   }
   h1,
   h2,
@@ -25,7 +25,7 @@
     @apply font-outfit;
   }
   h1 {
-    @apply text-6xl sm:text-8xl main-heading;
+    @apply main-heading text-6xl sm:text-8xl;
   }
   h2 {
     @apply text-xl font-semibold;
@@ -36,7 +36,7 @@
     @apply font-inter text-dark-gray dark:text-light;
   }
   .footer-icons {
-    @apply dark:text-light flex items-center border border-dark dark:border-light p-4 rounded-lg justify-center;
+    @apply flex items-center justify-center rounded-lg border border-dark p-4 dark:border-light dark:text-light;
   }
 }
 

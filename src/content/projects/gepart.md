@@ -1,7 +1,10 @@
 ---
-layout: "@layouts/Layout.astro"
-title: "My Markdown page"
-description: "This is a page written in Markdown"
+title: "GePart"
+description: "Parteiklassifikation mittels Machine Learning"
+featured: true
+pubDatetime: 2023-03-26
+thumbnail: "/assets/images/deutscher_bundestag.jpg"
+githubUrl: "https://github.com/felixhoffmnn/gepart"
 ---
 
 # GePart

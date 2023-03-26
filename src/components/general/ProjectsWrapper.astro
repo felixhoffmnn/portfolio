@@ -1,10 +1,19 @@
 ---
-import { IProjects } from "@types";
+import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 
-const { projects } = Astro.props as IProjects;
+const { onlyFeatured } = Astro.props as { onlyFeatured: boolean };
+
+const projects = await getCollection("projects");
 ---
 
-<div class="grid md:grid-cols-2 grid-cols-1 gap-4 my-16">
-  {projects.map((project) => <ProjectCard projectDetail={project} />)}
+<div class="my-16 grid grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    projects.map((project) => {
+      if (onlyFeatured && !project.data.featured) {
+        return null;
+      }
+      return <ProjectCard project={project} />;
+    })
+  }
 </div>
