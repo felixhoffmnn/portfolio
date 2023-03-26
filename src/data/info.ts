@@ -9,54 +9,59 @@ export const info = {
   ],
   experience: [
     {
-      name: "Pointnext Services",
-      location: "Böblingen, Baden-Württemberg, Deutschland",
+      name: "Front-end Optimierung",
+      location: "Böblingen - Deutschland",
       startDate: "Jan 2023",
       endDate: "Feb 2023",
       description: [
+        "Pointnext Services (HPE)",
         "Ladezeiten-Optimierung eines React-Frontends mittels Server-Side Pagination und Backend-Filtering.",
       ],
       skills: ["React", "TypeScript", "Performanz Optimierung"],
     },
     {
-      name: "Hewlett Packard Labs",
-      location: "Milpitas, Kalifornien, USA",
+      name: "GPU Benchmarking",
+      location: "San Francisco - USA",
       startDate: "Jun 2022",
       endDate: "Sep 2022",
       description: [
+        "Hewlett Packard Labs (HPE)",
         "Benchmarking von Algorithmen (z. B. Parameter Server und Ring All-Reduce) zum Trainieren von Machine Learning Modellen auf verteilten Systemen.",
         "Das Trainieren erfolgte auf der Maschine Learning Plattform „Determined AI“ mittels Kubernetes und Docker Containern.",
       ],
       skills: ["Determined AI", "Kubernetes", "Machine Learning", "Python"],
     },
     {
-      name: "Digital Edge Ratingen",
-      location: "Ratingen, Nordrhein-Westfalen, Deutschland",
+      name: "Front-end Development",
+      location: "Ratingen - Deutschland",
       startDate: "Dez 2021",
       endDate: "Mär 2022",
       description: [
+        "Digital Edge Ratingen (DXC)",
         "Umsetzung eines React Frontends zur 3D-Visualisierung von Diagrammen und Prozessen.",
         "State-management erfolgte mittels Zustand und 3D Interaktion mittels React Three Fiber.",
       ],
       skills: ["React", "Three.js", "3D Visualisierung"],
     },
     {
-      name: "Digital Service Innovation",
-      location: "Böblingen, Baden-Württemberg, Deutschland",
+      name: "No-Code/Low-Code Development",
+      location: "Böblingen - Deutschland",
       startDate: "Mär 2021",
       endDate: "Mai 2021",
       description: [
+        "Digital Service Innovation (DXC)",
         "Umsetzung einer zentralen Speicherlösung mittels einer Microsoft PowerApp.",
         "Interaktion anhand REST APIs mit Java Spring Backend.",
       ],
       skills: ["Power Apps", "Knowledge Management"],
     },
     {
-      name: "Pointnext Services",
-      location: "Böblingen, Baden-Württemberg, Deutschland",
+      name: "Analyse von Monitoring-Tools",
+      location: "Böblingen - Deutschland",
       startDate: "Okt 2020",
       endDate: "Nov 2020",
       description: [
+        "Pointnext Services (HPE)",
         "Analyse von Open Source Monitoring Tools wie zum Beispiel Nagios und Zabbix.",
         "Die Erkenntnisse wurden in einer Tabelle und Projektarbeit dokumentiert.",
       ],
@@ -65,8 +70,8 @@ export const info = {
   ],
   education: [
     {
-      name: "Bachelor of Science, Informatik",
-      location: "Stuttgart, Baden-Württemberg, Deutschland",
+      name: "Informatik B.Sc.",
+      location: "Stuttgart - Deutschland",
       startDate: "2020",
       endDate: "2023",
       description: [
@@ -76,7 +81,7 @@ export const info = {
     },
     {
       name: "Abitur",
-      location: "Strausberg, Brandenburg, Deutschland",
+      location: "Strausberg - Deutschland",
       startDate: "2017",
       endDate: "2020",
       description: [
@@ -87,10 +92,21 @@ export const info = {
     },
     {
       name: "Mittlerer Schulabschluss",
-      location: "Strausberg, Brandenburg, Deutschland",
+      location: "Strausberg - Deutschland",
       startDate: "2006",
       endDate: "2017",
       description: ["bundtStift Schulen", "Grundschule und Gymnasium mit kreativem Schwerpunkt"],
+    },
+  ],
+  aboard: [
+    {
+      name: "Entwicklungspolitische Bildungs- und Workcamp-Reise",
+      location: "Bangalore, Vijayawada, Hyderabad, Mumbai - Indien",
+      startDate: "Okt 2018",
+      endDate: "Nov 2018",
+      description: [
+        "Ein Projekt der Gesellschaft für solidarische Entwicklungszusammenarbeit e.V. (GSE) auf deutscher Seite in Kooperation mit mehreren lokalen Partnern auf indischer Seite.",
+      ],
     },
   ],
   socialMedia: {
@@ -105,6 +121,22 @@ export const info = {
       isFeatured: true,
       thumbnail: "/assets/images/deutscher_bundestag.jpg",
       githubUrl: "https://github.com/felixhoffmnn/gepart",
+      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
+    },
+    {
+      title: "HiBuddy",
+      // blogUrl: "/projects/gepart",
+      isFeatured: false,
+      thumbnail: "/assets/images/amazon_alexa.jpg",
+      githubUrl: "https://github.com/felixhoffmnn/aswe",
+      // liveUrl: "https://felix-hoffmann.de/projects/gepart",
+    },
+    {
+      title: "Spurerkennung",
+      // blogUrl: "/projects/gepart",
+      isFeatured: false,
+      thumbnail: "/assets/images/auto_auf_straße.jpg",
+      githubUrl: "https://github.com/felixhoffmnn/digitale-bildverarbeitung",
       // liveUrl: "https://felix-hoffmann.de/projects/gepart",
     },
   ],

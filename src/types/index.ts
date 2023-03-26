@@ -24,11 +24,11 @@ export interface IExperiences {
 
 export interface IProject {
   title: string;
-  blogUrl: string;
+  blogUrl?: string;
   isFeatured: boolean;
   thumbnail: string;
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
 }
 export interface IProjects {
   projects: IProject[];
