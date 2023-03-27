@@ -1,0 +1,9 @@
+pre.astro-code {
+  @apply m-3 rounded-lg;
+}
+.astro-code {
+  @apply p-5;
+}
+code {
+  @apply text-sm;
+}

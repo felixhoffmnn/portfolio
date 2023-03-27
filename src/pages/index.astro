@@ -7,7 +7,7 @@ import Experience from "@components/home/Experience.astro";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
 ---
 
-<Layout title={"Portfolio"} description={info.about[0]}>
+<Layout frontmatter={{ title: "Portfolio", description: info.about[0] }}>
   <Hero name={info.name} about={info.about} />
   <Experience title={"ERFAHRUNG"} details={info.experience} />
   <Experience title={"AUSBILDUNG"} details={info.education} />

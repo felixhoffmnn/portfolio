@@ -5,7 +5,7 @@
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "files.associations": {
-    "*.mdx": "markdown"
+    "*.css": "tailwindcss"
   },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"]
 }

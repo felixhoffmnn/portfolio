@@ -7,5 +7,11 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
+  markdown: {
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    },
+  },
   integrations: [tailwind(), image(), sitemap(), mdx()],
 });

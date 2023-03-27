@@ -1,8 +1,8 @@
-/* ========== import font source ========== */
-@import "fonts.css";
-
 /* ========== import custom styles ========== */
 @import "custom-styles.css";
+
+/* ========== import code styles ========== */
+@import "code.css";
 
 @tailwind base;
 @tailwind components;

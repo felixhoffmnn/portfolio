@@ -97,27 +97,27 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"projects": {
-"gepart.md": {
-  id: "gepart.md",
+"gepart.mdx": {
+  id: "gepart.mdx",
   slug: "gepart",
   body: string,
   collection: "projects",
   data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] },
-"hibuddy.md": {
-  id: "hibuddy.md",
+} & { render(): Render[".mdx"] },
+"hibuddy.mdx": {
+  id: "hibuddy.mdx",
   slug: "hibuddy",
   body: string,
   collection: "projects",
   data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] },
-"lanedetection.md": {
-  id: "lanedetection.md",
+} & { render(): Render[".mdx"] },
+"lanedetection.mdx": {
+  id: "lanedetection.mdx",
   slug: "lanedetection",
   body: string,
   collection: "projects",
   data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] },
+} & { render(): Render[".mdx"] },
 },
 
 	};

@@ -41,6 +41,5 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 {description && <meta property="twitter:description" content={description} />}
 {ogImageUrl && <meta property="twitter:image" content={`${info.baseUrl}${ogImageUrl}`} />}
 
-<!-- preload assests -->
-<link rel="preload" href="/assets/fonts/Inter/Inter-Light.ttf" as="font" crossorigin />
-<link rel="preload" href="/assets/fonts/Outfit/Outfit-SemiBold.ttf" as="font" crossorigin />
+<!-- sitemaps -->
+<link rel="sitemap" href="/sitemap-index.xml" />
