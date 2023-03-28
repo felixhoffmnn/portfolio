@@ -1,8 +1,13 @@
 ---
-import { IMetaHead } from "@types";
 import { info } from "@data/info";
 
-const { title, description, ogImageUrl } = Astro.props as IMetaHead;
+const { title, description, ogImageUrl } = Astro.props as {
+  title: string;
+  description: string;
+  ogImageUrl: string;
+};
+
+const compose_title = title ? `${title} - ${info.name}` : `${info.name} - Portfolio`;
 ---
 
 <meta charset="UTF-8" />
@@ -23,21 +28,21 @@ const { title, description, ogImageUrl } = Astro.props as IMetaHead;
 
 <!-- Primary Meta Tags -->
 {title && <link rel="canonical" href={`${info.baseUrl}${Astro.url.pathname}`} />}
-{title && <title>{`${title} - ${info.name}`}</title>}
-{title && <meta name="title" content={`${title} - ${info.name}`} />}
+{(<title>{compose_title}</title>)}
+{(<meta name="title" content={compose_title} />)}
 {description && <meta name="description" content={description} />}
 
 <!-- Open Graph / Facebook -->
 {title && <meta property="og:type" content="website" />}
 {title && <meta property="og:url" content={`${info.baseUrl}${Astro.url.pathname}`} />}
-{title && <meta property="og:title" content={`${title} - ${info.name}`} />}
+{(<meta property="og:title" content={compose_title} />)}
 {description && <meta property="og:description" content={description} />}
 {ogImageUrl && <meta property="og:image" content={`${info.baseUrl}${ogImageUrl}`} />}
 
 <!-- Twitter -->
 {title && <meta property="twitter:card" content="summary_large_image" />}
 {title && <meta property="twitter:url" content={`${info.baseUrl}${Astro.url.pathname}`} />}
-{title && <meta property="twitter:title" content={`${title} - ${info.name}`} />}
+{(<meta property="twitter:title" content={compose_title} />)}
 {description && <meta property="twitter:description" content={description} />}
 {ogImageUrl && <meta property="twitter:image" content={`${info.baseUrl}${ogImageUrl}`} />}
 

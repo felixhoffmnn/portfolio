@@ -16,7 +16,7 @@ import MetaHead from "@components/general/MetaHead.astro";
 
 import "../styles/style.css";
 
-const { frontmatter } = Astro.props as { frontmatter: { title: string; description: string } };
+const { frontmatter } = Astro.props as { frontmatter: { title?: string; description: string } };
 ---
 
 <!DOCTYPE html>

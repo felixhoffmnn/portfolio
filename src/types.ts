@@ -1,15 +1,9 @@
-export interface IMetaHead {
-  title: string;
-  description: string;
-  ogImageUrl: string;
-}
-
-export interface IHeroProps {
+interface IHeroProps {
   name: string;
   about: string[];
 }
 
-export interface IExperience {
+interface IExperience {
   name: string;
   location: string;
   startDate: string;
@@ -17,7 +11,9 @@ export interface IExperience {
   description: string[];
   skills: string[];
 }
-export interface IExperiences {
+interface IExperiences {
   title: string;
   details: IExperience[];
 }
+
+export type { IHeroProps, IExperience, IExperiences };

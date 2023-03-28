@@ -22,7 +22,7 @@
   h4,
   h5,
   h6 {
-    @apply font-outfit;
+    @apply hyphens-auto font-outfit;
   }
   h1 {
     @apply main-heading text-6xl sm:text-8xl;
