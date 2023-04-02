@@ -8,7 +8,7 @@
     "prepare": "husky install",
     "dev": "astro check --watch & astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && tsc --noEmit && astro build",
     "sync": "astro sync",
     "preview": "astro preview",
     "astro": "astro",
