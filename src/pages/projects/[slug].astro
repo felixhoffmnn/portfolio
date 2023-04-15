@@ -1,6 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ data }) => {
@@ -13,12 +13,16 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry } = Astro.props as { entry: CollectionEntry<"projects"> };
+const {
+  entry,
+  entry: { data },
+} = Astro.props as { entry: CollectionEntry<"projects"> };
 const { Content } = await entry.render();
 ---
 
-<Layout frontmatter={{ title: entry.data.title, description: entry.data.description }}>
+<Layout frontmatter={{ title: data.title, description: data.description }}>
   <article class="prose lg:prose-xl">
+    <h1>{data.title}</h1>
     <Content />
   </article>
 </Layout>

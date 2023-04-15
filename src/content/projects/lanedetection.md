@@ -8,8 +8,6 @@ githubUrl: "https://github.com/felixhoffmnn/digitale-bildverarbeitung"
 liveUrl: "https://digitale-bildverarbeitung.readthedocs.io/en/latest/"
 ---
 
-# {frontmatter.title}
-
 Spurerkennung mittels OpenCV. Dieses Projekt wurde im Rahmen des Moduls Digitale Bildverarbeitung an der DHBW Stuttgart erstellt.
 
 <br />

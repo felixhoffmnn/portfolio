@@ -7,7 +7,7 @@ const { onlyFeatured } = Astro.props as { onlyFeatured: boolean };
 const projects = await getCollection("projects");
 ---
 
-<div class="my-16 grid grid-cols-1 gap-4 md:grid-cols-2">
+<div class="my-16 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2">
   {
     projects.map((project) => {
       if (onlyFeatured && !project.data.featured) {

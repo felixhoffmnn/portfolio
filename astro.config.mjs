@@ -4,14 +4,16 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",
-      wrap: true,
-    },
+      wrap: true
+    }
   },
-  integrations: [tailwind(), image(), sitemap(), mdx()],
+  integrations: [tailwind(), image(), sitemap(), mdx(), react()]
 });

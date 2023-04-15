@@ -19,13 +19,18 @@
   "dependencies": {
     "@astrojs/image": "^0.16.3",
     "@astrojs/mdx": "^0.18.2",
+    "@astrojs/react": "^2.1.1",
     "@astrojs/sitemap": "^1.2.1",
     "@astrojs/tailwind": "^3.1.1",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/outfit": "^4.5.11",
-    "astro": "^2.1.8"
+    "astro": "^2.1.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
     "@tailwindcss/typography": "^0.5.9",
     "@typescript-eslint/parser": "^5.57.0",
     "astro-eslint-parser": "^0.13.2",
