@@ -3,15 +3,15 @@ import { info } from "@data/info";
 
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/home/Hero.astro";
-import { Experience } from "@components/home/Experience";
 import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
+import ExperienceWrapper from "@components/home/ExperienceWrapper.astro";
 ---
 
 <Layout frontmatter={{ description: info.about[0] }}>
   <Hero name={info.name} about={info.about} />
-  <Experience title={"ERFAHRUNG"} details={info.experience} />
-  <Experience title={"AUSBILDUNG"} details={info.education} />
-  <Experience title={"ENGAGEMENT"} details={info.aboard} />
+  <ExperienceWrapper title={"ERFAHRUNG"} details={info.experience} />
+  <ExperienceWrapper title={"AUSBILDUNG"} details={info.education} />
+  <ExperienceWrapper title={"ENGAGEMENT"} details={info.aboard} />
   <section>
     <h2 class="mt-16 w-[15rem] dark:text-light">AKTUELLE PROJEKTE</h2>
     <ProjectsWrapper onlyFeatured />
