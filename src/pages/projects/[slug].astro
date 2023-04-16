@@ -22,7 +22,29 @@ const { Content } = await entry.render();
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
   <article class="prose lg:prose-xl">
-    <h1>{data.title}</h1>
+    <div class="flex w-full flex-row items-center gap-8">
+      <h1 class="grow">{data.title}</h1>
+      <div class="flex w-min flex-row-reverse gap-4">
+        {
+          data.githubUrl && (
+            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+              <a href={data.githubUrl} rel="noopener noreferrer">
+                GitHub
+              </a>
+            </button>
+          )
+        }
+        {
+          data.liveUrl && (
+            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+              <a href={data.liveUrl} rel="noopener noreferrer">
+                Live
+              </a>
+            </button>
+          )
+        }
+      </div>
+    </div>
     <Content />
   </article>
 </Layout>
