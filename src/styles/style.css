@@ -1,14 +1,8 @@
-/* ========== import custom styles ========== */
-@import "custom-styles.css";
-
-/* ========== import code styles ========== */
-@import "code.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ========== tailwind custom styles ========== */
+/* ========== general settings ========== */
 @layer components {
   body {
     @apply bg-light dark:bg-dark;
@@ -25,7 +19,7 @@
     @apply hyphens-auto font-outfit;
   }
   h1 {
-    @apply main-heading text-6xl sm:text-8xl;
+    @apply inline-block bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-6xl font-semibold !leading-tight text-transparent sm:text-8xl;
   }
   h2 {
     @apply text-xl font-semibold;
@@ -43,4 +37,13 @@
 /* ========== custom styles ========== */
 a:hover {
   @apply underline;
+}
+pre.astro-code {
+  @apply m-3 rounded-lg;
+}
+.astro-code {
+  @apply p-5;
+}
+code {
+  @apply text-sm;
 }
