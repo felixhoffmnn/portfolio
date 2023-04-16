@@ -13,7 +13,7 @@ const { title, details } = Astro.props as { title: IExperiences["title"]; detail
     {details.slice(0, defaultNumEntries).map((detail: IExperience) => <Experience item={detail} />)}
     {
       details.length > defaultNumEntries && (
-        <ExperienceGroup details={details} defaultNumEntries={defaultNumEntries} client:idle />
+        <ExperienceGroup details={details} defaultNumEntries={defaultNumEntries} client:load />
       )
     }
   </div>
