@@ -1,8 +1,9 @@
 import { defineConfig } from "astro/config";
 import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,5 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [tailwind(), image(), sitemap(), mdx()],
+  integrations: [tailwind(), image(), sitemap(), react()],
 });

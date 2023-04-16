@@ -16,17 +16,16 @@ import MetaHead from "@components/general/MetaHead.astro";
 
 import "../styles/style.css";
 
-const { frontmatter } = Astro.props as { frontmatter: { title?: string; description: string } };
+const { title, description } = Astro.props as {
+  title: string;
+  description: string;
+};
 ---
 
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <MetaHead
-      title={frontmatter.title}
-      description={frontmatter.description}
-      ogImageUrl={"/assets/images/profile.png"}
-    />
+    <MetaHead title={title} description={description} ogImageUrl={"/assets/images/profile.png"} />
   </head>
 
   <body>

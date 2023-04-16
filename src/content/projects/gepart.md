@@ -7,8 +7,6 @@ thumbnail: "/assets/images/deutscher_bundestag.jpg"
 githubUrl: "https://github.com/felixhoffmnn/gepart"
 ---
 
-# {frontmatter.title}
-
 GePart ist ein Klassifikationsmodell, welches dazu genutzt werden kann, Texte anhand der sechs größten Parteien in Deutschland zu klassifizieren.
 
 <br />

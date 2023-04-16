@@ -1,6 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ data }) => {
@@ -13,12 +13,38 @@ export async function getStaticPaths() {
   }));
 }
 
-const { entry } = Astro.props as { entry: CollectionEntry<"projects"> };
+const {
+  entry,
+  entry: { data },
+} = Astro.props as { entry: CollectionEntry<"projects"> };
 const { Content } = await entry.render();
 ---
 
-<Layout frontmatter={{ title: entry.data.title, description: entry.data.description }}>
+<Layout frontmatter={{ title: data.title, description: data.description }}>
   <article class="prose lg:prose-xl">
+    <div class="mb-16 flex w-full flex-row place-content-between items-center gap-8">
+      <h1>{data.title}</h1>
+      <div class="flex w-min flex-row gap-4">
+        {
+          data.githubUrl && (
+            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+              <a href={data.githubUrl} rel="noopener noreferrer">
+                GitHub
+              </a>
+            </button>
+          )
+        }
+        {
+          data.liveUrl && (
+            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+              <a href={data.liveUrl} rel="noopener noreferrer">
+                Live
+              </a>
+            </button>
+          )
+        }
+      </div>
+    </div>
     <Content />
   </article>
 </Layout>

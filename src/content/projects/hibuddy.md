@@ -7,8 +7,6 @@ thumbnail: "/assets/images/amazon_alexa.jpg"
 githubUrl: "https://github.com/felixhoffmnn/aswe"
 ---
 
-# {frontmatter.title}
-
 HiBuddy ist ein Sprachassistent, der dir dabei helfen soll, den Alltag zu meistern. Er kann dir beispielsweise helfen, deine Einkäufe zu planen, dir den Wetterbericht für die nächsten Tage nennen oder dir die neuesten Nachrichten vorlesen.
 
 <br />
