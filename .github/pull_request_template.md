@@ -1,16 +1,10 @@
-{
-"files.exclude": {
-".git/": true,
-"node_modules/": false,
-"public/": false
-},
-"search.exclude": {
-"**/.cache": true,
-"**/node_modules": true,
-"\*\*/public": true
-},
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-"eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-"editor.formatOnSave": true,
-"editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
-}
+## Description
+
+<!---
+Lead with the intended commit body in this description field. Also please link to any GitHub issue or discourse thread that this PR addresses.
+-->
+
+## Checklist
+
+- [ ] Check preview locally
+- [ ] Run linting and prettier
