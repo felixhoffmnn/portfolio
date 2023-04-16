@@ -8,6 +8,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "tailwindcss": {
+      "config": "tailwind.config.cjs"
+    }
+  },
   "overrides": [
     {
       "files": ["**/*.ts", "**/*.tsx"],
@@ -18,9 +26,12 @@
       ],
       "plugins": ["tailwindcss", "prettier", "jsx-a11y"],
       "parserOptions": {
+        "parser": "@typescript-eslint/parser",
         "project": "./tsconfig.json"
       },
-      "rules": {}
+      "rules": {
+        "tailwindcss/classnames-order": "off"
+      }
     },
     {
       "files": ["*.astro"],
@@ -37,7 +48,9 @@
         "parser": "@typescript-eslint/parser",
         "extraFileExtensions": [".astro"]
       },
-      "rules": {}
+      "rules": {
+        "tailwindcss/classnames-order": "off"
+      }
     }
   ]
 }

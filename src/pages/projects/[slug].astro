@@ -27,7 +27,7 @@ const { Content } = await entry.render();
       <div class="flex w-min flex-row gap-4">
         {
           data.githubUrl && (
-            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+            <button type="button" class="dark:text-white">
               <a href={data.githubUrl} rel="noopener noreferrer">
                 GitHub
               </a>
@@ -36,7 +36,7 @@ const { Content } = await entry.render();
         }
         {
           data.liveUrl && (
-            <button type="button" class="btn btn-primary dark:bg-gray-800 dark:text-white">
+            <button type="button" class="dark:text-white">
               <a href={data.liveUrl} rel="noopener noreferrer">
                 Live
               </a>
