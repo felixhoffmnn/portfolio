@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 /* ========== general settings ========== */
-@layer components {
+@layer base {
   body {
-    @apply bg-light dark:bg-dark;
+    @apply bg-white dark:bg-zinc-900;
+    @apply font-inter text-zinc-900 dark:text-white;
   }
   .container {
     @apply mx-auto max-w-[1112px] px-4;
   }
+}
+
+@layer components {
   h1,
   h2,
   h3,
@@ -24,13 +28,8 @@
   h2 {
     @apply text-xl font-semibold;
   }
-  p,
-  li,
-  a {
-    @apply font-inter text-dark-gray dark:text-light;
-  }
   .footer-icons {
-    @apply flex items-center justify-center rounded-lg border border-dark p-4 dark:border-light dark:text-light;
+    @apply flex items-center justify-center rounded-lg border border-slate-800 p-3 dark:border-white;
   }
 }
 
@@ -39,7 +38,7 @@ a:hover {
   @apply underline;
 }
 pre.astro-code {
-  @apply m-3 rounded-lg;
+  @apply rounded-lg;
 }
 .astro-code {
   @apply p-5;

@@ -1,4 +1,5 @@
 ---
+import PageHeader from "@components/general/PageHeader.astro";
 import Layout from "@layouts/Layout.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 
@@ -22,46 +23,12 @@ const { Content } = await entry.render();
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
   <article class="prose lg:prose-xl">
-    <div class="my-16">
-      <a class="mb-4 inline-flex items-center text-center text-sm font-semibold dark:text-gray" href="/projects">
-        <svg
-          class="-ml-1 mr-2 h-4 w-4"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path>
-        </svg>
-        Projekte
-      </a>
-      <div class="flex w-full flex-row place-content-between items-center gap-8">
-        <div class="flex flex-col">
-          <h1>{data.title}</h1>
-        </div>
-        <div class="flex w-min flex-row gap-4">
-          {
-            data.githubUrl && (
-              <button type="button" class="dark:text-white">
-                <a href={data.githubUrl} rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </button>
-            )
-          }
-          {
-            data.liveUrl && (
-              <button type="button" class="dark:text-white">
-                <a href={data.liveUrl} rel="noopener noreferrer">
-                  Live
-                </a>
-              </button>
-            )
-          }
-        </div>
-      </div>
-    </div>
+    <PageHeader
+      title={data.title}
+      back={{ link: "/projects", name: "Projekte" }}
+      githubUrl={data.githubUrl}
+      liveUrl={data.liveUrl}
+    />
     <Content />
   </article>
 </Layout>

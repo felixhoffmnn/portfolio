@@ -1,5 +1,6 @@
 ---
 import { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -11,15 +12,15 @@ const { title, description, thumbnail } = project.data;
 
 <article class="group relative w-full overflow-hidden rounded-lg bg-zinc-800">
   <a href={`/${project.collection}/${project.slug}`} aria-label="Blog Link">
-    <img
+    <Image
       src={thumbnail}
       class="h-[400px] w-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
       loading="lazy"
+      width={600}
+      quality={90}
       alt={`Preview for ${title}`}
     />
-    <div
-      class="absolute bottom-0 left-0 w-full translate-y-0 bg-black/50 p-4 text-white backdrop-blur-md dark:text-white"
-    >
+    <div class="absolute bottom-0 left-0 w-full translate-y-0 bg-black/50 p-4 text-white backdrop-blur-md">
       <h3 class="mr-2 text-xl font-semibold text-white">{title}</h3>
       <p class="text-sm text-white">{description}</p>
     </div>
