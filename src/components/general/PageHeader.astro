@@ -37,6 +37,18 @@ const { title, back, githubUrl, liveUrl } = Astro.props as {
     </div>
     <div class="flex w-min flex-row gap-4">
       {
+        liveUrl && (
+          <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+            <button
+              type="button"
+              class="inline-flex items-center rounded-lg border border-zinc-200 bg-white px-5 py-2.5 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
+            >
+              Live
+            </button>
+          </a>
+        )
+      }
+      {
         githubUrl && (
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
             <button
@@ -61,15 +73,6 @@ const { title, back, githubUrl, liveUrl } = Astro.props as {
               GitHub
             </button>
           </a>
-        )
-      }
-      {
-        liveUrl && (
-          <button type="button" class="dark:text-white">
-            <a href={liveUrl} rel="noopener noreferrer">
-              Live
-            </a>
-          </button>
         )
       }
     </div>
