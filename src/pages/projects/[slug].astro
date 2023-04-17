@@ -1,4 +1,5 @@
 ---
+import PageHeader from "@components/general/PageHeader.astro";
 import Layout from "@layouts/Layout.astro";
 import { CollectionEntry, getCollection } from "astro:content";
 
@@ -22,29 +23,12 @@ const { Content } = await entry.render();
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
   <article class="prose lg:prose-xl">
-    <div class="mb-16 flex w-full flex-row place-content-between items-center gap-8">
-      <h1>{data.title}</h1>
-      <div class="flex w-min flex-row gap-4">
-        {
-          data.githubUrl && (
-            <button type="button" class="dark:text-white">
-              <a href={data.githubUrl} rel="noopener noreferrer">
-                GitHub
-              </a>
-            </button>
-          )
-        }
-        {
-          data.liveUrl && (
-            <button type="button" class="dark:text-white">
-              <a href={data.liveUrl} rel="noopener noreferrer">
-                Live
-              </a>
-            </button>
-          )
-        }
-      </div>
-    </div>
+    <PageHeader
+      title={data.title}
+      back={{ link: "/projects", name: "Projekte" }}
+      githubUrl={data.githubUrl}
+      liveUrl={data.liveUrl}
+    />
     <Content />
   </article>
 </Layout>

@@ -6,6 +6,6 @@ const { name, about } = Astro.props as IHeroProps;
 
 <section>
   <p class="mt-[117px]">Hey, ich bin</p>
-  <h1>{name}</h1>
+  <h1 class="text-8xl">{name}</h1>
   {about.map((paragraph) => <p class="mb-2 text-lg last:mb-16">{paragraph}</p>)}
 </section>

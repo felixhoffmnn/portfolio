@@ -3,7 +3,7 @@ title: "GePart"
 description: "Parteiklassifikation mittels Machine Learning"
 featured: true
 pubDatetime: 2023-03-26
-thumbnail: "/assets/images/deutscher_bundestag.jpg"
+thumbnail: "@assets/images/deutscher_bundestag.jpg"
 githubUrl: "https://github.com/felixhoffmnn/gepart"
 ---
 
@@ -11,7 +11,7 @@ GePart ist ein Klassifikationsmodell, welches dazu genutzt werden kann, Texte an
 
 <br />
 
-![Bundestag](/assets/images/deutscher_bundestag.jpg)
+![Bundestag](../../assets/images/deutscher_bundestag.jpg)
 
 <br />
 

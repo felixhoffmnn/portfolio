@@ -1,11 +1,12 @@
 ---
+import PageHeader from "@components/general/PageHeader.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout frontmatter={{ title: "Impressum", description: "Impressum für felix-hoffmann.dev" }}>
-  <h1>Impressum</h1>
+  <PageHeader title="Impressum" />
 
-  <h2 class="mb-2 dark:text-light">Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+  <h2 class="mb-2">Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
   <p class="mb-8 text-lg">
     Felix Hoffmann<br />
     Ernsthaldenstra&szlig;e 43<br />
@@ -13,13 +14,13 @@ import Layout from "@layouts/Layout.astro";
     70565 Stuttgart
   </p>
 
-  <h2 class="mb-2 dark:text-light">Kontakt</h2>
+  <h2 class="mb-2">Kontakt</h2>
   <p class="mb-8 text-lg">
-    Telefon: <a class="dark:text-light" href="tel:+4917621470118">+49 176 214 70118</a><br />
-    E-Mail: <a class="dark:text-light" href="mailto:post@felixemmanuel.de"> post@felixemmanuel.de</a>
+    Telefon: <a href="tel:+4917621470118">+49 176 214 70118</a><br />
+    E-Mail: <a href="mailto:post@felixemmanuel.de"> post@felixemmanuel.de</a>
   </p>
 
-  <h2 class="mb-2 dark:text-light">EU-Streitschlichtung</h2>
+  <h2 class="mb-2">EU-Streitschlichtung</h2>
   <p class="mb-8 text-lg">
     Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a
       href="https://ec.europa.eu/consumers/odr/"
@@ -28,7 +29,7 @@ import Layout from "@layouts/Layout.astro";
     >.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
   </p>
 
-  <h2 class="mb-2 dark:text-light">Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+  <h2 class="mb-2">Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
   <p class="mb-8 text-lg">
     Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
     teilzunehmen.
