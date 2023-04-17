@@ -19,7 +19,7 @@
     @apply hyphens-auto font-outfit;
   }
   h1 {
-    @apply inline-block bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-6xl font-semibold !leading-tight text-transparent sm:text-8xl;
+    @apply inline-block bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-6xl font-semibold !leading-tight text-transparent;
   }
   h2 {
     @apply text-xl font-semibold;

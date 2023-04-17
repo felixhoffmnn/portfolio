@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
@@ -14,5 +13,5 @@ export default defineConfig({
       wrap: true,
     },
   },
-  integrations: [tailwind(), image(), sitemap(), react()],
+  integrations: [tailwind(), sitemap(), react()],
 });
