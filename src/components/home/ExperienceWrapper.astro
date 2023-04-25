@@ -1,14 +1,15 @@
 ---
-import { IExperience, IExperiences } from "@types";
-import { Experience, ExperienceGroup } from "./Experience";
+import { IExperience, IExperiences } from "@/types";
+import { Experience, ExperienceGroup } from "@/components/home/Experience";
 
 const defaultNumEntries = 3;
 
 const { title, details } = Astro.props as { title: IExperiences["title"]; details: IExperiences["details"] };
 ---
 
-<section class="flex flex-col items-start justify-between sm:flex-row">
-  <h2 class="mt-16 w-[15rem] uppercase">{title}</h2>
+<!-- TODO: Replace current version with react collapsible -->
+<section class="mt-16 flex flex-col items-start justify-between gap-8 sm:flex-row md:gap-4">
+  <h2 class="w-[15rem] uppercase">{title}</h2>
   <div class="w-full">
     {details.slice(0, defaultNumEntries).map((detail: IExperience) => <Experience item={detail} />)}
     {

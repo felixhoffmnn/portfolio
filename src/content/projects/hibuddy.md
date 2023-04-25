@@ -1,9 +1,10 @@
 ---
 title: "HiBuddy"
 description: "Sprachassistent für den tagtäglichen Gebrauch"
+status: "done"
 featured: false
 pubDatetime: 2023-03-26
-thumbnail: "@assets/images/amazon_alexa.jpg"
+thumbnail: "@/assets/images/amazon_alexa.jpg"
 githubUrl: "https://github.com/felixhoffmnn/aswe"
 ---
 

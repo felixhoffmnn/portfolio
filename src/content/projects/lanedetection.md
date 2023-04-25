@@ -1,9 +1,10 @@
 ---
 title: "Spurerkennung"
 description: "Spurerkennung mittels OpenCV"
+status: "done"
 featured: false
 pubDatetime: 2023-03-26
-thumbnail: "@assets/images/auto_auf_straße.jpg"
+thumbnail: "@/assets/images/auto_auf_straße.jpg"
 githubUrl: "https://github.com/felixhoffmnn/digitale-bildverarbeitung"
 liveUrl: "https://digitale-bildverarbeitung.readthedocs.io/en/latest/"
 ---

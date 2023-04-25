@@ -1,20 +1,20 @@
 ---
 import "@fontsource/inter";
-import "@fontsource/inter/300.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
 import "@fontsource/outfit";
+import "@fontsource/inter/300.css";
 import "@fontsource/outfit/300.css";
+import "@fontsource/inter/400.css";
 import "@fontsource/outfit/400.css";
+import "@fontsource/inter/600.css";
 import "@fontsource/outfit/600.css";
+import "@fontsource/inter/700.css";
 import "@fontsource/outfit/700.css";
 
-import Footer from "@components/general/Footer.astro";
-import Navbar from "@components/general/Navbar.astro";
-import MetaHead from "@components/general/MetaHead.astro";
+import "@/style.css";
 
-import "../styles/style.css";
+import Footer from "@/components/general/Footer.astro";
+import MetaHead from "@/components/general/MetaHead.astro";
+import Navbar from "@/components/general/Navbar.astro";
 
 const { title, description } = Astro.props as {
   title: string;

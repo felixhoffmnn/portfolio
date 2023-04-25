@@ -1,14 +1,14 @@
 ---
-import { info } from "@data/info";
+import { info } from "@/data/info";
 
-import Layout from "@layouts/Layout.astro";
-import Hero from "@components/home/Hero.astro";
-import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-import ExperienceWrapper from "@components/home/ExperienceWrapper.astro";
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/home/Hero.astro";
+import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
+import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
 ---
 
 <Layout frontmatter={{ description: info.about[0] }}>
-  <Hero name={info.name} about={info.about} />
+  <Hero class="my-8" name={info.name} about={info.about} />
   <ExperienceWrapper title={"Erfahrung"} details={info.experience} />
   <ExperienceWrapper title={"Ausbildung"} details={info.education} />
   <ExperienceWrapper title={"Engagement"} details={info.aboard} />

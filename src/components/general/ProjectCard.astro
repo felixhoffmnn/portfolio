@@ -10,19 +10,19 @@ const { project } = Astro.props as Props;
 const { title, description, thumbnail } = project.data;
 ---
 
-<article class="group relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-zinc-800">
+<article class="group relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-card shadow-lg">
   <a href={`/${project.collection}/${project.slug}`} aria-label="Blog Link">
     <Image
       src={thumbnail}
-      class="h-full w-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
+      class="h-full w-full object-fill object-center brightness-90 transition duration-300 group-hover:scale-105"
       loading="lazy"
       height={400}
       quality={90}
       alt={`Preview for ${title}`}
     />
-    <div class="absolute bottom-0 left-0 w-full bg-black/50 p-4 text-white backdrop-blur">
+    <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 text-white backdrop-blur">
       <h3 class="mr-2 text-xl font-semibold text-white">{title}</h3>
-      <p class="text-sm text-white">{description}</p>
+      <p class="truncate text-sm text-white">{description}</p>
     </div>
   </a>
 </article>

@@ -1,5 +1,5 @@
 ---
-import { info } from "@data/info";
+import { info } from "@/data/info";
 
 const { title, description, ogImageUrl } = Astro.props as {
   title: string;
@@ -22,7 +22,7 @@ const compose_title = title ? `${title} - ${info.name}` : `${info.name} - Portfo
 <link rel="manifest" href="/site.webmanifest" />
 <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" /> -->
 <meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
+<!-- <meta name="theme-color" content="#ffffff" /> -->
 
 <meta name="generator" content={Astro.generator} />
 

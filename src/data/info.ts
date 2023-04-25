@@ -4,8 +4,7 @@ export const info = {
   jobDescription: "Bachelorstudent Informatik",
   about: [
     "Ich bin Bachelorstudent an der Dualen Hochschule Baden-Württemberg Stuttgart und arbeite bei Hewlett Packard Enterprise. Geboren und aufgewachsen in Buckow - Brandenburg, lebe ich seit Mitte 2020 in Stuttgart - Baden-Württemberg.",
-    "Ich habe mich auf Data Science und Web Design spezialisiert und arbeite derzeit an NLP-Projekten und Performance-Optimierung von einer React-Application, bei dem ich mein Wissen in diesen Bereichen anwenden kann.",
-    "Zu meinen Fähigkeiten gehören die Arbeit mit Datenbanken wie Postgres und MySQL, Programmiersprachen wie Python, TypeScript und Java, sowie Tools und Frameworks im Bereich Data Science wie Pandas, Scikit, spaCy, Streamlit und TensorFlow. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien wie Hadoop, Pyspark, Airflow und HDFS sowie im Bereich Webdesign mit Figma und Adobe XD und in der Fotobearbeitung mit Photoshop und Lightroom.",
+    "Ich habe mich auf Data Science und Web Design spezialisiert und arbeite derzeit an NLP-Projekten und Performance-Optimierung von einer React-Application, bei dem ich mein Wissen in diesen Bereichen anwenden kann. Zu meinen Fähigkeiten gehören die Arbeit mit Datenbanken, Programmiersprachen wie Python und TypeScript, sowie Tools und Frameworks im Bereich Data Science. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien, sowie im Bereich Webdesign mit Figma und Adobe XD und in der Fotobearbeitung.",
   ],
   experience: [
     {

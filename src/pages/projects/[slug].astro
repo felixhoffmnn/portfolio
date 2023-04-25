@@ -1,6 +1,7 @@
 ---
-import PageHeader from "@components/general/PageHeader.astro";
-import Layout from "@layouts/Layout.astro";
+import PageHeader from "@/components/general/PageHeader.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,6 +15,19 @@ export async function getStaticPaths() {
   }));
 }
 
+function getStatus(status: string) {
+  switch (status) {
+    case "planned":
+      return "Geplant";
+    case "progress":
+      return "In Arbeit";
+    case "done":
+      return "Abgeschlossen";
+    default:
+      return "Unbekannt";
+  }
+}
+
 const {
   entry,
   entry: { data },
@@ -22,13 +36,42 @@ const { Content } = await entry.render();
 ---
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
-  <article class="prose lg:prose-xl">
-    <PageHeader
-      title={data.title}
-      back={{ link: "/projects", name: "Projekte" }}
-      githubUrl={data.githubUrl}
-      liveUrl={data.liveUrl}
+  <PageHeader
+    title={data.title}
+    description={data.description}
+    back={{ link: "/projects", name: "Projekte" }}
+    githubUrl={data.githubUrl}
+    liveUrl={data.liveUrl}
+  />
+  <section class="my-16 aspect-[4/3] w-full overflow-hidden rounded-xl">
+    <Image
+      class="h-full w-full object-cover object-center brightness-90"
+      src={data.thumbnail}
+      loading="lazy"
+      height={1080}
+      quality={90}
+      alt={data.title}
     />
-    <Content />
-  </article>
+  </section>
+  <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+    <div class="grid grid-cols-2 content-start gap-8 md:grid-cols-1">
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projekttyp</h4>
+        <p class="text-muted-foreground">Lorem ipsum</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projektjahr</h4>
+        <p class="text-muted-foreground">Lorem ipsum</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projektstatus</h4>
+        <p class="text-muted-foreground">{getStatus(data.status)}</p>
+      </div>
+    </div>
+    <article
+      class="prose max-w-none dark:prose-invert prose-img:mx-auto prose-img:w-full prose-img:rounded-xl md:prose-img:w-4/5 lg:col-span-2"
+    >
+      <Content />
+    </article>
+  </section>
 </Layout>

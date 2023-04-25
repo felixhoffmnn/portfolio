@@ -1,10 +1,10 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-import PageHeader from "@components/general/PageHeader.astro";
+import Layout from "@/layouts/Layout.astro";
+import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
+import PageHeader from "@/components/general/PageHeader.astro";
 ---
 
 <Layout frontmatter={{ title: "Projekte", description: "Übersicht über meine Projekte." }}>
-  <PageHeader title="Projekte" />
+  <PageHeader title="Projekte" description="Kunden- und Studiumsprojekte" />
   <ProjectsWrapper />
 </Layout>

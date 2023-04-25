@@ -13,7 +13,7 @@
       "version": "detect"
     },
     "tailwindcss": {
-      "config": "tailwind.config.cjs"
+      "config": "tailwind.config.js"
     }
   },
   "overrides": [
