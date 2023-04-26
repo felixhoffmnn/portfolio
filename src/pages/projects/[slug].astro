@@ -36,13 +36,7 @@ const { Content } = await entry.render();
 ---
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
-  <PageHeader
-    title={data.title}
-    description={data.description}
-    back={{ link: "/projects", name: "Projekte" }}
-    githubUrl={data.githubUrl}
-    liveUrl={data.liveUrl}
-  />
+  <PageHeader title={data.title} description={data.description} githubUrl={data.githubUrl} liveUrl={data.liveUrl} />
   <section class="my-16 aspect-[4/3] w-full overflow-hidden rounded-xl">
     <Image
       class="h-full w-full object-cover object-center brightness-90"
@@ -54,7 +48,7 @@ const { Content } = await entry.render();
     />
   </section>
   <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-    <div class="grid grid-cols-2 content-start gap-8 md:grid-cols-1">
+    <div class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
       <div>
         <h4 class="text-lg font-semibold uppercase">Projekttyp</h4>
         <p class="text-muted-foreground">Lorem ipsum</p>

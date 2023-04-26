@@ -4,9 +4,9 @@ import { createLogo } from "@/utils/logo";
 import { Button } from "../ui/button";
 ---
 
-<header class="container mb-16 flex h-20 items-center justify-between sm:h-[123px]">
+<header class="container mb-16 flex h-20 items-center justify-between sm:h-32">
   <a class="font-outfit text-2xl font-semibold !no-underline dark:font-semibold" href="/">{createLogo(info.name)}.</a>
-  <nav class="flex flex-row items-center gap-8">
+  <nav class="flex flex-row items-center gap-4 sm:gap-8">
     <a class="block text-lg font-medium !no-underline" href="/projects">Projekte</a>
     <Button id="theme-button" variant="secondary" size="icon" />
   </nav>

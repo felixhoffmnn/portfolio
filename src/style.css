@@ -94,9 +94,6 @@
   h2 {
     @apply text-xl font-semibold;
   }
-  a {
-    @apply hover:underline;
-  }
   svg {
     @apply stroke-foreground;
   }
