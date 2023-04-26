@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 
 interface Props {
   project: CollectionEntry<"projects">;
+  lazy: boolean;
 }
 
-const { project } = Astro.props as Props;
+const { project, lazy } = Astro.props as Props;
 const { title, description, thumbnail } = project.data;
 ---
 
@@ -14,9 +15,9 @@ const { title, description, thumbnail } = project.data;
   <a href={`/${project.collection}/${project.slug}`} aria-label="Blog Link">
     <Image
       src={thumbnail}
-      class="h-full w-full object-fill object-center brightness-90 transition duration-300 group-hover:scale-105"
-      loading="lazy"
-      height={400}
+      class="h-full w-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
+      loading={lazy ? "lazy" : "eager"}
+      width={600}
       quality={90}
       alt={`Preview for ${title}`}
     />

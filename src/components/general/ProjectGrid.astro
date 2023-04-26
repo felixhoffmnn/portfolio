@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 
-const { onlyFeatured } = Astro.props as { onlyFeatured: boolean };
-
 const projects = await getCollection("projects");
+
+const { onlyFeatured, lazy } = Astro.props as { onlyFeatured: boolean; lazy: boolean };
 ---
 
 <section class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2">
@@ -13,7 +13,7 @@ const projects = await getCollection("projects");
       if (onlyFeatured && !project.data.featured) {
         return null;
       }
-      return <ProjectCard project={project} />;
+      return <ProjectCard project={project} lazy={lazy} />;
     })
   }
 </section>

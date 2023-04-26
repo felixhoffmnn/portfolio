@@ -37,16 +37,14 @@ const { Content } = await entry.render();
 
 <Layout frontmatter={{ title: data.title, description: data.description }}>
   <PageHeader title={data.title} description={data.description} githubUrl={data.githubUrl} liveUrl={data.liveUrl} />
-  <section class="my-16 aspect-[4/3] w-full overflow-hidden rounded-xl">
-    <Image
-      class="h-full w-full object-cover object-center brightness-90"
-      src={data.thumbnail}
-      loading="lazy"
-      height={1080}
-      quality={90}
-      alt={data.title}
-    />
-  </section>
+  <Image
+    class="my-16 aspect-[4/3] h-full w-full overflow-hidden rounded-xl object-cover object-center brightness-90"
+    src={data.thumbnail}
+    loading="eager"
+    width={800}
+    quality={90}
+    alt={data.title}
+  />
   <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
     <div class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
       <div>
