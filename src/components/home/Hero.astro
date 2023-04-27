@@ -1,7 +1,10 @@
 ---
-import { IHeroProps } from "@/types";
+interface Props {
+  name: string;
+  about: string[];
+}
 
-const { name, about } = Astro.props as IHeroProps;
+const { name, about } = Astro.props;
 ---
 
 <section>

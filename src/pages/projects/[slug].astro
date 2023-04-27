@@ -28,10 +28,14 @@ function getStatus(status: string) {
   }
 }
 
+interface Props {
+  entry: CollectionEntry<"projects">;
+}
+
 const {
   entry,
   entry: { data },
-} = Astro.props as { entry: CollectionEntry<"projects"> };
+} = Astro.props;
 const { Content } = await entry.render();
 ---
 

@@ -4,7 +4,12 @@ import { Experience, ExperienceGroup } from "@/components/home/Experience";
 
 const defaultNumEntries = 3;
 
-const { title, details } = Astro.props as { title: IExperiences["title"]; details: IExperiences["details"] };
+interface Props {
+  title: IExperiences["title"];
+  details: IExperiences["details"];
+}
+
+const { title, details } = Astro.props;
 ---
 
 <!-- TODO: Replace current version with react collapsible -->

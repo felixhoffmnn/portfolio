@@ -1,8 +1,3 @@
-interface IHeroProps {
-  name: string;
-  about: string[];
-}
-
 interface IExperience {
   name: string;
   location: string;
@@ -16,4 +11,4 @@ interface IExperiences {
   details: IExperience[];
 }
 
-export type { IHeroProps, IExperience, IExperiences };
+export type { IExperience, IExperiences };

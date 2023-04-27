@@ -1,12 +1,14 @@
 ---
 import { buttonVariants } from "../ui/button";
 
-const { title, description, githubUrl, liveUrl } = Astro.props as {
+interface Props {
   title: string;
   description?: string;
   githubUrl?: string;
   liveUrl?: string;
-};
+}
+
+const { title, description, githubUrl, liveUrl } = Astro.props;
 ---
 
 <section class="mb-16 flex w-full flex-col justify-start gap-4 sm:flex-row sm:justify-between sm:gap-8">

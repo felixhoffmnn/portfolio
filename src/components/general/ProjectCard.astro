@@ -7,7 +7,7 @@ interface Props {
   lazy: boolean;
 }
 
-const { project, lazy } = Astro.props as Props;
+const { project, lazy } = Astro.props;
 const { title, description, thumbnail } = project.data;
 ---
 

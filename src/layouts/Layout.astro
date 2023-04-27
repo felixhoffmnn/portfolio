@@ -18,13 +18,13 @@ import { SEO } from "astro-seo";
 import { info } from "@/data/info";
 import laptopImage from "@/assets/images/laptop.jpg";
 
-interface ILayoutProps {
+interface Props {
   frontmatter: { title: string; description: string; ogImageUrl: string };
 }
 
 const {
   frontmatter: { title, description, ogImageUrl },
-} = Astro.props as ILayoutProps;
+} = Astro.props;
 ---
 
 <!DOCTYPE html>

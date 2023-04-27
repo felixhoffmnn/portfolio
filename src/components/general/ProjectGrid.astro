@@ -4,7 +4,12 @@ import ProjectCard from "./ProjectCard.astro";
 
 const projects = await getCollection("projects");
 
-const { onlyFeatured, lazy } = Astro.props as { onlyFeatured: boolean; lazy: boolean };
+interface Props {
+  onlyFeatured: boolean;
+  lazy: boolean;
+}
+
+const { onlyFeatured, lazy } = Astro.props;
 ---
 
 <section class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2">
