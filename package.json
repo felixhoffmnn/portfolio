@@ -26,6 +26,7 @@
     "@radix-ui/react-separator": "^1.0.2",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.3.1",
+    "astro-seo": "^0.7.2",
     "class-variance-authority": "^0.5.2",
     "clsx": "^1.2.1",
     "lucide-react": "^0.179.0",
@@ -54,7 +55,7 @@
     "prettier-plugin-tailwindcss": "^0.2.7"
   },
   "lint-staged": {
-    "*": [
+    "*.{astro,md,mdx,js,jsx,ts,tsx}": [
       "prettier --write ."
     ]
   }

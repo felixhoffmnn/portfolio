@@ -17,14 +17,14 @@ const { title, description, githubUrl, liveUrl } = Astro.props as {
   <div class="flex w-min flex-row items-center gap-4">
     {
       liveUrl && (
-        <a class={buttonVariants({ size: "sm" })} href={liveUrl} target="_blank" rel="noopener noreferrer">
+        <a class={buttonVariants({ size: "sm" })} href={liveUrl} target="_blank">
           Live
         </a>
       )
     }
     {
       githubUrl && (
-        <a class={buttonVariants({ size: "sm" })} href={githubUrl} target="_blank" rel="noopener noreferrer">
+        <a class={buttonVariants({ size: "sm" })} href={githubUrl} target="_blank">
           GitHub
         </a>
       )

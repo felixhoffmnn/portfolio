@@ -1,6 +1,7 @@
 export const info = {
   baseUrl: "https://felix-hoffmann.dev",
   name: "Felix Hoffmann",
+  twitterHandle: "@felixhoffmnn",
   jobDescription: "Bachelorstudent Informatik",
   about: [
     "Ich bin Bachelorstudent an der Dualen Hochschule Baden-Württemberg Stuttgart und arbeite bei Hewlett Packard Enterprise. Geboren und aufgewachsen in Buckow - Brandenburg, lebe ich seit Mitte 2020 in Stuttgart - Baden-Württemberg.",

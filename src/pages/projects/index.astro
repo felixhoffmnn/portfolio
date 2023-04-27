@@ -2,9 +2,11 @@
 import Layout from "@/layouts/Layout.astro";
 import ProjectGrid from "@/components/general/ProjectGrid.astro";
 import PageHeader from "@/components/general/PageHeader.astro";
+
+const title = "Projekte";
 ---
 
-<Layout frontmatter={{ title: "Projekte", description: "Übersicht über meine Projekte." }}>
-  <PageHeader title="Projekte" description="Kunden- und Studiumsprojekte" />
+<Layout frontmatter={{ title: title, description: "Übersicht über meine Projekte." }}>
+  <PageHeader title={title} description="Kunden- und Studiumsprojekte" />
   <ProjectGrid lazy={false} />
 </Layout>
