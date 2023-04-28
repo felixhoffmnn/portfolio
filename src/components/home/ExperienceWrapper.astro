@@ -12,10 +12,9 @@ interface Props {
 const { title, details } = Astro.props;
 ---
 
-<!-- TODO: Replace current version with react collapsible -->
-<section class="mt-16 flex flex-col items-start justify-between gap-8 sm:flex-row md:gap-4">
-  <h2 class="w-[15rem] uppercase">{title}</h2>
-  <div class="w-full">
+<section class="flex flex-col items-start justify-between gap-8 sm:flex-row md:gap-4">
+  <h2 class="w-[15rem] text-xl uppercase">{title}</h2>
+  <div class="w-full space-y-16">
     {details.slice(0, defaultNumEntries).map((detail: IExperience) => <Experience item={detail} />)}
     {
       details.length > defaultNumEntries && (

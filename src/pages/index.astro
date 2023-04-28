@@ -8,12 +8,12 @@ import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
 ---
 
 <Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }}>
-  <Hero name={info.name} about={info.about} />
+  <Hero name={info.name} about={info.about} gradient={true} />
   <ExperienceWrapper title={"Erfahrung"} details={info.experience} />
   <ExperienceWrapper title={"Ausbildung"} details={info.education} />
   <ExperienceWrapper title={"Engagement"} details={info.aboard} />
   <section>
-    <h2 class="my-16 w-[15rem] uppercase">Aktuelle Projekte</h2>
+    <h2 class="mb-8 text-xl uppercase">Aktuelle Projekte</h2>
     <ProjectsWrapper onlyFeatured lazy />
   </section>
 </Layout>

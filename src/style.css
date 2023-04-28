@@ -89,10 +89,16 @@
     @apply hyphens-auto font-outfit;
   }
   h1 {
-    @apply inline-block bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-6xl font-semibold leading-tight text-transparent;
+    @apply text-5xl font-extrabold tracking-tight lg:text-6xl;
   }
   h2 {
-    @apply text-xl font-semibold;
+    @apply text-3xl font-semibold tracking-tight transition-colors;
+  }
+  h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  h4 {
+    @apply text-xl font-semibold tracking-tight;
   }
   svg {
     @apply stroke-foreground;

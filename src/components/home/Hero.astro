@@ -2,13 +2,20 @@
 interface Props {
   name: string;
   about: string[];
+  gradient: boolean;
 }
 
-const { name, about } = Astro.props;
+const { name, about, gradient } = Astro.props;
 ---
 
 <section>
   <p>Hey, ich bin</p>
-  <h1 class="my-4 text-7xl md:text-8xl">{name}</h1>
-  {about.map((paragraph) => <p class="mb-2 text-lg last:mb-16">{paragraph}</p>)}
+  <h1
+    class={gradient
+      ? "my-4 text-7xl md:text-8xl bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-transparent"
+      : "my-4"}
+  >
+    {name}
+  </h1>
+  {about.map((paragraph) => <p class="mb-2 text-lg">{paragraph}</p>)}
 </section>

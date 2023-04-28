@@ -2,10 +2,11 @@ import { IExperience } from "@/types";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 
 export function Experience({ item }: { item: IExperience }): JSX.Element {
   return (
-    <div className="mb-16 grid gap-3">
+    <div className="grid gap-3">
       <div className="flex flex-wrap items-center justify-between gap-1">
         <h3 className="text-xl font-semibold">{item.name}</h3>
         <p className="text-sm text-muted-foreground">
@@ -21,11 +22,11 @@ export function Experience({ item }: { item: IExperience }): JSX.Element {
         ))}
       </ul>
       {item.skills && (
-        <div className="mt-3 flex flex-wrap">
+        <div className="mt-3 flex flex-wrap gap-2">
           {item.skills.map((item) => (
-            <span className="mb-2 mr-2 rounded-full bg-muted px-3 py-1.5 text-sm shadow-sm" key={`key-${item}`}>
+            <Badge variant="secondary" key={`key-${item}`}>
               {item}
-            </span>
+            </Badge>
           ))}
         </div>
       )}
@@ -45,8 +46,14 @@ export function ExperienceGroup({
 
   return (
     <>
-      {showMore && details.slice(defaultNumEntries).map((item) => <Experience item={item} key={`key-${item.name}`} />)}
-      <Button className="-translate-y-8 gap-2 p-0" variant="link" onClick={() => setShowMore(!showMore)}>
+      {showMore && (
+        <div className="mt-16 space-y-16">
+          {details.slice(defaultNumEntries).map((item) => (
+            <Experience item={item} key={`key-${item.name}`} />
+          ))}
+        </div>
+      )}
+      <Button className="mt-8 gap-2 p-0" variant="link" onClick={() => setShowMore(!showMore)}>
         {showMore ? (
           <ArrowUp size={iconSize} aria-label="Mehr Anzeigen Icon" />
         ) : (
