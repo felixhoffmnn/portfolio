@@ -5,8 +5,10 @@ import { Button } from "../ui/button";
 import { Moon } from "lucide-react";
 ---
 
-<header class="container mb-16 flex h-20 items-center justify-between space-x-4 sm:h-32" aria-label="Header">
-  <a class="font-outfit text-2xl font-semibold !no-underline dark:font-semibold" href="/">{createLogo(info.name)}.</a>
+<header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
+  <a class="font-outfit text-2xl font-semibold no-underline transition-colors duration-100" href="/"
+    >{createLogo(info.name)}.</a
+  >
   <nav class="flex flex-row items-center space-x-4 sm:space-x-8" aria-label="Navigation">
     <a
       class={Astro.url.pathname === "/projects"
