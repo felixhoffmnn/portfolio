@@ -47,7 +47,11 @@ export function ExperienceGroup({
     <>
       {showMore && details.slice(defaultNumEntries).map((item) => <Experience item={item} key={`key-${item.name}`} />)}
       <Button className="-translate-y-8 gap-2 p-0" variant="link" onClick={() => setShowMore(!showMore)}>
-        {showMore ? <ArrowUp size={iconSize} /> : <ArrowDown size={iconSize} />}
+        {showMore ? (
+          <ArrowUp size={iconSize} aria-label="Mehr Anzeigen Icon" />
+        ) : (
+          <ArrowDown size={iconSize} aria-label="Mehr Anzeigen Icon" />
+        )}
         {showMore ? "Weniger Anzeigen" : "Mehr Anzeigen"}
       </Button>
     </>

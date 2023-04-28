@@ -7,8 +7,8 @@ import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
 import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
 ---
 
-<Layout frontmatter={{ description: info.about[0] }}>
-  <Hero class="my-8" name={info.name} about={info.about} />
+<Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }}>
+  <Hero name={info.name} about={info.about} />
   <ExperienceWrapper title={"Erfahrung"} details={info.experience} />
   <ExperienceWrapper title={"Ausbildung"} details={info.education} />
   <ExperienceWrapper title={"Engagement"} details={info.aboard} />

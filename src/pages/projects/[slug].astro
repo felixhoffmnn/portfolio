@@ -36,10 +36,13 @@ const {
   entry,
   entry: { data },
 } = Astro.props;
+
 const { Content } = await entry.render();
 ---
 
-<Layout frontmatter={{ title: data.title, description: data.description, ogImageUrl: data.thumbnail.src }}>
+<Layout
+  frontmatter={{ title: data.title, description: data.description, ogImageUrl: data.thumbnail.src, label: data.title }}
+>
   <PageHeader title={data.title} description={data.description} githubUrl={data.githubUrl} liveUrl={data.liveUrl} />
   <Image
     class="my-16 aspect-[4/3] h-full w-full overflow-hidden rounded-xl object-cover object-center brightness-90"

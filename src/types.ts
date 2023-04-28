@@ -4,7 +4,7 @@ interface IExperience {
   startDate: string;
   endDate: string;
   description: string[];
-  skills: string[];
+  skills?: string[];
 }
 interface IExperiences {
   title: string;

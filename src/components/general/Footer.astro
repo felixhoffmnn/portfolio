@@ -9,6 +9,7 @@ const iconSize = 20;
 
 <footer
   class="container mb-4 mt-16 flex flex-col-reverse items-center justify-between gap-8 sm:flex-row md:mb-8 md:flex-row"
+  aria-label="Footer"
 >
   <div class="flex h-5 items-center space-x-4 text-sm">
     <a class={buttonVariants({ variant: "link", size: "none" })} href="/imprint">Impressum</a>
@@ -16,27 +17,27 @@ const iconSize = 20;
   </div>
   <div class="grid grid-cols-3 items-center gap-4">
     <a
-      aria-label="Social Media"
+      aria-label="GitHub"
       href={info.socialMedia.github}
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
-      ><Github size={iconSize} />
+      ><Github size={iconSize} aria-label="GitHub Icon" />
     </a>
     <a
-      aria-label="Social Media"
+      aria-label="LinkedIn"
       href={info.socialMedia.linkedin}
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
     >
-      <Linkedin size={iconSize} />
+      <Linkedin size={iconSize} aria-label="LinkedIn Icon" />
     </a>
     <a
-      aria-label="Social Media"
+      aria-label="Email"
       href={`mailto:${info.socialMedia.email}`}
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
     >
-      <Mail size={iconSize} />
+      <Mail size={iconSize} aria-label="Email Icon" />
     </a>
   </div>
 </footer>

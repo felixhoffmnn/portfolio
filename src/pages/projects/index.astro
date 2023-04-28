@@ -6,7 +6,7 @@ import PageHeader from "@/components/general/PageHeader.astro";
 const title = "Projekte";
 ---
 
-<Layout frontmatter={{ title: title, description: "Übersicht über meine Projekte." }}>
+<Layout frontmatter={{ title: title, description: "Übersicht über meine Projekte.", label: "Projektübersicht" }}>
   <PageHeader title={title} description="Kunden- und Studiumsprojekte" />
   <ProjectGrid lazy={false} />
 </Layout>
