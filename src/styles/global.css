@@ -1,3 +1,5 @@
+@import "fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,29 +80,5 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    @apply font-inter;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply hyphens-auto font-outfit;
-  }
-  h1 {
-    @apply text-5xl font-bold tracking-tight lg:text-6xl;
-  }
-  h2 {
-    @apply text-3xl font-semibold tracking-tight;
-  }
-  h3 {
-    @apply text-2xl font-semibold tracking-tight;
-  }
-  h4 {
-    @apply text-xl font-semibold tracking-tight;
-  }
-  svg {
-    @apply stroke-foreground transition-colors duration-100;
   }
 }

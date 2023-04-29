@@ -9,7 +9,7 @@ import "@fontsource/inter/600.css";
 import "@fontsource/outfit/600.css";
 import "@fontsource/outfit/700.css";
 
-import "@/style.css";
+import "@/styles/global.css";
 
 import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
@@ -73,7 +73,7 @@ const {
     />
   </head><body>
     <Navbar />
-    <main class="container space-y-20" aria-label={label}>
+    <main class="container space-y-16 md:space-y-20" aria-label={label}>
       <slot />
     </main>
     <Footer />
