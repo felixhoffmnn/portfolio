@@ -17,12 +17,27 @@ import { SEO } from "astro-seo";
 import { info } from "@/data/info";
 import laptopImage from "@/assets/images/laptop.jpg";
 
+function getSpacing(spacing?: "sm" | "md" | "lg") {
+  switch (spacing) {
+    case "sm":
+      return "space-y-16";
+    case "md":
+      return "space-y-20";
+    case "lg":
+      return "space-y-24";
+    default:
+      return "space-y-20";
+  }
+}
+
 interface Props {
   frontmatter: { title?: string; description: string; ogImageUrl?: string; label: string };
+  spacing?: "sm" | "md" | "lg";
 }
 
 const {
   frontmatter: { title, description, ogImageUrl, label },
+  spacing,
 } = Astro.props;
 ---
 
@@ -73,7 +88,7 @@ const {
     />
   </head><body>
     <Navbar />
-    <main class="container space-y-16 md:space-y-20" aria-label={label}>
+    <main class={`container ${getSpacing(spacing)}`} aria-label={label}>
       <slot />
     </main>
     <Footer />

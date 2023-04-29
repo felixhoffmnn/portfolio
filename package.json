@@ -6,8 +6,7 @@
   "author": "Felix Hoffmann <felix.emmanuel.hoffmann@gmail.com>",
   "scripts": {
     "prepare": "husky install",
-    "dev": "astro check --watch & astro dev",
-    "start": "astro dev",
+    "dev": "astro dev",
     "build": "astro check && tsc --noEmit && astro build",
     "sync": "astro sync",
     "preview": "astro preview",
@@ -23,8 +22,6 @@
     "@astrojs/tailwind": "^3.1.1",
     "@fontsource/inter": "^4.5.15",
     "@fontsource/outfit": "^4.5.11",
-    "@radix-ui/react-separator": "^1.0.2",
-    "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.3.1",
     "astro-seo": "^0.7.2",
     "class-variance-authority": "^0.5.2",

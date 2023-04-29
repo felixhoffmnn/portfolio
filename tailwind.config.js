@@ -49,29 +49,6 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            "--tw-prose-body": theme("colors.foreground"),
-            "--tw-prose-headings": theme("colors.foreground"),
-            "--tw-prose-lead": theme("colors.foreground"),
-            "--tw-prose-links": theme("colors.foreground"),
-            "--tw-prose-bold": theme("colors.foreground"),
-            "--tw-prose-counters": theme("colors.foreground"),
-            "--tw-prose-bullets": theme("colors.foreground"),
-            "--tw-prose-hr": theme("colors.border"),
-            "--tw-prose-quotes": theme("colors.foreground"),
-            "--tw-prose-quote-borders": theme("colors.border"),
-            // "--tw-prose-captions": theme("colors.orange[700]"),
-            "--tw-prose-code": theme("colors.foreground"),
-            // "--tw-prose-code-bg": theme("colors.orange[50]"),
-            // "--tw-prose-pre-code": theme("colors.orange[100]"),
-            "--tw-prose-pre-bg": theme("colors.foreground"),
-            "--tw-prose-th-borders": theme("colors.border"),
-            "--tw-prose-td-borders": theme("colors.border"),
-          },
-        },
-      }),
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
@@ -81,21 +58,21 @@ module.exports = {
         inter: ["Inter", ...fontFamily.sans],
         outfit: ["Outfit", ...fontFamily.sans],
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      // keyframes: {
+      //   "accordion-down": {
+      //     from: { height: 0 },
+      //     to: { height: "var(--radix-accordion-content-height)" },
+      //   },
+      //   "accordion-up": {
+      //     from: { height: "var(--radix-accordion-content-height)" },
+      //     to: { height: 0 },
+      //   },
+      // },
+      // animation: {
+      //   "accordion-down": "accordion-down 0.2s ease-out",
+      //   "accordion-up": "accordion-up 0.2s ease-out",
+      // },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate")],
 };
