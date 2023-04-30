@@ -16,9 +16,7 @@ export function Experience({ item }: { item: IExperience }): JSX.Element {
       <p className=" text-sm text-cyan-500">{item.location}</p>
       <ul className="list-inside list-disc">
         {item.description.map((item) => (
-          <li className="text-secondary-foreground" key={`key-${item}`}>
-            {item}
-          </li>
+          <li key={`key-${item}`}>{item}</li>
         ))}
       </ul>
       {item.skills && (
