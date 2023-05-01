@@ -1,8 +1,9 @@
 {
   "name": "portfolio",
+  "description": "My personal portfolio website built with Astro, React, and Tailwind CSS.",
   "repository": "felixhoffmnn/portfolio",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Felix Hoffmann <felix.emmanuel.hoffmann@gmail.com>",
   "scripts": {
     "prepare": "husky install",
