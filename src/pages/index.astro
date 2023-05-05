@@ -1,10 +1,9 @@
 ---
-import { info } from "@/data/info";
-
-import Layout from "@/layouts/Layout.astro";
-import Hero from "@/components/home/Hero.astro";
 import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
 import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
+import Hero from "@/components/home/Hero.astro";
+import { info } from "@/data/info";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }} spacing="md">

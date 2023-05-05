@@ -11,11 +11,11 @@ import "@fontsource/outfit/700.css";
 
 import "@/styles/global.css";
 
+import laptopImage from "@/assets/images/laptop.jpg";
 import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
-import { SEO } from "astro-seo";
 import { info } from "@/data/info";
-import laptopImage from "@/assets/images/laptop.jpg";
+import { SEO } from "astro-seo";
 
 function getSpacing(spacing?: "sm" | "md" | "lg") {
   switch (spacing) {
@@ -73,9 +73,7 @@ const {
       }}
       extend={{
         link: [
-          { rel: "icon", type: "image/png", href: "/logo_kurz_512.png" },
           { rel: "icon", type: "image/png", href: "/logo_kurz_32.png" },
-          { rel: "icon", type: "image/png", href: "/logo_kurz_16.png" },
           { rel: "manifest", href: "/site.webmanifest" },
           { rel: "sitemap", href: "/sitemap-index.xml" },
         ],

@@ -1,8 +1,8 @@
 import { IExperience } from "@/types";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
-import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 
 export function Experience({ item }: { item: IExperience }): JSX.Element {
   return (
