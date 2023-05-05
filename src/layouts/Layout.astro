@@ -1,36 +1,93 @@
 ---
 import "@fontsource/inter";
-import "@fontsource/inter/300.css";
-import "@fontsource/inter/400.css";
+// import "@fontsource/outfit";
+// import "@fontsource/inter/300.css";
+// import "@fontsource/outfit/300.css";
+// import "@fontsource/inter/400.css";
+// import "@fontsource/outfit/400.css";
 import "@fontsource/inter/600.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/outfit";
-import "@fontsource/outfit/300.css";
-import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "@fontsource/outfit/700.css";
 
-import Footer from "@components/general/Footer.astro";
-import Navbar from "@components/general/Navbar.astro";
-import MetaHead from "@components/general/MetaHead.astro";
+import "@/styles/global.css";
 
-import "../styles/style.css";
+import laptopImage from "@/assets/images/laptop.jpg";
+import Footer from "@/components/general/Footer.astro";
+import Navbar from "@/components/general/Navbar.astro";
+import { info } from "@/data/info";
+import { SEO } from "astro-seo";
 
-const { title, description } = Astro.props as {
-  title: string;
-  description: string;
-};
+function getSpacing(spacing?: "sm" | "md" | "lg") {
+  switch (spacing) {
+    case "sm":
+      return "space-y-16";
+    case "md":
+      return "space-y-20";
+    case "lg":
+      return "space-y-24";
+    default:
+      return "space-y-20";
+  }
+}
+
+interface Props {
+  frontmatter: { title?: string; description: string; ogImageUrl?: string; label: string };
+  spacing?: "sm" | "md" | "lg";
+}
+
+const {
+  frontmatter: { title, description, ogImageUrl, label },
+  spacing,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <MetaHead title={title} description={description} ogImageUrl={"/assets/images/profile.png"} />
-  </head>
-
-  <body>
+    <SEO
+      title={title}
+      titleTemplate={`%s - ${info.name}`}
+      titleDefault={`${info.name} - Portfolio`}
+      description={description}
+      charset="UTF-8"
+      openGraph={{
+        basic: {
+          type: "website",
+          url: info.baseUrl,
+          title: info.name,
+          image: ogImageUrl ? ogImageUrl : laptopImage.src,
+        },
+        optional: {
+          description: description,
+          locale: "de_DE",
+          siteName: info.name,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        site: info.twitterHandle,
+        creator: info.twitterHandle,
+        title: info.name,
+        description: description,
+        image: ogImageUrl,
+      }}
+      extend={{
+        link: [
+          { rel: "icon", type: "image/png", href: "/logo_kurz_32.png" },
+          { rel: "manifest", href: "/site.webmanifest" },
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+        ],
+        meta: [
+          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+          { name: "generator", content: Astro.generator },
+          { name: "msapplication-TileColor", content: "#da532c" },
+          { name: "theme-color", content: "#ffffff" },
+        ],
+      }}
+    />
+  </head><body>
     <Navbar />
-    <main class="container">
+    <main class={`container ${getSpacing(spacing)}`} aria-label={label}>
       <slot />
     </main>
     <Footer />

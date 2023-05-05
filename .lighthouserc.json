@@ -1,0 +1,23 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 1,
+      "maxAutodiscoverUrls": 0
+    },
+    "assert": {
+      "preset": "lighthouse:recommended",
+      "assertions": {
+        "heading-order": "warn",
+        "render-blocking-resources": "off",
+        "bf-cache": "off",
+        "csp-xss": "off",
+        "unsized-images": "off",
+        "uses-responsive-images": "off",
+        "unused-css-rules": "off",
+        "unused-javascript": "off",
+        "color-contrast": "warn",
+        "service-worker": "off"
+      }
+    }
+  }
+}

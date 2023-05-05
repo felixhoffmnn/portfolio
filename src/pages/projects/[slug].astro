@@ -1,6 +1,7 @@
 ---
-import PageHeader from "@components/general/PageHeader.astro";
-import Layout from "@layouts/Layout.astro";
+import PageHeader from "@/components/general/PageHeader.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,21 +15,60 @@ export async function getStaticPaths() {
   }));
 }
 
+function getStatus(status: string) {
+  switch (status) {
+    case "planned":
+      return "Geplant";
+    case "progress":
+      return "In Arbeit";
+    case "done":
+      return "Abgeschlossen";
+    default:
+      return "Unbekannt";
+  }
+}
+
+interface Props {
+  entry: CollectionEntry<"projects">;
+}
+
 const {
   entry,
   entry: { data },
-} = Astro.props as { entry: CollectionEntry<"projects"> };
+} = Astro.props;
+
 const { Content } = await entry.render();
 ---
 
-<Layout frontmatter={{ title: data.title, description: data.description }}>
-  <article class="prose lg:prose-xl">
-    <PageHeader
-      title={data.title}
-      back={{ link: "/projects", name: "Projekte" }}
-      githubUrl={data.githubUrl}
-      liveUrl={data.liveUrl}
-    />
-    <Content />
-  </article>
+<Layout
+  frontmatter={{ title: data.title, description: data.description, ogImageUrl: data.thumbnail.src, label: data.title }}
+>
+  <PageHeader title={data.title} description={data.description} githubUrl={data.githubUrl} liveUrl={data.liveUrl} />
+  <Image
+    class="my-16 aspect-[4/3] h-full w-full overflow-hidden rounded-xl object-cover object-center brightness-90"
+    src={data.thumbnail}
+    loading="eager"
+    width={800}
+    quality={90}
+    alt={data.title}
+  />
+  <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+    <div class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projekttyp</h4>
+        <p class="text-muted-foreground">Lorem ipsum</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projektjahr</h4>
+        <p class="text-muted-foreground">Lorem ipsum</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold uppercase">Projektstatus</h4>
+        <p class="text-muted-foreground">{getStatus(data.status)}</p>
+      </div>
+    </div>
+    <article class="lg:col-span-2">
+      <Content />
+    </article>
+  </section>
 </Layout>

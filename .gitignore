@@ -21,3 +21,4 @@ pnpm-debug.log*
 ## Custom Files ##
 .tool-versions
 .astro/
+.lighthouseci/

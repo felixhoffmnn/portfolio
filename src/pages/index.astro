@@ -1,19 +1,18 @@
 ---
-import { info } from "@data/info";
-
-import Layout from "@layouts/Layout.astro";
-import Hero from "@components/home/Hero.astro";
-import ProjectsWrapper from "@components/general/ProjectsWrapper.astro";
-import ExperienceWrapper from "@components/home/ExperienceWrapper.astro";
+import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
+import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
+import Hero from "@/components/home/Hero.astro";
+import { info } from "@/data/info";
+import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout frontmatter={{ description: info.about[0] }}>
-  <Hero name={info.name} about={info.about} />
+<Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }} spacing="md">
+  <Hero name={info.name} about={info.about} gradient={true} />
   <ExperienceWrapper title={"Erfahrung"} details={info.experience} />
   <ExperienceWrapper title={"Ausbildung"} details={info.education} />
   <ExperienceWrapper title={"Engagement"} details={info.aboard} />
   <section>
-    <h2 class="my-16 w-[15rem] uppercase">Aktuelle Projekte</h2>
-    <ProjectsWrapper onlyFeatured />
+    <h2 class="mb-16 text-xl uppercase">Aktuelle Projekte</h2>
+    <ProjectsWrapper onlyFeatured lazy />
   </section>
 </Layout>

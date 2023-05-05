@@ -1,77 +1,42 @@
 ---
-import { info } from "@data/info";
+import { info } from "@/data/info";
+import { buttonVariants } from "@/components/ui/button";
+import { Github, Linkedin, Mail } from "lucide-react";
+
+const iconSize = 20;
 ---
 
-<footer class="container mb-8 flex flex-col items-center justify-between sm:mb-4 sm:flex-row">
-  <a class="my-8 text-right" href="/imprint">
-    <strong>Impressum</strong>
-  </a>
-  <div class="grid grid-cols-3 gap-4">
+<footer
+  class="container mb-4 mt-16 flex flex-col-reverse items-center justify-between gap-8 sm:flex-row md:mb-8 md:flex-row"
+  aria-label="Footer"
+>
+  <div class="flex h-5 items-center space-x-6 text-sm">
+    <a class={buttonVariants({ variant: "link", size: "none" })} href="/imprint">Impressum</a>
+    <a class={buttonVariants({ variant: "link", size: "none" })} href="/privacy">Datenschutz</a>
+  </div>
+  <div class="grid grid-cols-3 items-center gap-4">
     <a
-      aria-label="Social Media"
+      aria-label="GitHub"
       href={info.socialMedia.github}
+      class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
-      class="inline-flex aspect-square items-center rounded-lg border border-zinc-200 bg-white p-3 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path
-          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-        ></path>
-      </svg>
+      ><Github size={iconSize} aria-label="GitHub Icon" />
     </a>
     <a
-      aria-label="Social Media"
+      aria-label="LinkedIn"
       href={info.socialMedia.linkedin}
+      class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
-      class="inline-flex aspect-square items-center rounded-lg border border-zinc-200 bg-white p-3 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect
-          x="2"
-          y="9"
-          width="4"
-          height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-      </svg>
+      <Linkedin size={iconSize} aria-label="LinkedIn Icon" />
     </a>
     <a
-      aria-label="Social Media"
+      aria-label="Email"
       href={`mailto:${info.socialMedia.email}`}
+      class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
-      class="inline-flex aspect-square items-center rounded-lg border border-zinc-200 bg-white p-3 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-        ></path>
-      </svg>
+      <Mail size={iconSize} aria-label="Email Icon" />
     </a>
   </div>
 </footer>

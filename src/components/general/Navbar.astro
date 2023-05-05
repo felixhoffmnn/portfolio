@@ -1,60 +1,67 @@
 ---
-import { info } from "@data/info";
-import { createLogo } from "@utils/index";
+import { info } from "@/data/info";
+import { createLogo } from "@/utils/logo";
+import { Moon } from "lucide-react";
+import { Button } from "../ui/button";
 ---
 
-<header class="container flex h-[80px] items-center justify-between sm:h-[123px]">
-  <a class="font-outfit text-2xl font-semibold !no-underline dark:font-semibold" href="/">{createLogo(info.name)}.</a>
-  <nav class="flex flex-row items-center gap-4">
-    <a class="block text-lg !no-underline" href="/projects">Projekte</a>
-    <button
-      aria-label="theme-button"
-      id="theme-button"
-      class="inline-flex aspect-square items-center rounded-lg border border-zinc-200 bg-white p-4 text-center text-sm font-medium text-zinc-900 hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700 dark:focus:ring-zinc-600"
-    ></button>
+<header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
+  <a class="font-outfit text-2xl font-semibold !no-underline transition-colors duration-100" href="/"
+    >{createLogo(info.name)}.</a
+  >
+  <nav class="flex flex-row items-center space-x-4 sm:space-x-8" aria-label="Navigation">
+    <a
+      class={Astro.url.pathname === "/projects"
+        ? "text-foreground/90 !no-underline"
+        : "text-foreground/70 hover:text-foreground/90 transition-colors !no-underline"}
+      href="/projects">Projekte</a
+    >
+    <Button id="theme-button" variant="ghost" size="icon-sm" aria-label="Theme Switch">
+      <Moon size={20} aria-label="Theme Switch Icon" />
+    </Button>
   </nav>
 </header>
 
 <script is:inline>
-  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-label="Theme Switch Icon"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
+  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-label="Theme Switch Icon"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`;
+
   const themeButton = document.getElementById("theme-button");
-  const browserTheme = document.querySelector('[name="theme-color"]');
   let isDark;
+
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (matchMedia("(prefers-color-scheme: dark)").matches) {
       return "dark";
     }
     return "light";
   })();
 
+  // Change the class of the html element to contain the theme
   if (theme === "light") {
-    document.documentElement.setAttribute("data-theme", "light");
-    isDark = true;
+    document.documentElement.setAttribute("class", "light");
     themeButton.innerHTML = moon;
+    isDark = true;
   } else {
-    document.documentElement.setAttribute("data-theme", "dark");
-    isDark = false;
+    document.documentElement.setAttribute("class", "dark");
     themeButton.innerHTML = sun;
+    isDark = false;
   }
-  window.localStorage.setItem("theme", theme);
+  localStorage.setItem("theme", theme);
 
   const darkModeHandler = () => {
     if (isDark) {
-      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.setAttribute("class", "dark");
       localStorage.theme = "dark";
       isDark = false;
       themeButton.innerHTML = sun;
-      browserTheme.content = "#111111";
     } else {
-      document.documentElement.setAttribute("data-theme", "light");
+      document.documentElement.setAttribute("class", "light");
       localStorage.theme = "light";
       isDark = true;
       themeButton.innerHTML = moon;
-      browserTheme.content = "#FFFFFF";
     }
   };
 
