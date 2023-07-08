@@ -19,8 +19,10 @@ jobs:
           node-version: latest
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --ignore-scripts
       - name: Run Prettier
-        run: pnpm run prettier
+        run: pnpm run format:check
       - name: Run ESLint
         run: pnpm run lint
+      - name: Run TypeScript checkgit 
+        run: pnpm run check
