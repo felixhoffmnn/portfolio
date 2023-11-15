@@ -6,10 +6,7 @@ import Layout from "@/layouts/Layout.astro";
 const title = "Projekte";
 ---
 
-<Layout
-  frontmatter={{ title: title, description: "Übersicht über meine Projekte.", label: "Projektübersicht" }}
-  spacing="sm"
->
+<Layout frontmatter={{ title: title, description: "Übersicht über meine Projekte.", label: "Projektübersicht" }}>
   <PageHeader title={title} description="Kunden- und Studiumsprojekte" />
   <ProjectGrid lazy={false} />
 </Layout>

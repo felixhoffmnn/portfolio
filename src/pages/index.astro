@@ -6,7 +6,7 @@ import { info } from "@/data/info";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }} spacing="md">
+<Layout frontmatter={{ description: info.about[0], label: "Startseite mit Lebenslauf" }}>
   <Hero name={info.name} about={info.about} gradient={true} />
   <ExperienceWrapper title={"Erfahrung"} details={info.experience} />
   <ExperienceWrapper title={"Ausbildung"} details={info.education} />

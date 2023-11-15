@@ -18,7 +18,7 @@ Für das Training des Klassifikationsmodells wurden verschiedene Quellen verwend
 
 Das Modell basiert auf einer deutschen Version des DistilBERT-Modells. Das Modell kann auf [Hugging Face](https://huggingface.co/felixhoffmnn/GePart) gefunden und getestet werden.
 
-**Wichtig:** Bei dem Modell handelt es sich um ein Proof-of-Concept. Es ist nicht für den produktiven Einsatz geeignet. Auf dem Testdatensatz erreicht das Modell eine Genauigkeit (_F1_) von _0,58_.
+**Wichtig:** Bei dem Modell handelt es sich um ein Proof-of-Concept. Es ist nicht für den produktiven Einsatz geeignet. Auf dem Testdatensatz erreicht das Modell eine Genauigkeit ($F_1$) von $0,58$.
 
 ## Lizenz
 

@@ -1,0 +1,36 @@
+graph TD
+  subgraph User Interaction
+    A(Speech-to-Text)
+    B(Text-to-Speech)
+  end
+
+  subgraph Core Layer
+    C(Agent)
+  end
+
+  subgraph Business Logic Layer
+    D(Use Case 1)
+    E(Use Case 2)
+    F(Use Case 3)
+    G(Use Case 4)
+  end
+
+  subgraph Api Layer
+    H(API 1)
+    I(API 2)
+    J(API 3)
+    K(API 4)
+    L(API 5)
+    M(API 6)
+    N(API 7)
+    O(API 8)
+  end
+
+  A & B -.- C
+
+  C -->|Provides| D & E & F & G
+
+  D -->|Uses| H & I
+  E -->|Uses| J & K
+  F -->|Uses| L & M
+  G -->|Uses| N & O

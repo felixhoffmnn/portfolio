@@ -1,8 +1,8 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import remarkMermaid from "astro-diagram/remark-mermaid";
 import { defineConfig } from "astro/config";
+import remarkMath from "remark-math";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +12,7 @@ export default defineConfig({
       theme: "one-dark-pro",
       wrap: true,
     },
-    remarkPlugins: [remarkMermaid],
+    remarkPlugins: [remarkMath],
   },
   integrations: [tailwind(), sitemap(), react()],
 });
