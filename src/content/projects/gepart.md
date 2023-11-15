@@ -1,28 +1,25 @@
 ---
 title: "GePart"
 description: "Parteiklassifikation mittels Machine Learning"
-status: "progress"
-featured: true
+status: "done"
+type: "Studienarbeit"
+featured: false
+year: 2023
 pubDatetime: 2023-03-26
 thumbnail: "@/assets/images/deutscher_bundestag.jpg"
 githubUrl: "https://github.com/felixhoffmnn/gepart"
 ---
 
-**GePart** ist ein _Klassifikationsmodell_, welches dazu genutzt werden kann, Texte anhand der sechs größten Parteien in Deutschland zu klassifizieren. [Test](hibuddy).
+**GePart** ist ein deutsches Parteiklassifizierungsmodell, das in der Lage ist, die wahrscheinlichste Partei für einen gegebenen Text vorherzusagen. Dieses Repository ist Teil eines Studentenprojekts an der [Dualen Hochschule Baden-Württemberg](https://www.dhbw.de/startseite) während des 5. und 6. Semesters meines Bachelorstudiums in Informatik.
 
-> Test
+Für das Training des Klassifikationsmodells wurden verschiedene Quellen verwendet (z. B. Reden, Tweets und Parteiprogramme) mit Worteinbettungen wie [FastText](https://fasttext.cc/) und Transformer-Modellen wie [BERT](https://arxiv.org/abs/1810.04805).
 
-![Test](../../assets/images/deutscher_bundestag.jpg)
+## Gehostetes Modell
 
-```python
-from gepart import GePart
+Das Modell basiert auf einer deutschen Version des DistilBERT-Modells. Das Modell kann auf [Hugging Face](https://huggingface.co/felixhoffmnn/GePart) gefunden und getestet werden.
 
-model = GePart()
-model.predict("Die SPD ist eine Partei, die sich für die sozialen Belange der Menschen einsetzt.")
+**Wichtig:** Bei dem Modell handelt es sich um ein Proof-of-Concept. Es ist nicht für den produktiven Einsatz geeignet. Auf dem Testdatensatz erreicht das Modell eine Genauigkeit (_F1_) von _0,58_.
 
-# -> 'SPD'
-```
+## Lizenz
 
-<br />
-
-_Sobald diese Webseite fertig ist, findest du hier mehr Informationen._
+Dieses Projekt steht unter der [GNU GPL V3](https://github.com/felixhoffmnn/gepart/blob/main/LICENSE) Lizenz.

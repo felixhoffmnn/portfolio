@@ -2,12 +2,23 @@ export const info = {
   baseUrl: "https://felix-hoffmann.dev",
   name: "Felix Hoffmann",
   twitterHandle: "@felixhoffmnn",
-  jobDescription: "Bachelorstudent Informatik",
+  jobDescription: "M.Sc. Data Engineering am Hasso-Plattner-Institut",
   about: [
-    "Ich bin Bachelorstudent an der Dualen Hochschule Baden-Württemberg Stuttgart und arbeite bei Hewlett Packard Enterprise. Geboren und aufgewachsen in Buckow - Brandenburg, lebe ich seit Mitte 2020 in Stuttgart - Baden-Württemberg.",
-    "In meinem Studium habe ich mich auf Data Science und Web Entwicklung spezialisiert und arbeite derzeit an einem NLP-Projekt und der Performance-Optimierung von einer React-Application. Zu meinen Fähigkeiten gehören außerdem die Arbeit mit Datenbanken und Programmiersprachen wie Python und TypeScript. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien, sowie in meiner Freizeit im Bereich Webdesign (Figma und Adobe XD) und in der Fotobearbeitung mit der Adobe Suite gesammelt.",
+    "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und bin nebenbei Selbstständig als Web-Entwickler. Zuvor habe ich meinen Bachelor in Informatik an der DHBW Stuttgart absolviert und nebenbei bei Hewlett Packard Enterprise angestellt.",
+    "In meinem Bachelor-Studium habe ich mich verstärkt mit Data Science und Web Entwicklung auseinandergesetzt. In diesem Kontext habe ich unter anderem Erfahrung mit React, Three.js und Machine Learning gesammelt. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien, sowie in meiner Freizeit im Bereich Webdesign (Figma und Adobe XD) und in der Fotobearbeitung mit der Adobe Suite gesammelt.",
   ],
   experience: [
+    {
+      name: "Front-end Optimierung",
+      location: "Böblingen - Deutschland",
+      startDate: "Jan 2023",
+      endDate: "Feb 2023",
+      description: [
+        "Pointnext Services (HPE)",
+        "Bachelorarbeit: Optimierung von GraphQL-Abfragen und Suchen durch Pagination, Caching und Filterung",
+      ],
+      skills: ["React", "TypeScript", "PostgreSQL", "Performance Optimierung"],
+    },
     {
       name: "Front-end Optimierung",
       location: "Böblingen - Deutschland",
@@ -69,6 +80,13 @@ export const info = {
     },
   ],
   education: [
+    {
+      name: "Data Engineering M.Sc.",
+      location: "Potsdam - Deutschland",
+      startDate: "2023",
+      endDate: "Heute",
+      description: ["Hasso-Plattner-Institut"],
+    },
     {
       name: "Informatik B.Sc.",
       location: "Stuttgart - Deutschland",

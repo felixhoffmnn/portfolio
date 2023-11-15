@@ -2,7 +2,7 @@
 import PageHeader from "@/components/general/PageHeader.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { CollectionEntry, getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ data }) => {
@@ -43,7 +43,13 @@ const { Content } = await entry.render();
 <Layout
   frontmatter={{ title: data.title, description: data.description, ogImageUrl: data.thumbnail.src, label: data.title }}
 >
-  <PageHeader title={data.title} description={data.description} githubUrl={data.githubUrl} liveUrl={data.liveUrl} />
+  <PageHeader
+    title={data.title}
+    description={data.description}
+    githubUrl={data.githubUrl}
+    liveUrl={data.liveUrl}
+    docsUrl={data.docsUrl}
+  />
   <Image
     class="my-16 aspect-[4/3] h-full w-full overflow-hidden rounded-xl object-cover object-center brightness-90"
     src={data.thumbnail}
@@ -56,18 +62,18 @@ const { Content } = await entry.render();
     <div class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
       <div>
         <h4 class="text-lg font-semibold uppercase">Projekttyp</h4>
-        <p class="text-muted-foreground">Lorem ipsum</p>
+        <p class="text-muted-foreground">{data.type}</p>
       </div>
       <div>
         <h4 class="text-lg font-semibold uppercase">Projektjahr</h4>
-        <p class="text-muted-foreground">Lorem ipsum</p>
+        <p class="text-muted-foreground">{data.year}</p>
       </div>
       <div>
         <h4 class="text-lg font-semibold uppercase">Projektstatus</h4>
         <p class="text-muted-foreground">{getStatus(data.status)}</p>
       </div>
     </div>
-    <article class="lg:col-span-2">
+    <article class="prose dark:prose-invert lg:col-span-2">
       <Content />
     </article>
   </section>
