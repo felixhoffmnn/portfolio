@@ -6,9 +6,10 @@ interface Props {
   description?: string;
   githubUrl?: string;
   liveUrl?: string;
+  docsUrl?: string;
 }
 
-const { title, description, githubUrl, liveUrl } = Astro.props;
+const { title, description, githubUrl, liveUrl, docsUrl } = Astro.props;
 ---
 
 <section class="flex w-full flex-col justify-start gap-4 sm:flex-row sm:justify-between sm:gap-8">
@@ -21,6 +22,13 @@ const { title, description, githubUrl, liveUrl } = Astro.props;
       liveUrl && (
         <a class={buttonVariants({ size: "sm" })} href={liveUrl} target="_blank">
           Live
+        </a>
+      )
+    }
+    {
+      docsUrl && (
+        <a class={buttonVariants({ size: "sm" })} href={docsUrl} target="_blank">
+          Docs
         </a>
       )
     }

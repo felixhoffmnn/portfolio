@@ -10,15 +10,21 @@ interface Props {
 }
 
 const { onlyFeatured, lazy } = Astro.props;
+
+const hasFeatured = projects.some((project) => project.data.featured);
 ---
 
 <section class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2">
   {
-    projects.map((project) => {
-      if (onlyFeatured && !project.data.featured) {
-        return null;
-      }
-      return <ProjectCard project={project} lazy={lazy} />;
-    })
+    hasFeatured || !onlyFeatured ? (
+      projects.map((project) => {
+        if (onlyFeatured && !project.data.featured) {
+          return null;
+        }
+        return <ProjectCard project={project} lazy={lazy} />;
+      })
+    ) : (
+      <p class="mb-2 text-lg text-muted-foreground">Aktuell keine laufenden Projekte.</p>
+    )
   }
 </section>

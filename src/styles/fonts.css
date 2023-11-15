@@ -41,7 +41,7 @@
     @apply space-y-6;
   }
   article > h2 {
-    @apply mt-10 border-b pb-2 first:mt-0;
+    @apply mt-10 pb-2 first:mt-0;
   }
   article > blockquote {
     @apply border-l-2 pl-6 italic;
