@@ -94,7 +94,7 @@ export const info = {
       endDate: "2023",
       description: [
         "Duale Hochschule Baden-Württemberg Stuttgart",
-        "Studienrichtung: Informatik mit Vertiefung Data Science",
+        "Studienrichtung: Informatik mit Vertiefung Computational Data Science",
       ],
     },
     {
@@ -102,11 +102,7 @@ export const info = {
       location: "Strausberg - Deutschland",
       startDate: "2017",
       endDate: "2020",
-      description: [
-        "Oberstufenzentrum Märkisch-Oderland",
-        "Abitur in 3 Jahren",
-        "Schwerpunkt: Maschinen- und Kommunikationstechnik",
-      ],
+      description: ["Oberstufenzentrum Märkisch-Oderland", "Schwerpunkt: Maschinen- und Kommunikationstechnik"],
     },
     {
       name: "Mittlerer Schulabschluss",

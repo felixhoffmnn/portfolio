@@ -1,5 +1,5 @@
 ---
-import { Experience, ExperienceGroup } from "@/components/home/Experience";
+import { Experience } from "@/components/home/Experience";
 import type { IExperience, IExperiences } from "@/types";
 
 const defaultNumEntries = 3;
@@ -18,7 +18,14 @@ const { title, details } = Astro.props;
     {details.slice(0, defaultNumEntries).map((detail: IExperience) => <Experience item={detail} />)}
     {
       details.length > defaultNumEntries && (
-        <ExperienceGroup details={details} defaultNumEntries={defaultNumEntries} client:load />
+        <details class="p-0">
+          <summary class="-mt-4 mb-8">Mehr Anzeigen</summary>
+          <div class="space-y-16">
+            {details.slice(defaultNumEntries).map((detail: IExperience) => (
+              <Experience item={detail} />
+            ))}
+          </div>
+        </details>
       )
     }
   </div>
