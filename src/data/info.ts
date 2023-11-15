@@ -11,13 +11,13 @@ export const info = {
     {
       name: "Front-end Optimierung",
       location: "Böblingen - Deutschland",
-      startDate: "Jan 2023",
-      endDate: "Feb 2023",
+      startDate: "Mai 2023",
+      endDate: "Sept 2023",
       description: [
         "Pointnext Services (HPE)",
         "Bachelorarbeit: Optimierung von GraphQL-Abfragen und Suchen durch Pagination, Caching und Filterung",
       ],
-      skills: ["React", "TypeScript", "PostgreSQL", "Performance Optimierung"],
+      skills: ["React", "TypeScript", "PostgreSQL", "GraphQL", "Performance Optimierung"],
     },
     {
       name: "Front-end Optimierung",
@@ -28,7 +28,7 @@ export const info = {
         "Pointnext Services (HPE)",
         "Ladezeiten-Optimierung eines React-Frontends mittels Server-Side Pagination und Backend-Filtering.",
       ],
-      skills: ["React", "TypeScript", "Performance Optimierung"],
+      skills: ["React", "TypeScript", "PostgreSQL", "GraphQL", "Performance Optimierung"],
     },
     {
       name: "GPU Benchmarking",
