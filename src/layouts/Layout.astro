@@ -16,6 +16,7 @@ import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
 import { info } from "@/data/info";
 import { SEO } from "astro-seo";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   frontmatter: { title?: string; description: string; ogImageUrl?: string; label: string };
@@ -26,7 +27,6 @@ const {
 } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="de">
   <head>
     <SEO
@@ -70,6 +70,7 @@ const {
         ],
       }}
     />
+    <ViewTransitions />
   </head><body>
     <Navbar />
     <main class={`container space-y-16 md:space-y-20 lg:space-y-24`} aria-label={label}>

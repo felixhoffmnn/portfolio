@@ -21,8 +21,9 @@ const {
   <a href={`/${collection}/${slug}`} aria-label="Blog Link">
     <Image
       src={thumbnail}
-      class="h-full w-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
+      class="h-full w-full object-cover object-center brightness-90 transition duration-300 rounded-xl group-hover:scale-105"
       loading={lazy ? "lazy" : "eager"}
+      transition:name={`img-${slug}`}
       width={600}
       quality={90}
       alt={`Preview for ${title}`}

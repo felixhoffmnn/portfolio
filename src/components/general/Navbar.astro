@@ -1,8 +1,7 @@
 ---
+import { ThemeToggle } from "@/components/general/ThemeToggle";
 import { info } from "@/data/info";
 import { createLogo } from "@/utils/logo";
-import { Moon } from "lucide-react";
-import { Button } from "../ui/button";
 ---
 
 <header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
@@ -16,54 +15,26 @@ import { Button } from "../ui/button";
         : "text-foreground/70 hover:text-foreground/90 transition-colors !no-underline"}
       href="/projects">Projekte</a
     >
-    <Button id="theme-button" variant="ghost" size="icon-sm" aria-label="Theme Switch">
-      <Moon size={20} aria-label="Theme Switch Icon" />
-    </Button>
+    <div>
+      <ThemeToggle client:only />
+    </div>
   </nav>
 </header>
 
-<script is:inline>
-  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-label="Theme Switch Icon"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
-  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-label="Theme Switch Icon"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`;
+<script>
+  const theme = localStorage.getItem("theme");
 
-  const themeButton = document.getElementById("theme-button");
-  let isDark;
-
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  // Change the class of the html element to contain the theme
-  if (theme === "light") {
-    document.documentElement.setAttribute("class", "light");
-    themeButton.innerHTML = moon;
-    isDark = true;
-  } else {
-    document.documentElement.setAttribute("class", "dark");
-    themeButton.innerHTML = sun;
-    isDark = false;
+  if (theme === "dark") {
+    document.body.classList.add("dark");
   }
-  localStorage.setItem("theme", theme);
 
-  const darkModeHandler = () => {
-    if (isDark) {
-      document.documentElement.setAttribute("class", "dark");
-      localStorage.theme = "dark";
-      isDark = false;
-      themeButton.innerHTML = sun;
+  document.addEventListener("astro:after-swap", (event) => {
+    const theme = localStorage.getItem("theme");
+
+    if (theme === "dark") {
+      document.body.classList.add("dark");
     } else {
-      document.documentElement.setAttribute("class", "light");
-      localStorage.theme = "light";
-      isDark = true;
-      themeButton.innerHTML = moon;
+      document.body.classList.remove("dark");
     }
-  };
-
-  themeButton.addEventListener("click", darkModeHandler);
+  });
 </script>

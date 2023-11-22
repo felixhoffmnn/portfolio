@@ -1,7 +1,7 @@
 ---
-import { info } from "@/data/info";
 import { buttonVariants } from "@/components/ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { info } from "@/data/info";
+import { Icon } from "astro-icon";
 
 const iconSize = 20;
 ---
@@ -20,7 +20,8 @@ const iconSize = 20;
       href={info.socialMedia.github}
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
-      ><Github size={iconSize} aria-label="GitHub Icon" />
+    >
+      <Icon pack="lucide" name="github" size={iconSize} class="stroke-white" alt="GitHub Icon" />
     </a>
     <a
       aria-label="LinkedIn"
@@ -28,7 +29,7 @@ const iconSize = 20;
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
     >
-      <Linkedin size={iconSize} aria-label="LinkedIn Icon" />
+      <Icon pack="lucide" name="linkedin" size={iconSize} class="stroke-white" alt="LinkedIn Icon" />
     </a>
     <a
       aria-label="Email"
@@ -36,7 +37,7 @@ const iconSize = 20;
       class={buttonVariants({ variant: "ghost", size: "icon-sm" })}
       target="_blank"
     >
-      <Mail size={iconSize} aria-label="Email Icon" />
+      <Icon pack="lucide" name="mail" size={iconSize} class="stroke-white" alt="Email Icon" />
     </a>
   </div>
 </footer>

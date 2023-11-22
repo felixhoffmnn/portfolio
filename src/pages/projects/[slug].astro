@@ -51,8 +51,9 @@ const { Content } = await entry.render();
     docsUrl={data.docsUrl}
   />
   <Image
-    class="aspect-[4/3] h-full w-full overflow-hidden rounded-xl object-cover object-center brightness-90 sm:aspect-[2/1]"
+    class="aspect-[4/3] h-full w-full object-cover rounded-xl object-center brightness-90 shadow-xl sm:aspect-[2/1]"
     src={data.thumbnail}
+    transition:name={`img-${entry.slug}`}
     loading="eager"
     width={800}
     quality={90}
