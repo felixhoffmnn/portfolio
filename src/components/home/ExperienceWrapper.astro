@@ -19,7 +19,7 @@ const { title, details } = Astro.props;
     {
       details.length > defaultNumEntries && (
         <details class="p-0">
-          <summary class="-mt-4">Mehr Anzeigen</summary>
+          <summary class="-mt-4 cursor-pointer">Mehr Anzeigen</summary>
           <div class="space-y-16 mt-8">
             {details.slice(defaultNumEntries).map((detail: IExperience) => (
               <Experience item={detail} />
