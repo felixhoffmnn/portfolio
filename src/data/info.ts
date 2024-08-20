@@ -125,7 +125,7 @@ export const info = {
   ],
   socialMedia: {
     github: "https://github.com/felixhoffmnn",
-    email: "post@felixemmanuel.de",
+    email: "post@felix-hoffmann.dev",
     linkedin: "https://www.linkedin.com/in/felix-hoffmnn/",
   },
 };
