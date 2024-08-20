@@ -13,7 +13,7 @@ const { title, details } = Astro.props;
 ---
 
 <section class="flex flex-col items-start justify-between gap-8 sm:flex-row md:gap-4">
-  <h2 class="w-[15rem] text-xl uppercase">{title}</h2>
+  <h2 class="w-60 text-xl uppercase">{title}</h2>
   <div class="w-full space-y-16">
     {details.slice(0, defaultNumEntries).map((detail: IExperience) => <Experience item={detail} />)}
     {
