@@ -16,7 +16,9 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
   },
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sitemap(),
     react(),
     icon({
