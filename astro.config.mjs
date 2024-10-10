@@ -8,7 +8,9 @@ import remarkMath from "remark-math";
 // https://astro.build/config
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
-  prefetch: true,
+  prefetch: {
+    prefetchAll: true,
+  },
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",
