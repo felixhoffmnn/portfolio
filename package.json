@@ -8,7 +8,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "astro dev",
-    "build": "pnpm run mermaid && astro build",
+    "build": "astro build",
     "check": "astro check && tsc --noEmit",
     "sync": "astro sync",
     "preview": "astro preview",
@@ -38,7 +38,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
-    "@mermaid-js/mermaid-cli": "^10.9.1",
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
