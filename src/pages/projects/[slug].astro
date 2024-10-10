@@ -1,8 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection } from "astro:content";
 import PageHeader from "@/components/general/PageHeader.astro";
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ data }) => {
@@ -55,7 +55,7 @@ const { Content } = await entry.render();
     src={data.thumbnail}
     loading="eager"
     width={800}
-    quality={90}
+    quality="high"
     alt={data.title}
   />
   <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
