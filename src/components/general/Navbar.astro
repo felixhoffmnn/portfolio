@@ -1,8 +1,10 @@
 ---
+import { Button } from "@/components/ui/button";
 import { info } from "@/data/info";
 import { createLogo } from "@/utils/logo";
-import { Moon } from "lucide-react";
-import { Button } from "../ui/button";
+import { Icon } from "astro-icon/components";
+
+const iconSize = 25;
 ---
 
 <header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
@@ -17,53 +19,59 @@ import { Button } from "../ui/button";
       href="/projects">Projekte</a
     >
     <Button id="theme-button" variant="ghost" size="icon-sm" aria-label="Theme Switch">
-      <Moon size={20} aria-label="Theme Switch Icon" />
+      <Icon id="icon-dark" class="hidden" name="sun" size={25} aria-label="Theme Switch Icon" />
+      <Icon id="icon-light" name="moon" size={25} aria-label="Theme Switch Icon" />
     </Button>
   </nav>
 </header>
 
 <script is:inline>
-  const moon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-label="Theme Switch Icon"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
-  const sun = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-label="Theme Switch Icon"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`;
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeButton = document.getElementById("theme-button");
+    const iconDark = document.getElementById("icon-dark");
+    const iconLight = document.getElementById("icon-light");
+    let isDark;
 
-  const themeButton = document.getElementById("theme-button");
-  let isDark;
+    const theme = (() => {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        return localStorage.getItem("theme");
+      }
+      if (document.documentElement.classList.contains("dark")) {
+        return "dark";
+      }
+      return "light";
+    })();
 
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  // Change the class of the html element to contain the theme
-  if (theme === "light") {
-    document.documentElement.setAttribute("class", "light");
-    themeButton.innerHTML = moon;
-    isDark = true;
-  } else {
-    document.documentElement.setAttribute("class", "dark");
-    themeButton.innerHTML = sun;
-    isDark = false;
-  }
-  localStorage.setItem("theme", theme);
-
-  const darkModeHandler = () => {
-    if (isDark) {
-      document.documentElement.setAttribute("class", "dark");
-      localStorage.theme = "dark";
-      isDark = false;
-      themeButton.innerHTML = sun;
-    } else {
+    // Change the class of the html element to contain the theme
+    if (theme === "light") {
       document.documentElement.setAttribute("class", "light");
-      localStorage.theme = "light";
+      iconDark.classList.add("hidden");
+      iconLight.classList.remove("hidden");
+      isDark = false;
+    } else {
+      document.documentElement.setAttribute("class", "dark");
+      iconDark.classList.remove("hidden");
+      iconLight.classList.add("hidden");
       isDark = true;
-      themeButton.innerHTML = moon;
     }
-  };
+    localStorage.setItem("theme", theme);
 
-  themeButton.addEventListener("click", darkModeHandler);
+    const darkModeHandler = () => {
+      if (isDark) {
+        document.documentElement.setAttribute("class", "light");
+        localStorage.theme = "light";
+        isDark = false;
+        iconDark.classList.add("hidden");
+        iconLight.classList.remove("hidden");
+      } else {
+        document.documentElement.setAttribute("class", "dark");
+        localStorage.theme = "dark";
+        isDark = true;
+        iconDark.classList.remove("hidden");
+        iconLight.classList.add("hidden");
+      }
+    };
+
+    themeButton.addEventListener("click", darkModeHandler);
+  });
 </script>
