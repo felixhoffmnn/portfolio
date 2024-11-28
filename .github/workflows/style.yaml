@@ -20,10 +20,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --ignore-scripts
-      - name: Run Prettier
-        run: pnpm run format:check
-      - name: Run ESLint
-        run: pnpm run lint
+      - name: Run Biome
+        run: pnpm biome check
       - name: Run TypeScript check
         run: |
           pnpm run sync

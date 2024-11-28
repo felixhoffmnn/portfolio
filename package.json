@@ -15,7 +15,8 @@
     "astro": "astro",
     "lint": "biome lint",
     "lint:fix": "biome lint --fix",
-    "format": "biome format --fix"
+    "format": "biome format --fix",
+    "format:check": "biome format --check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
