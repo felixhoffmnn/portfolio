@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -24,7 +24,7 @@ const {
       class="size-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
       loading={lazy ? "lazy" : "eager"}
       width={600}
-      quality={90}
+      quality="high"
       alt={`Preview for ${title}`}
     />
     <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur">

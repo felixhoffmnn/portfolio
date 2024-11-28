@@ -1,5 +1,5 @@
 import { cn } from "@/utils/cn";
-import { cva, type VariantProps } from "class-variance-authority";
+import { type VariantProps, cva } from "class-variance-authority";
 import type { HTMLAttributes } from "react";
 
 export interface BadgeProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}

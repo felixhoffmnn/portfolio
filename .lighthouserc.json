@@ -17,7 +17,7 @@
         "unused-javascript": "off",
         "color-contrast": "warn",
         "service-worker": "off",
-        "label-content-name-mismatch": "off"
+        "label-content-name-mismatch": "warn"
       }
     }
   }

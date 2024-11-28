@@ -1,12 +1,16 @@
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import remarkMath from "remark-math";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
+  prefetch: {
+    prefetchAll: true,
+  },
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",
@@ -14,5 +18,14 @@ export default defineConfig({
     },
     remarkPlugins: [remarkMath],
   },
-  integrations: [tailwind(), sitemap(), react()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    sitemap(),
+    react(),
+    icon({
+      iconDir: "src/assets/icons",
+    }),
+  ],
 });
