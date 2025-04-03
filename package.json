@@ -8,18 +8,12 @@
   "scripts": {
     "prepare": "husky",
     "dev": "astro dev",
-    "build": "astro build",
-    "check": "astro check && tsc --noEmit",
-    "sync": "astro sync",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "lint": "biome lint",
-    "lint:fix": "biome lint --fix",
-    "format": "biome format --fix",
-    "format:check": "biome format --check"
+    "check": "astro check && tsc --noEmit && biome check",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^3.6.3",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
@@ -38,6 +32,7 @@
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "@biomejs/biome": "1.9.4",
     "@tailwindcss/typography": "^0.5.15",
     "@types/react": "^18.3.12",
@@ -48,9 +43,14 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.7.2"
+    "typescript": "^5.8.2"
   },
   "lint-staged": {
-    "*": ["biome check --no-errors-on-unmatched"]
+    "*": [
+      "biome check --no-errors-on-unmatched"
+    ],
+    "*.{astro,md,mdx,json,ts,mjs}": [
+      "prettier --check"
+    ]
   }
 }
