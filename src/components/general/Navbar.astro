@@ -8,19 +8,19 @@ const iconSize = 25;
 ---
 
 <header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
-  <a class="font-outfit text-2xl font-semibold !no-underline transition-colors duration-100" href="/"
+  <a class="font-outfit text-2xl font-semibold no-underline! transition-colors duration-100" href="/"
     >{createLogo(info.name)}.</a
   >
   <nav class="flex flex-row items-center space-x-4 sm:space-x-8" aria-label="Navigation">
     <a
       class={Astro.url.pathname === "/projects"
-        ? "text-foreground/90 !no-underline"
-        : "text-foreground/70 hover:text-foreground/90 transition-colors !no-underline"}
+        ? "text-foreground/90 no-underline!"
+        : "text-foreground/70 hover:text-foreground/90 transition-colors no-underline!"}
       href="/projects">Projekte</a
     >
     <Button id="theme-button" variant="ghost" size="icon-sm" aria-label="Theme Switch">
-      <Icon id="icon-dark" class="hidden" name="sun" size={25} aria-label="Theme Switch Icon" />
-      <Icon id="icon-light" name="moon" size={25} aria-label="Theme Switch Icon" />
+      <Icon id="icon-dark" class="hidden" name="sun" size={iconSize} aria-label="Theme Switch Icon" />
+      <Icon id="icon-light" name="moon" size={iconSize} aria-label="Theme Switch Icon" />
     </Button>
   </nav>
 </header>

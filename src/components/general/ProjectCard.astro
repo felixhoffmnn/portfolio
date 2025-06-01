@@ -17,7 +17,7 @@ const {
 } = Astro.props;
 ---
 
-<article class="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border bg-card shadow-xl">
+<article class="group bg-card relative aspect-4/3 w-full overflow-hidden rounded-xl border shadow-xl">
   <a href={`/${collection}/${slug}`} aria-label="Blog Link">
     <Image
       src={thumbnail}
@@ -27,9 +27,9 @@ const {
       quality="high"
       alt={`Preview for ${title}`}
     />
-    <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur">
-      <h3 class="mr-2 text-xl font-semibold !text-slate-200">{title}</h3>
-      <p class="truncate text-sm !text-slate-200">{description}</p>
+    <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur-sm">
+      <h3 class="mr-2 text-xl font-semibold text-slate-200!">{title}</h3>
+      <p class="truncate text-sm text-slate-200!">{description}</p>
     </div>
   </a>
 </article>

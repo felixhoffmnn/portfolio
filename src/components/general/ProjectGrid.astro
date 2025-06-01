@@ -24,7 +24,7 @@ const hasFeatured = projects.some((project) => project.data.featured);
         return <ProjectCard project={project} lazy={lazy} />;
       })
     ) : (
-      <p class="mb-2 text-lg text-muted-foreground">Aktuell keine laufenden Projekte.</p>
+      <p class="text-muted-foreground mb-2 text-lg">Aktuell keine laufenden Projekte.</p>
     )
   }
 </section>
