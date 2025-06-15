@@ -7,8 +7,3 @@ html {
 html.dark {
   color-scheme: dark;
 }
-
-html,
-body {
-  @apply size-full;
-}

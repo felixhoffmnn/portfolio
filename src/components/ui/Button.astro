@@ -1,0 +1,24 @@
+---
+interface Props {
+  id?: string;
+  as?: "button" | "a";
+  variant?: "primary" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  size?: "default" | "sm" | "md" | "lg" | "icon" | "icon-sm" | "none";
+  href?: string;
+  target?: string;
+}
+
+const { id, as = "button", variant = "primary", size = "default", href, target } = Astro.props;
+---
+
+{
+  as === "a" ? (
+    <a id={id} href={href} target={target} data-slot="button" data-variant={variant} data-size={size}>
+      <slot />
+    </a>
+  ) : (
+    <button id={id} data-slot="button" data-variant={variant} data-size={size}>
+      <slot />
+    </button>
+  )
+}

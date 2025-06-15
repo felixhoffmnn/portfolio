@@ -1,9 +1,10 @@
-import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import remarkMath from "remark-math";
+
+import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,9 +24,9 @@ export default defineConfig({
   },
   integrations: [
     sitemap(),
-    react(),
     icon({
       iconDir: "src/assets/icons",
     }),
+    alpinejs(),
   ],
 });
