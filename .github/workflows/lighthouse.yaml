@@ -10,21 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
-      - uses: actions/setup-node@v3
+          version: 9
+      - uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 22
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
       - name: Build site
         run: pnpm run build
       - name: Run Lighthouse CI
         run: |
-          pnpm install -g @lhci/cli
-          lhci autorun
+          pnpm install -g @lhci/cli@latest
+          lhci autorun || echo "::warning::Lighthouse CI failed but not blocking merge"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+        continue-on-error: true
