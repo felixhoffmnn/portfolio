@@ -8,7 +8,7 @@ interface Props {
   target?: string;
 }
 
-const { id, as = "button", variant = "primary", size = "default", href, target } = Astro.props;
+const { id, as = "button", variant = "primary", size = "default", href, target } = Astro.props as Props;
 ---
 
 {
