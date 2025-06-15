@@ -18,9 +18,8 @@
     @apply text-foreground;
   }
 }
-
 [data-slot="button"] {
-  @apply focus-visible:ring-ring ring-offset-background inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50;
+  @apply focus-visible:ring-ring ring-offset-background inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 cursor-pointer;
 
   &[data-variant="primary"] {
     @apply bg-primary text-primary-foreground hover:bg-primary/90 no-underline;
