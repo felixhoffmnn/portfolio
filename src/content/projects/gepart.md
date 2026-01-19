@@ -3,7 +3,7 @@ title: "GePart"
 description: "Parteiklassifikation mittels Machine Learning"
 status: "done"
 type: "Studienarbeit"
-featured: false
+featured: true
 year: 2023
 pubDatetime: 2023-03-26
 thumbnail: "@/assets/images/deutscher_bundestag.jpg"

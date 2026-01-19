@@ -9,7 +9,7 @@ interface Props {
 
 const {
   project: {
-    data: { title, description, thumbnail },
+    data: { title, description, thumbnail, status },
     collection,
     slug,
   },
@@ -17,8 +17,24 @@ const {
 } = Astro.props;
 ---
 
-<article class="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border bg-card shadow-xl">
+<article class="group bg-card relative aspect-4/3 w-full overflow-hidden rounded-xl border shadow-xl">
   <a href={`/${collection}/${slug}`} aria-label="Blog Link">
+    {
+      status && (
+        <div
+          class:list={[
+            "absolute top-2 right-2 z-10 rounded-md px-2 py-1 text-xs font-medium shadow-md backdrop-blur-sm",
+            status === "progress" && "bg-green-500/90 text-white",
+            status === "done" && "bg-gray-500/90 text-white",
+            status === "planned" && "bg-blue-500/90 text-white",
+          ]}
+        >
+          {status === "progress" && "Aktiv"}
+          {status === "done" && "Abgeschlossen"}
+          {status === "planned" && "Geplant"}
+        </div>
+      )
+    }
     <Image
       src={thumbnail}
       class="size-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
@@ -27,9 +43,9 @@ const {
       quality="high"
       alt={`Preview for ${title}`}
     />
-    <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur">
-      <h3 class="mr-2 text-xl font-semibold !text-slate-200">{title}</h3>
-      <p class="truncate text-sm !text-slate-200">{description}</p>
+    <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur-sm">
+      <h3 class="mr-2 text-xl font-semibold text-slate-200!">{title}</h3>
+      <p class="truncate text-sm text-slate-200!">{description}</p>
     </div>
   </a>
 </article>

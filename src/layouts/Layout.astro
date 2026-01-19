@@ -6,11 +6,11 @@ import "@fontsource/outfit/700.css";
 
 import "@/styles/global.css";
 
+import { SEO } from "astro-seo";
 import laptopImage from "@/assets/images/laptop.jpg";
 import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
 import { info } from "@/data/info";
-import { SEO } from "astro-seo";
 
 interface Props {
   frontmatter: { title?: string; description: string; ogImageUrl?: string; label: string };
@@ -71,20 +71,19 @@ const {
         }
         return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       };
-      const isDark = getThemePreference() === "dark";
-      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+      document.documentElement.classList[getThemePreference() === "dark" ? "add" : "remove"]("dark");
 
       if (typeof localStorage !== "undefined") {
         const observer = new MutationObserver(() => {
-          const isDark = document.documentElement.classList.contains("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
+          localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
         });
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
       }
     </script>
-  </head><body>
+  </head>
+  <body class="mx-auto max-w-(--breakpoint-xl) px-6">
     <Navbar />
-    <main class={`container space-y-16 md:space-y-20 lg:space-y-24`} aria-label={label}>
+    <main data-slot="container" class="space-y-16 md:space-y-20 lg:space-y-24" aria-label={label}>
       <slot />
     </main>
     <Footer />

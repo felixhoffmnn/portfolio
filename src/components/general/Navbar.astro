@@ -1,77 +1,46 @@
 ---
-import { Button } from "@/components/ui/button";
+import { Icon } from "astro-icon/components";
 import { info } from "@/data/info";
 import { createLogo } from "@/utils/logo";
-import { Icon } from "astro-icon/components";
 
 const iconSize = 25;
 ---
 
-<header class="container mb-16 flex h-20 items-center justify-between space-x-4 md:h-28" aria-label="Header">
-  <a class="font-outfit text-2xl font-semibold !no-underline transition-colors duration-100" href="/"
+<header
+  data-slot="container"
+  class="mb-16 flex h-20 items-center justify-between space-x-4 md:h-28"
+  aria-label="Header"
+>
+  <a class="font-outfit text-2xl font-semibold no-underline! transition-colors duration-100" href="/"
     >{createLogo(info.name)}.</a
   >
   <nav class="flex flex-row items-center space-x-4 sm:space-x-8" aria-label="Navigation">
     <a
       class={Astro.url.pathname === "/projects"
-        ? "text-foreground/90 !no-underline"
-        : "text-foreground/70 hover:text-foreground/90 transition-colors !no-underline"}
+        ? "text-foreground/90 no-underline!"
+        : "text-foreground/70 hover:text-foreground/90 transition-colors no-underline!"}
       href="/projects">Projekte</a
     >
-    <Button id="theme-button" variant="ghost" size="icon-sm" aria-label="Theme Switch">
-      <Icon id="icon-dark" class="hidden" name="sun" size={25} aria-label="Theme Switch Icon" />
-      <Icon id="icon-light" name="moon" size={25} aria-label="Theme Switch Icon" />
-    </Button>
+    <button
+      x-data="{
+                toggle: () => {
+                  if (localStorage.theme === 'dark') {
+                    localStorage.theme = 'light';
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    localStorage.theme = 'dark';
+                    document.documentElement.classList.add('dark');
+                  }
+                }
+            }"
+      @click="toggle"
+      data-slot="button"
+      data-variant="ghost"
+      data-size="icon-sm"
+      aria-label="Theme Switch"
+    >
+      <Icon class="dark:hidden" name="moon" size={iconSize} aria-label="Switch to dark mode" />
+      <Icon class="hidden dark:block" name="sun" size={iconSize} aria-label="Switch to light mode" />
+    </button>
   </nav>
 </header>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const themeButton = document.getElementById("theme-button");
-    const iconDark = document.getElementById("icon-dark");
-    const iconLight = document.getElementById("icon-light");
-    let isDark;
-
-    const theme = (() => {
-      if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-        return localStorage.getItem("theme");
-      }
-      if (document.documentElement.classList.contains("dark")) {
-        return "dark";
-      }
-      return "light";
-    })();
-
-    // Change the class of the html element to contain the theme
-    if (theme === "light") {
-      document.documentElement.setAttribute("class", "light");
-      iconDark.classList.add("hidden");
-      iconLight.classList.remove("hidden");
-      isDark = false;
-    } else {
-      document.documentElement.setAttribute("class", "dark");
-      iconDark.classList.remove("hidden");
-      iconLight.classList.add("hidden");
-      isDark = true;
-    }
-    localStorage.setItem("theme", theme);
-
-    const darkModeHandler = () => {
-      if (isDark) {
-        document.documentElement.setAttribute("class", "light");
-        localStorage.theme = "light";
-        isDark = false;
-        iconDark.classList.add("hidden");
-        iconLight.classList.remove("hidden");
-      } else {
-        document.documentElement.setAttribute("class", "dark");
-        localStorage.theme = "dark";
-        isDark = true;
-        iconDark.classList.remove("hidden");
-        iconLight.classList.add("hidden");
-      }
-    };
-
-    themeButton.addEventListener("click", darkModeHandler);
-  });
-</script>

@@ -1,8 +1,8 @@
-import react from "@astrojs/react";
+import alpinejs from "@astrojs/alpinejs";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import remarkMath from "remark-math";
 
 // https://astro.build/config
@@ -18,14 +18,14 @@ export default defineConfig({
     },
     remarkPlugins: [remarkMath],
   },
+  vite: {
+    plugins: [tailwindcss()],
+  },
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
     sitemap(),
-    react(),
     icon({
       iconDir: "src/assets/icons",
     }),
+    alpinejs(),
   ],
 });

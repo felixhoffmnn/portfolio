@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "description": "My personal portfolio website built with Astro, React, and Tailwind CSS.",
+  "description": "My personal portfolio website built with Astro and Tailwind CSS.",
   "repository": "felixhoffmnn/portfolio",
   "private": false,
   "version": "0.2.1",
@@ -8,49 +8,45 @@
   "scripts": {
     "prepare": "husky",
     "dev": "astro dev",
-    "build": "astro build",
-    "check": "astro check && tsc --noEmit",
-    "sync": "astro sync",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "lint": "biome lint",
-    "lint:fix": "biome lint --fix",
-    "format": "biome format --fix",
-    "format:check": "biome format --check"
+    "check": "astro check && tsc --noEmit && biome check",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^3.6.3",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^5.1.2",
-    "@fontsource/inter": "^5.1.0",
-    "@fontsource/outfit": "^5.1.0",
-    "astro": "^4.16.16",
-    "astro-icon": "^1.1.4",
-    "astro-seo": "^0.8.4",
+    "@astrojs/alpinejs": "^0.4.9",
+    "@astrojs/sitemap": "^3.7.0",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/outfit": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.15.4",
+    "astro": "^5.16.11",
+    "astro-icon": "^1.1.5",
+    "astro-seo": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "remark-math": "^6.0.0",
-    "sharp": "^0.33.5",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss": "^3.4.15"
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@tailwindcss/typography": "^0.5.15",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@astrojs/check": "^0.9.6",
+    "@biomejs/biome": "2.3.11",
+    "@tailwindcss/typography": "^0.5.19",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
-    "prettier": "^3.4.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "typescript": "^5.9.3"
   },
   "lint-staged": {
-    "*": ["biome check --no-errors-on-unmatched"]
+    "*": [
+      "biome check --no-errors-on-unmatched"
+    ],
+    "*.{astro,md,mdx,json,ts,mjs}": [
+      "prettier --check"
+    ]
   }
 }

@@ -1,17 +1,24 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": true },
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [".astro", ".husky", "node_modules", "public", "dist", "pnpm-lock.yaml"]
+    "includes": [
+      "**",
+      "!!**/.husky",
+      "!!**/node_modules",
+      "!!**/public",
+      "!!**/dist",
+      "!!**/pnpm-lock.yaml",
+      "!!**/.astro"
+    ]
   },
   "formatter": {
-    "enabled": true,
-    "useEditorconfig": true,
-    "formatWithErrors": false,
-    "lineWidth": 120,
-    "attributePosition": "auto",
-    "bracketSpacing": true
+    "enabled": false
   },
   "javascript": {
     "formatter": {
@@ -26,7 +33,39 @@
       "attributePosition": "auto"
     }
   },
-  "organizeImports": { "enabled": true },
-  "linter": { "enabled": true, "rules": { "recommended": true } },
-  "overrides": [{ "include": ["*.astro"] }]
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
 }

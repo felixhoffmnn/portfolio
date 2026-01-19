@@ -1,0 +1,9 @@
+html {
+  overflow-y: auto;
+  color-scheme: light;
+  scroll-padding-top: 100px;
+}
+
+html.dark {
+  color-scheme: dark;
+}

@@ -12,7 +12,7 @@ const { name, about, gradient } = Astro.props;
   <p>Hey, mein Name ist</p>
   <h1
     class={gradient
-      ? "my-4 text-7xl md:text-8xl bg-gradient-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text !text-transparent"
+      ? "my-4 text-7xl md:text-8xl bg-linear-to-r from-violet-500 via-cyan-500 to-pink-500 bg-clip-text text-transparent"
       : "my-4"}
   >
     {name}

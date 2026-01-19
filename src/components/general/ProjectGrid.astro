@@ -6,25 +6,45 @@ const projects = await getCollection("projects");
 
 interface Props {
   onlyFeatured?: boolean;
+  showRecentAndActive?: boolean;
   lazy: boolean;
 }
 
-const { onlyFeatured, lazy } = Astro.props;
+const { onlyFeatured, showRecentAndActive, lazy } = Astro.props;
 
-const hasFeatured = projects.some((project) => project.data.featured);
+let displayProjects = projects;
+
+if (showRecentAndActive) {
+  // 1. Filter out projects with featured: false (manual exclusion)
+  const eligibleProjects = projects.filter((p) => p.data.featured !== false);
+
+  // 2. Sort all eligible projects by pubDatetime (newest first)
+  const sortedProjects = eligibleProjects.sort((a, b) => b.data.pubDatetime.getTime() - a.data.pubDatetime.getTime());
+
+  // 3. Get last 2 projects
+  const lastTwoProjects = sortedProjects.slice(0, 2);
+
+  // 4. Get all active projects (status: "progress")
+  const activeProjects = eligibleProjects.filter((p) => p.data.status === "progress");
+
+  // 5. Combine and deduplicate using Set with slug as unique key
+  const displayProjectSlugs = new Set([...activeProjects.map((p) => p.slug), ...lastTwoProjects.map((p) => p.slug)]);
+
+  // 6. Filter to get final projects, maintaining sort order
+  displayProjects = sortedProjects.filter((p) => displayProjectSlugs.has(p.slug));
+} else if (onlyFeatured) {
+  displayProjects = projects.filter((project) => project.data.featured);
+}
+
+const hasProjects = displayProjects.length > 0;
 ---
 
 <section class="grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2">
   {
-    hasFeatured || !onlyFeatured ? (
-      projects.map((project) => {
-        if (onlyFeatured && !project.data.featured) {
-          return null;
-        }
-        return <ProjectCard project={project} lazy={lazy} />;
-      })
+    hasProjects ? (
+      displayProjects.map((project) => <ProjectCard project={project} lazy={lazy} />)
     ) : (
-      <p class="mb-2 text-lg text-muted-foreground">Aktuell keine laufenden Projekte.</p>
+      <p class="text-muted-foreground mb-2 text-lg">Aktuell keine Projekte verfügbar.</p>
     )
   }
 </section>
