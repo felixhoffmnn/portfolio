@@ -7,7 +7,15 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": [".astro", ".husky", "node_modules", "public", "dist", "pnpm-lock.yaml"]
+    "includes": [
+      "**",
+      "!!**/.husky",
+      "!!**/node_modules",
+      "!!**/public",
+      "!!**/dist",
+      "!!**/pnpm-lock.yaml",
+      "!!**/.astro"
+    ]
   },
   "formatter": {
     "enabled": false
@@ -25,8 +33,12 @@
       "attributePosition": "auto"
     }
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -34,9 +46,26 @@
       "recommended": true
     }
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "overrides": [
     {
-      "include": ["*.astro"]
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
     }
   ]
 }

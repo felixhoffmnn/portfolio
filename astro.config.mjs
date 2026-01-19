@@ -1,10 +1,9 @@
+import alpinejs from "@astrojs/alpinejs";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import icon from "astro-icon";
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import remarkMath from "remark-math";
-
-import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({

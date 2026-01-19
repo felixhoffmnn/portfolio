@@ -4,41 +4,52 @@ export const info = {
   twitterHandle: "@felixhoffmnn",
   jobDescription: "M.Sc. Data Engineering am Hasso-Plattner-Institut",
   about: [
-    "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und bin nebenbei Selbstständig als Web-Entwickler. Zuvor habe ich meinen Bachelor in Informatik an der DHBW Stuttgart absolviert und nebenbei bei Hewlett Packard Enterprise angestellt.",
-    "In meinem Bachelor-Studium habe ich mich verstärkt mit Data Science und Web Entwicklung auseinandergesetzt. In diesem Kontext habe ich unter anderem Erfahrung mit React, Three.js und Machine Learning gesammelt. Zusätzlich habe ich Erfahrung in der Arbeit mit Big-Data-Technologien, sowie in meiner Freizeit im Bereich Webdesign (Figma und Adobe XD) und in der Fotobearbeitung mit der Adobe Suite gesammelt.",
+    "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und arbeite nebenbei als studentische Hilfskraft und Tutor am Lehrstuhl für Data-Intensive Internet Computing. Zuvor habe ich meinen Bachelor in Informatik an der DHBW Stuttgart absolviert und war parallel bei Hewlett Packard Enterprise angestellt.",
+    "Meine Schwerpunkte liegen in der Daten- und Backend-Entwicklung (Python, Django, SQL, ClickHouse, Polars), Frontend-Entwicklung (TypeScript, React, Figma) sowie UI/UX-Konzeption. Darüber hinaus habe ich Erfahrung mit DevOps und Infrastruktur (Containerisierung, Ansible, CI/CD, Monitoring) sowie im Bereich Networking und Homelab-Betrieb (Virtualisierung, Container-Deployments, Netzwerksegmentierung). Zusätzlich bringe ich Kenntnisse in Projektmanagement (Scrum, Design Thinking), technischer Kommunikation und analytischem Arbeiten mit.",
   ],
   experience: [
     {
-      name: "Front-end Optimierung",
+      name: "Tutor",
+      location: "Potsdam - Deutschland",
+      startDate: "Okt 2025",
+      endDate: "Feb 2026",
+      description: [
+        "Hasso-Plattner-Institut",
+        'Betreuung des Kurses "Introduction to Internet Measurements" am Lehrstuhl für Data-Intensive Internet Computing.',
+      ],
+      skills: ["Internet Measurements", "Data Analysis"],
+    },
+    {
+      name: "Studentische Hilfskraft",
+      location: "Potsdam - Deutschland",
+      startDate: "Okt 2024",
+      endDate: "Okt 2025",
+      description: [
+        "Hasso-Plattner-Institut",
+        "Mitarbeit am Lehrstuhl für Data-Intensive Internet Computing mit Fokus auf Datenerhebung, Datenaufbereitung und Messinfrastruktur.",
+      ],
+      skills: ["Data Collection", "Python", "Internet Measurements"],
+    },
+    {
+      name: "Frontend-Optimierung",
       location: "Böblingen - Deutschland",
-      startDate: "Mai 2023",
+      startDate: "Jan 2023",
       endDate: "Sept 2023",
       description: [
         "Pointnext Services (HPE)",
-        "Bachelorarbeit: Optimierung von GraphQL-Abfragen und Suchen durch Pagination, Caching und Filterung",
-      ],
-      skills: ["React", "TypeScript", "PostgreSQL", "GraphQL", "Performance Optimierung"],
-    },
-    {
-      name: "Front-end Optimierung",
-      location: "Böblingen - Deutschland",
-      startDate: "Jan 2023",
-      endDate: "Feb 2023",
-      description: [
-        "Pointnext Services (HPE)",
-        "Ladezeiten-Optimierung eines React-Frontends mittels Server-Side Pagination und Backend-Filtering.",
+        "Ladezeiten-Optimierung eines React-Frontends mittels Server-Side Pagination und Backend-Filtering. Bachelorarbeit: Optimierung von GraphQL-Abfragen und Suchen durch Pagination, Caching und Filterung.",
       ],
       skills: ["React", "TypeScript", "PostgreSQL", "GraphQL", "Performance Optimierung"],
     },
     {
       name: "GPU Benchmarking",
-      location: "San Francisco - USA",
+      location: "Milpitas - USA",
       startDate: "Jun 2022",
       endDate: "Sep 2022",
       description: [
         "Hewlett Packard Labs (HPE)",
         "Benchmarking von Algorithmen (z. B. Parameter Server und Ring All-Reduce) zum Trainieren von Machine Learning Modellen auf verteilten Systemen.",
-        "Das Trainieren erfolgte auf der Maschine Learning Plattform „Determined AI“ mittels Kubernetes und Docker Containern.",
+        'Das Trainieren erfolgte auf der Machine Learning Plattform "Determined AI" mittels Kubernetes und Docker Containern.',
       ],
       skills: ["Determined AI", "Kubernetes", "Machine Learning", "Python"],
     },
@@ -85,7 +96,7 @@ export const info = {
       location: "Potsdam - Deutschland",
       startDate: "2023",
       endDate: "Heute",
-      description: ["Hasso-Plattner-Institut"],
+      description: ["Hasso-Plattner-Institut", "Austauschsemester an der University of Aarhus, Dänemark"],
     },
     {
       name: "Informatik B.Sc.",
@@ -95,6 +106,7 @@ export const info = {
       description: [
         "Duale Hochschule Baden-Württemberg Stuttgart",
         "Studienrichtung: Informatik mit Vertiefung Computational Data Science",
+        "Kurssprecher · Mitglied in der Jugend- und Auszubildendenvertretung",
       ],
     },
     {
@@ -102,7 +114,11 @@ export const info = {
       location: "Strausberg - Deutschland",
       startDate: "2017",
       endDate: "2020",
-      description: ["Oberstufenzentrum Märkisch-Oderland", "Schwerpunkt: Maschinen- und Kommunikationstechnik"],
+      description: [
+        "Oberstufenzentrum Märkisch-Oderland",
+        "Schwerpunkt: Maschinen- und Kommunikationstechnik",
+        "Klassensprecher · Mitglied im Schülerrat",
+      ],
     },
     {
       name: "Mittlerer Schulabschluss",
@@ -114,12 +130,25 @@ export const info = {
   ],
   aboard: [
     {
-      name: "Entwicklungspolitische Bildungs- und Workcamp-Reise",
-      location: "Bangalore, Vijayawada, Hyderabad, Mumbai - Indien",
-      startDate: "Okt 2018",
-      endDate: "Nov 2018",
+      name: "Ehrenamtlicher Softwareentwickler",
+      location: "Stuttgart & Potsdam - Deutschland",
+      startDate: "2023",
+      endDate: "Heute",
       description: [
-        "Ein Projekt der Gesellschaft für solidarische Entwicklungszusammenarbeit e.V. (GSE) auf deutscher Seite in Kooperation mit mehreren lokalen Partnern auf indischer Seite.",
+        "Selfnet e.V.",
+        "Neuimplementierung und Wartung des Blogs",
+        "Zusätzliche Aufgaben: Verbesserung der Developer Experience, Reduktion technischer Schulden, kleinere DevOps-Aufgaben.",
+      ],
+      skills: ["React", "TypeScript", "DevOps", "Developer Experience"],
+    },
+    {
+      name: "Bildungs- und Begegnungsreise mit Workcamp",
+      location: "Indien",
+      startDate: "2018",
+      endDate: "2018",
+      description: [
+        "Gesellschaft für solidarische Entwicklungszusammenarbeit e.V. (GSE)",
+        "Reise für interkulturellen Austausch und Hausbau-Workcamp als Hilfe für einen indigenen Stamm in Indien",
       ],
     },
   ],

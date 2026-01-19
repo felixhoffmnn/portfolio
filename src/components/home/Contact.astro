@@ -1,0 +1,25 @@
+---
+interface Props {
+  email: string;
+}
+
+const { email } = Astro.props;
+const subject = "Kontaktanfrage über Website";
+const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+---
+
+<section>
+  <h2 class="mb-8 text-xl uppercase">Kontakt</h2>
+  <div class="space-y-4">
+    <p class="text-lg">Haben Sie Fragen oder möchten Sie zusammenarbeiten? Ich freue mich über Ihre Nachricht!</p>
+    <p>
+      <a
+        href={mailtoLink}
+        class="text-lg underline decoration-1 underline-offset-4 transition-colors hover:text-violet-500"
+        aria-label={`E-Mail senden an ${email}`}
+      >
+        {email}
+      </a>
+    </p>
+  </div>
+</section>

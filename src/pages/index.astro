@@ -1,5 +1,6 @@
 ---
 import ProjectsWrapper from "@/components/general/ProjectGrid.astro";
+import Contact from "@/components/home/Contact.astro";
 import ExperienceWrapper from "@/components/home/ExperienceWrapper.astro";
 import Hero from "@/components/home/Hero.astro";
 import { info } from "@/data/info";
@@ -13,6 +14,7 @@ import Layout from "@/layouts/Layout.astro";
   <ExperienceWrapper title={"Engagement"} details={info.aboard} />
   <section>
     <h2 class="mb-16 text-xl uppercase">Aktuelle Projekte</h2>
-    <ProjectsWrapper onlyFeatured lazy />
+    <ProjectsWrapper showRecentAndActive lazy />
   </section>
+  <Contact email={info.socialMedia.email} />
 </Layout>

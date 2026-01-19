@@ -6,11 +6,11 @@ import "@fontsource/outfit/700.css";
 
 import "@/styles/global.css";
 
+import { SEO } from "astro-seo";
 import laptopImage from "@/assets/images/laptop.jpg";
 import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
 import { info } from "@/data/info";
-import { SEO } from "astro-seo";
 
 interface Props {
   frontmatter: { title?: string; description: string; ogImageUrl?: string; label: string };

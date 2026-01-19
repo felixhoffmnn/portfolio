@@ -3,7 +3,7 @@ title: "HiBuddy"
 description: "Sprachassistent für den tagtäglichen Gebrauch"
 status: "done"
 type: "Vorlesungsprojekt"
-featured: false
+featured: true
 year: 2022
 pubDatetime: 2023-03-26
 thumbnail: "@/assets/images/amazon_alexa.jpg"
