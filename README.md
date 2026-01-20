@@ -21,4 +21,6 @@ Personal portfolio website for Felix Hoffmann showcasing professional experience
 
 ## License
 
-This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
+This repository is based on the [astro-portfolio](https://github.com/uzzii-21/astro-portfolio) template by Uzair Ahmed. It is licensed under the MIT License.
+
+All new content in this repository is also licensed under the MIT License.
