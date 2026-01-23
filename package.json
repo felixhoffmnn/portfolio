@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.15.4",
-    "astro": "^5.16.11",
+    "astro": "^5.16.15",
     "astro-icon": "^1.1.5",
     "astro-seo": "^1.1.0",
     "class-variance-authority": "^0.7.1",
@@ -33,11 +33,11 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
-    "@biomejs/biome": "2.3.11",
+    "@biomejs/biome": "2.3.12",
     "@tailwindcss/typography": "^0.5.19",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.8.0",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3"
