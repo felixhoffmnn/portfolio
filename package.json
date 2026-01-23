@@ -4,7 +4,8 @@
   "repository": "felixhoffmnn/portfolio",
   "private": false,
   "version": "0.2.1",
-  "author": "Felix Hoffmann <felix.emmanuel.hoffmann@gmail.com>",
+  "author": "Felix Hoffmann <post@felix-hoffmann.dev>",
+  "packageManager": "pnpm@10.28.1",
   "scripts": {
     "prepare": "husky",
     "dev": "astro dev",
