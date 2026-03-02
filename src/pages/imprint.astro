@@ -6,26 +6,20 @@ const title = "Impressum";
 ---
 
 <Layout frontmatter={{ title: title, description: "Impressum für felix-hoffmann.dev", label: "Impressum" }}>
-  <PageHeader title={title} description="Wer ist für diese Webseite verantwortlich?" />
-  <article class="prose dark:prose-invert">
-    <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+  <div class="mx-auto max-w-prose">
+    <PageHeader title={title} description="Wer ist für diese Webseite verantwortlich?" />
+  </div>
+  <article class="prose dark:prose-invert mx-auto">
     <p>
-      Christina Ohnrich<br />
-      c/o Felix Hoffmann<br />
+      Felix Hoffmann<br />
+      c/o Christina Ohnrich<br />
       Taborstraße 17<br />
       10997 Berlin
     </p>
-    <p>
-      E-Mail: <a href="mailto:post@felix-hoffmann.dev"> post@felix-hoffmann.dev</a>
-    </p>
 
-    <h2>EU-Streitschlichtung</h2>
+    <h2>Kontakt</h2>
     <p>
-      Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a
-        href="https://ec.europa.eu/consumers/odr/"
-        target="_blank"
-        rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a
-      >.<br /> Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      E-Mail: <a href="mailto:post@felix-hoffmann.dev">post@felix-hoffmann.dev</a>
     </p>
 
     <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
@@ -35,9 +29,7 @@ const title = "Impressum";
     </p>
 
     <p>
-      Quelle: <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank" rel="noopener noreferrer"
-        >https://www.e-recht24.de/impressum-generator.html</a
-      >
+      Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">https://www.e-recht24.de</a>
     </p>
   </article>
 </Layout>

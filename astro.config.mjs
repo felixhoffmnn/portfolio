@@ -1,4 +1,5 @@
 import alpinejs from "@astrojs/alpinejs";
+import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -8,6 +9,8 @@ import remarkMath from "remark-math";
 // https://astro.build/config
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
+  output: "static",
+  adapter: cloudflare({ imageService: "compile" }),
   prefetch: {
     prefetchAll: true,
   },

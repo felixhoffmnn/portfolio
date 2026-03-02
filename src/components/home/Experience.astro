@@ -16,15 +16,15 @@ const { item } = Astro.props;
       {item.startDate} - {item.endDate}
     </p>
   </div>
-  <p class="text-sm text-cyan-500">{item.location}</p>
+  <p class="text-sm text-cyan-600 dark:text-cyan-400">{item.location}</p>
   <ul class="list-inside list-disc">
-    {item.description.map((item) => <li>{item}</li>)}
+    {item.description.map((desc) => <li>{desc}</li>)}
   </ul>
   {
     item.skills && (
       <div class="mt-3 flex flex-wrap gap-2">
-        {item.skills.map((item) => (
-          <Badge variant="secondary">{item}</Badge>
+        {item.skills.map((skill) => (
+          <Badge variant="secondary">{skill}</Badge>
         ))}
       </div>
     )

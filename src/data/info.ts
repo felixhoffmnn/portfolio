@@ -128,7 +128,7 @@ export const info = {
       description: ["bundtStift Schulen", "Grundschule und Gymnasium mit kreativem Schwerpunkt"],
     },
   ],
-  aboard: [
+  engagement: [
     {
       name: "Ehrenamtlicher Softwareentwickler",
       location: "Stuttgart & Potsdam - Deutschland",

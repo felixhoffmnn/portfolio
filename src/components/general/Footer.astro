@@ -16,13 +16,13 @@ const iconSize = 25;
     <Button as="a" variant="link" size="none" href="/privacy">Datenschutz</Button>
   </div>
   <div class="grid grid-cols-3 items-center gap-4">
-    <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.github}>
+    <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.github} aria-label="GitHub Profil">
       <Icon name="github" size={iconSize} aria-label="GitHub Icon" />
     </Button>
-    <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.linkedin}>
+    <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.linkedin} aria-label="LinkedIn Profil">
       <Icon name="linkedin" size={iconSize} aria-label="LinkedIn Icon" />
     </Button>
-    <Button as="a" variant="ghost" size="icon-sm" href={`mailto:${info.socialMedia.email}`}>
+    <Button as="a" variant="ghost" size="icon-sm" href={`mailto:${info.socialMedia.email}`} aria-label="E-Mail senden">
       <Icon name="email" size={iconSize} aria-label="Email Icon" />
     </Button>
   </div>

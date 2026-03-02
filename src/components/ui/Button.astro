@@ -6,14 +6,35 @@ interface Props {
   size?: "default" | "sm" | "md" | "lg" | "icon" | "icon-sm" | "none";
   href?: string;
   target?: string;
+  rel?: string;
+  "aria-label"?: string;
 }
 
-const { id, as = "button", variant = "primary", size = "default", href, target } = Astro.props as Props;
+const {
+  id,
+  as = "button",
+  variant = "primary",
+  size = "default",
+  href,
+  target,
+  rel,
+  "aria-label": ariaLabel,
+} = Astro.props as Props;
+const resolvedRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
 ---
 
 {
   as === "a" ? (
-    <a id={id} href={href} target={target} data-slot="button" data-variant={variant} data-size={size}>
+    <a
+      id={id}
+      href={href}
+      target={target}
+      rel={resolvedRel}
+      aria-label={ariaLabel}
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+    >
       <slot />
     </a>
   ) : (
