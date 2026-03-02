@@ -46,7 +46,7 @@ article > blockquote {
   @apply border-l-2 pl-6 italic;
 }
 article > pre {
-  @apply overflow-x-auto rounded-lg p-4 text-sm break-words whitespace-pre-wrap;
+  @apply overflow-x-auto rounded-lg p-4 text-sm whitespace-pre-wrap;
 }
 article > p > img {
   @apply mx-auto rounded-lg;

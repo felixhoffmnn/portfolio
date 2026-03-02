@@ -21,26 +21,15 @@ const iconSize = 25;
         : "text-foreground/70 hover:text-foreground/90 transition-colors no-underline!"}
       href="/projects">Projekte</a
     >
-    <button
-      x-data="{
-                toggle: () => {
-                  if (localStorage.theme === 'dark') {
-                    localStorage.theme = 'light';
-                    document.documentElement.classList.remove('dark');
-                  } else {
-                    localStorage.theme = 'dark';
-                    document.documentElement.classList.add('dark');
-                  }
-                }
-            }"
-      @click="toggle"
-      data-slot="button"
-      data-variant="ghost"
-      data-size="icon-sm"
-      aria-label="Theme Switch"
-    >
+    <button id="theme-toggle" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="Theme Switch">
       <Icon class="dark:hidden" name="moon" size={iconSize} aria-label="Switch to dark mode" />
       <Icon class="hidden dark:block" name="sun" size={iconSize} aria-label="Switch to light mode" />
     </button>
   </nav>
 </header>
+
+<script is:inline>
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
+</script>

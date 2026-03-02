@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: detect-private-key
+  - repo: https://github.com/biomejs/pre-commit
+    rev: 'v2.4.4'
+    hooks:
+      - id: biome-check
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: pnpm exec prettier --write --ignore-unknown
+        language: system
+        files: \.(astro|ts|js|mjs|css|json|md)$
+      - id: astro-check
+        name: astro check
+        entry: pnpm exec astro check
+        language: system
+        files: \.(astro|ts|tsx)$
+        pass_filenames: false
