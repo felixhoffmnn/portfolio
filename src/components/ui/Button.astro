@@ -20,6 +20,9 @@ const {
   rel,
   "aria-label": ariaLabel,
 } = Astro.props as Props;
+if (as === "a" && !href) {
+  throw new Error("Button: `href` is required when `as` is set to `a`.");
+}
 const resolvedRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined);
 ---
 

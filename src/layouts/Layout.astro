@@ -64,19 +64,22 @@ const {
     />
     <script is:inline>
       const getThemePreference = () => {
-        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-          return localStorage.getItem("theme");
-        }
+        try {
+          const stored = localStorage.getItem("theme");
+          if (stored) return stored;
+        } catch (_) {}
         return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       };
       document.documentElement.classList[getThemePreference() === "dark" ? "add" : "remove"]("dark");
 
-      if (typeof localStorage !== "undefined") {
+      try {
         const observer = new MutationObserver(() => {
-          localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+          try {
+            localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+          } catch (_) {}
         });
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-      }
+      } catch (_) {}
     </script>
   </head>
   <body class="mx-auto max-w-(--breakpoint-xl) px-6">

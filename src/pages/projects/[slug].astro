@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   }));
 }
 
-function getStatus(status: string) {
+function getStatus(status: "planned" | "progress" | "done") {
   switch (status) {
     case "planned":
       return "Geplant";
@@ -23,8 +23,6 @@ function getStatus(status: string) {
       return "Aktiv";
     case "done":
       return "Abgeschlossen";
-    default:
-      return "Unbekannt";
   }
 }
 
