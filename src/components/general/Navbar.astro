@@ -28,8 +28,10 @@ const iconSize = 25;
   </nav>
 </header>
 
-<script is:inline>
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
+<script>
+  document.addEventListener("astro:page-load", () => {
+    document.getElementById("theme-toggle")?.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
   });
 </script>
