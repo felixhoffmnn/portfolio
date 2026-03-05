@@ -36,6 +36,11 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --status-progress: 142 71% 45%;
+    --status-done: 220 9% 46%;
+    --status-planned: 217 91% 60%;
+    --highlight: 192 91% 36%;
   }
 
   .dark {
@@ -69,6 +74,11 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
+
+    --status-progress: 142 71% 45%;
+    --status-done: 220 9% 56%;
+    --status-planned: 217 91% 60%;
+    --highlight: 187 92% 69%;
   }
 }
 
@@ -99,6 +109,11 @@
 
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-status-progress: hsl(var(--status-progress));
+  --color-status-done: hsl(var(--status-done));
+  --color-status-planned: hsl(var(--status-planned));
+  --color-highlight: hsl(var(--highlight));
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
