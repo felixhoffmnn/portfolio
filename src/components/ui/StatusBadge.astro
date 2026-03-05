@@ -1,0 +1,20 @@
+---
+import type { ProjectStatus } from "@/utils/status";
+import { statusConfig } from "@/utils/status";
+
+interface Props {
+  status: ProjectStatus;
+}
+
+const { status } = Astro.props;
+const { label, colorClass } = statusConfig[status];
+---
+
+<div
+  class:list={[
+    "absolute top-2 right-2 z-10 rounded-md px-2 py-1 text-xs font-medium text-white shadow-md backdrop-blur-sm",
+    colorClass,
+  ]}
+>
+  {label}
+</div>

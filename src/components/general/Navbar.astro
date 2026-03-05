@@ -1,9 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import { info } from "@/data/info";
+import { ICON_SIZE } from "@/utils/constants";
 import { createLogo } from "@/utils/logo";
-
-const iconSize = 25;
 ---
 
 <header
@@ -22,8 +21,8 @@ const iconSize = 25;
       href="/projects">Projekte</a
     >
     <button id="theme-toggle" data-slot="button" data-variant="ghost" data-size="icon-sm" aria-label="Theme Switch">
-      <Icon class="dark:hidden" name="moon" size={iconSize} aria-label="Switch to dark mode" />
-      <Icon class="hidden dark:block" name="sun" size={iconSize} aria-label="Switch to light mode" />
+      <Icon class="dark:hidden" name="moon" size={ICON_SIZE} aria-hidden="true" />
+      <Icon class="hidden dark:block" name="sun" size={ICON_SIZE} aria-hidden="true" />
     </button>
   </nav>
 </header>

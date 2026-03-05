@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageHeader from "@/components/general/PageHeader.astro";
 import Layout from "@/layouts/Layout.astro";
+import { statusConfig } from "@/utils/status";
 
 export async function getStaticPaths() {
   const projectEntries = await getCollection("projects", ({ data }) => {
@@ -13,17 +14,6 @@ export async function getStaticPaths() {
     params: { slug: post.slug },
     props: { entry: post },
   }));
-}
-
-function getStatus(status: "planned" | "progress" | "done") {
-  switch (status) {
-    case "planned":
-      return "Geplant";
-    case "progress":
-      return "Aktiv";
-    case "done":
-      return "Abgeschlossen";
-  }
 }
 
 interface Props {
@@ -68,7 +58,7 @@ const { Content } = await entry.render();
       </div>
       <div>
         <dt class="text-foreground block text-lg font-semibold uppercase">Projektstatus</dt>
-        <dd class="text-muted-foreground">{getStatus(data.status)}</dd>
+        <dd class="text-muted-foreground">{statusConfig[data.status].label}</dd>
       </div>
     </dl>
     <article class="prose dark:prose-invert lg:col-span-2">

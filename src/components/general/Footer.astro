@@ -2,8 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Button from "@/components/ui/Button.astro";
 import { info } from "@/data/info";
-
-const iconSize = 25;
+import { ICON_SIZE } from "@/utils/constants";
 ---
 
 <footer
@@ -17,13 +16,13 @@ const iconSize = 25;
   </div>
   <div class="grid grid-cols-3 items-center gap-4">
     <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.github} aria-label="GitHub Profil">
-      <Icon name="github" size={iconSize} aria-label="GitHub Icon" />
+      <Icon name="github" size={ICON_SIZE} aria-hidden="true" />
     </Button>
     <Button as="a" variant="ghost" size="icon-sm" href={info.socialMedia.linkedin} aria-label="LinkedIn Profil">
-      <Icon name="linkedin" size={iconSize} aria-label="LinkedIn Icon" />
+      <Icon name="linkedin" size={ICON_SIZE} aria-hidden="true" />
     </Button>
     <Button as="a" variant="ghost" size="icon-sm" href={`mailto:${info.socialMedia.email}`} aria-label="E-Mail senden">
-      <Icon name="email" size={iconSize} aria-label="Email Icon" />
+      <Icon name="email" size={ICON_SIZE} aria-hidden="true" />
     </Button>
   </div>
 </footer>

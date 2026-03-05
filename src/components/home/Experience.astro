@@ -16,7 +16,7 @@ const { item } = Astro.props;
       {item.startDate} - {item.endDate}
     </p>
   </div>
-  <p class="text-sm text-cyan-600 dark:text-cyan-400">{item.location}</p>
+  <p class="text-highlight text-sm">{item.location}</p>
   <ul class="list-inside list-disc">
     {item.description.map((desc) => <li>{desc}</li>)}
   </ul>

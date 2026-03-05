@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import StatusBadge from "@/components/ui/StatusBadge.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -19,22 +20,7 @@ const {
 
 <article class="group bg-card relative aspect-4/3 w-full overflow-hidden rounded-xl border shadow-xl">
   <a href={`/${collection}/${slug}`} aria-label={`Projekt: ${title}`}>
-    {
-      status && (
-        <div
-          class:list={[
-            "absolute top-2 right-2 z-10 rounded-md px-2 py-1 text-xs font-medium shadow-md backdrop-blur-sm",
-            status === "progress" && "bg-green-500/90 text-white",
-            status === "done" && "bg-gray-500/90 text-white",
-            status === "planned" && "bg-blue-500/90 text-white",
-          ]}
-        >
-          {status === "progress" && "Aktiv"}
-          {status === "done" && "Abgeschlossen"}
-          {status === "planned" && "Geplant"}
-        </div>
-      )
-    }
+    {status && <StatusBadge status={status} />}
     <Image
       src={thumbnail}
       class="size-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
