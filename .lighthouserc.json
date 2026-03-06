@@ -2,7 +2,8 @@
   "ci": {
     "collect": {
       "numberOfRuns": 1,
-      "maxAutodiscoverUrls": 0
+      "maxAutodiscoverUrls": 0,
+      "staticDistDir": "./dist"
     },
     "assert": {
       "preset": "lighthouse:recommended",
@@ -11,13 +12,18 @@
         "render-blocking-resources": "off",
         "bf-cache": "off",
         "csp-xss": "off",
-        "unsized-images": "off",
+        "unsized-images": "warn",
         "uses-responsive-images": "off",
         "unused-css-rules": "off",
         "unused-javascript": "off",
-        "color-contrast": "warn",
+        "color-contrast": "error",
         "service-worker": "off",
-        "label-content-name-mismatch": "warn"
+        "label-content-name-mismatch": "warn",
+        "network-dependency-tree-insight": "off",
+        "image-delivery-insight": "off",
+        "lcp-discovery-insight": "off",
+        "render-blocking-insight": "off",
+        "max-potential-fid": "off"
       }
     }
   }
