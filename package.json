@@ -22,9 +22,11 @@
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/outfit": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
+    "@unpic/placeholder": "^0.1.2",
     "astro": "^5.18.0",
     "astro-icon": "^1.1.5",
     "astro-seo": "^1.1.0",
+    "blurhash": "^2.0.5",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18"

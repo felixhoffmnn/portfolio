@@ -1,7 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import { type CollectionEntry, getCollection } from "astro:content";
 import PageHeader from "@/components/general/PageHeader.astro";
+import BlurImage from "@/components/ui/BlurImage.astro";
 import Layout from "@/layouts/Layout.astro";
 import { statusConfig } from "@/utils/status";
 
@@ -38,13 +38,12 @@ const { Content } = await entry.render();
     liveUrl={data.liveUrl}
     docsUrl={data.docsUrl}
   />
-  <Image
-    class="aspect-4/3 size-full overflow-hidden rounded-xl object-cover object-center brightness-90 sm:aspect-2/1"
+  <BlurImage
     src={data.thumbnail}
-    loading="eager"
-    width={800}
-    quality="high"
     alt={data.title}
+    width={800}
+    loading="eager"
+    class="aspect-4/3 overflow-hidden rounded-xl brightness-90 sm:aspect-2/1"
   />
   <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
     <dl class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
