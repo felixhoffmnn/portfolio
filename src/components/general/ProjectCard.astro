@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import BlurImage from "@/components/ui/BlurImage.astro";
 import StatusBadge from "@/components/ui/StatusBadge.astro";
 
 interface Props {
@@ -21,13 +21,13 @@ const {
 <article class="group bg-card relative aspect-4/3 w-full overflow-hidden rounded-xl border shadow-xl">
   <a href={`/${collection}/${slug}`} aria-label={`Projekt: ${title}`}>
     {status && <StatusBadge status={status} />}
-    <Image
+    <BlurImage
       src={thumbnail}
-      class="size-full object-cover object-center brightness-90 transition duration-300 group-hover:scale-105"
-      loading={lazy ? "lazy" : "eager"}
-      width={600}
-      quality="high"
       alt={`Preview for ${title}`}
+      width={600}
+      loading={lazy ? "lazy" : "eager"}
+      class="size-full"
+      imgClass="brightness-90 transition duration-300 group-hover:scale-105"
     />
     <div class="absolute bottom-0 left-0 w-full bg-black/30 p-4 backdrop-blur-sm">
       <h3 class="mr-2 text-xl font-semibold text-white">{title}</h3>
