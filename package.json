@@ -8,7 +8,7 @@
   "packageManager": "pnpm@10.28.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "wrangler dev",
     "astro": "astro",
     "check": "astro check && tsc --noEmit && biome check",
