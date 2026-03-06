@@ -1,9 +1,8 @@
 {
   "name": "portfolio",
   "description": "My personal portfolio website built with Astro and Tailwind CSS.",
-  "repository": "felixhoffmnn/portfolio",
-  "private": false,
-  "version": "0.2.1",
+  "private": true,
+  "version": "0.0.0",
   "author": "Felix Hoffmann <post@felix-hoffmann.dev>",
   "packageManager": "pnpm@10.28.1",
   "scripts": {
@@ -11,7 +10,7 @@
     "build": "astro build",
     "preview": "wrangler dev",
     "astro": "astro",
-    "check": "astro check && tsc --noEmit && biome check",
+    "check": "astro check && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "biome check",
