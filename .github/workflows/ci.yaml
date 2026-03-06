@@ -40,6 +40,8 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Sync Astro types
+        run: pnpm astro sync
       - name: Type check
         run: pnpm tsc --noEmit
       - name: Build site
