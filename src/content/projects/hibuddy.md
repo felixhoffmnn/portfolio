@@ -1,14 +1,14 @@
 ---
-title: "HiBuddy"
-description: "Sprachassistent für den tagtäglichen Gebrauch"
-status: "done"
-type: "Vorlesungsprojekt"
+title: HiBuddy
+description: Sprachassistent für den tagtäglichen Gebrauch
+status: done
+type: Vorlesungsprojekt
 featured: true
 year: 2022
 pubDatetime: 2023-03-26
-thumbnail: "@/assets/images/amazon_alexa.jpg"
-githubUrl: "https://github.com/felixhoffmnn/aswe"
-docsUrl: "https://felixhoffmnn.github.io/aswe/"
+thumbnail: '@/assets/images/amazon_alexa.jpg'
+githubUrl: https://github.com/felixhoffmnn/aswe
+docsUrl: https://felixhoffmnn.github.io/aswe/
 ---
 
 HiBuddy ist ein Sprachassistent, der dir dabei helfen soll, den Alltag zu meistern. Er kann beispielsweise helfen, deine Einkäufe zu planen, dir den Wetterbericht für die nächsten Tage mitteilen oder dir die neuesten Nachrichten vorlesen.

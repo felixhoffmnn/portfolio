@@ -13,17 +13,30 @@ repos:
       - id: check-added-large-files
         args: [--maxkb=1024]
       - id: detect-private-key
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.22
+    hooks:
+      - id: mdformat
+        args:
+          - --wrap=no
+          - --number
+        additional_dependencies:
+          - mdformat-gfm # GitHub Flavored Markdown
+          - mdformat-tables # Better table formatting
+          - mdformat-front-matters # Support for YAML front matter
+          - mdformat-footnote # Better footnote formatting
+          - mdformat-simple-breaks # Better handling thematic breaks
   - repo: https://github.com/biomejs/pre-commit
-    rev: 'v2.4.4'
+    rev: "v2.4.4"
     hooks:
       - id: biome-check
   - repo: local
     hooks:
       - id: prettier
-        name: prettier
-        entry: pnpm exec prettier --write --ignore-unknown
+        name: Prettier Format
+        entry: pnpm exec prettier --write
         language: system
-        files: \.(astro|ts|js|mjs|css|json|md)$
+        types_or: [astro, json, ts, javascript]
       - id: astro-check
         name: astro check
         entry: pnpm exec astro check

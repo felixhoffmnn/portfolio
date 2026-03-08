@@ -1,13 +1,13 @@
 ---
-title: "GePart"
-description: "Parteiklassifikation mittels Machine Learning"
-status: "done"
-type: "Studienarbeit"
+title: GePart
+description: Parteiklassifikation mittels Machine Learning
+status: done
+type: Studienarbeit
 featured: true
 year: 2023
 pubDatetime: 2023-03-26
-thumbnail: "@/assets/images/deutscher_bundestag.jpg"
-githubUrl: "https://github.com/felixhoffmnn/gepart"
+thumbnail: '@/assets/images/deutscher_bundestag.jpg'
+githubUrl: https://github.com/felixhoffmnn/gepart
 ---
 
 **GePart** ist ein deutsches Parteiklassifizierungsmodell, das in der Lage ist, die wahrscheinlichste Partei für einen gegebenen Text vorherzusagen. Dieses Repository ist Teil eines Studentenprojekts an der [Dualen Hochschule Baden-Württemberg](https://www.dhbw.de/startseite) während des 5. und 6. Semesters meines Bachelorstudiums in Informatik.
