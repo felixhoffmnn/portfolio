@@ -27,11 +27,11 @@ if (showRecentAndActive) {
   // 4. Get all active projects (status: "progress")
   const activeProjects = eligibleProjects.filter((p) => p.data.status === "progress");
 
-  // 5. Combine and deduplicate using Set with slug as unique key
-  const displayProjectSlugs = new Set([...activeProjects.map((p) => p.slug), ...lastTwoProjects.map((p) => p.slug)]);
+  // 5. Combine and deduplicate using Set with id as unique key
+  const displayProjectIds = new Set([...activeProjects.map((p) => p.id), ...lastTwoProjects.map((p) => p.id)]);
 
   // 6. Filter to get final projects, maintaining sort order
-  displayProjects = sortedProjects.filter((p) => displayProjectSlugs.has(p.slug));
+  displayProjects = sortedProjects.filter((p) => displayProjectIds.has(p.id));
 } else if (onlyFeatured) {
   displayProjects = projects.filter((project) => project.data.featured);
 }
