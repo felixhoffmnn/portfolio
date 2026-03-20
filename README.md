@@ -6,8 +6,8 @@ Personal portfolio website for Felix Hoffmann showcasing professional experience
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) 5 - Static site generator
-- [Tailwind CSS](https://tailwindcss.com/) 4 - Styling
+- [Astro](https://astro.build/) - Static site generator
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
 - [Alpine.js](https://alpinejs.dev/) - Lightweight interactivity
 
