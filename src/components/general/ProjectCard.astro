@@ -12,14 +12,14 @@ const {
   project: {
     data: { title, description, thumbnail, status },
     collection,
-    slug,
+    id,
   },
   lazy,
 } = Astro.props;
 ---
 
 <article class="group bg-card relative aspect-4/3 w-full overflow-hidden rounded-xl border shadow-xl">
-  <a href={`/${collection}/${slug}`} aria-label={title}>
+  <a href={`/${collection}/${id}`} aria-label={title}>
     {status && <StatusBadge status={status} />}
     <BlurImage
       src={thumbnail}

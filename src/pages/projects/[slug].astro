@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import PageHeader from "@/components/general/PageHeader.astro";
 import BlurImage from "@/components/ui/BlurImage.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   });
 
   return projectEntries.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { entry: post },
   }));
 }
@@ -25,7 +25,7 @@ const {
   entry: { data },
 } = Astro.props;
 
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout

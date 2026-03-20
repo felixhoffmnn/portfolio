@@ -9,7 +9,7 @@ import remarkMath from "remark-math";
 export default defineConfig({
   site: "https://felix-hoffmann.dev",
   output: "static",
-  adapter: cloudflare({ imageService: "compile" }),
+  adapter: cloudflare({ imageService: "compile", prerenderEnvironment: "node" }),
   prefetch: {
     prefetchAll: true,
   },
