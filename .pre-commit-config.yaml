@@ -27,7 +27,7 @@ repos:
           - mdformat-footnote # Better footnote formatting
           - mdformat-simple-breaks # Better handling thematic breaks
   - repo: https://github.com/biomejs/pre-commit
-    rev: "v2.4.4"
+    rev: "v2.4.14"
     hooks:
       - id: biome-check
   - repo: local
