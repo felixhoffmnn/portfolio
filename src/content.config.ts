@@ -15,6 +15,20 @@ const projects = defineCollection({
         year: z.number(),
         featured: z.boolean(),
         thumbnail: image(),
+        thumbnailAttribution: z
+          .object({
+            author: z.string(),
+            authorUrl: z.url(),
+            source: z.string(),
+            sourceUrl: z.url(),
+            license: z
+              .object({
+                name: z.string(),
+                url: z.url(),
+              })
+              .optional(),
+          })
+          .optional(),
         githubUrl: z.string().optional(),
         liveUrl: z.string().optional(),
         docsUrl: z.string().optional(),
