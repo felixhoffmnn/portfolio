@@ -7,6 +7,14 @@ featured: false
 pubDatetime: 2023-03-26
 year: 2022
 thumbnail: '@/assets/images/auto_auf_straße.jpg'
+thumbnailAttribution:
+  author: Alessio Lin
+  authorUrl: https://unsplash.com/@lin_alessio?utm_source=felix_hoffmann_portfolio&utm_medium=referral
+  source: Unsplash
+  sourceUrl: https://unsplash.com/photos/-6LYjG0H32E?utm_source=felix_hoffmann_portfolio&utm_medium=referral
+  license:
+    name: CC0
+    url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 githubUrl: https://github.com/felixhoffmnn/digitale-bildverarbeitung
 docsUrl: https://digitale-bildverarbeitung.readthedocs.io/en/latest/
 ---

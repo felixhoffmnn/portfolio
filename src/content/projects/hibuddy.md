@@ -7,6 +7,11 @@ featured: true
 year: 2022
 pubDatetime: 2023-03-26
 thumbnail: '@/assets/images/amazon_alexa.jpg'
+thumbnailAttribution:
+  author: Andres Urena
+  authorUrl: https://unsplash.com/@andresurena?utm_source=felix_hoffmann_portfolio&utm_medium=referral
+  source: Unsplash
+  sourceUrl: https://unsplash.com/photos/amazon-echo-dot-tsBropDpnwE?utm_source=felix_hoffmann_portfolio&utm_medium=referral
 githubUrl: https://github.com/felixhoffmnn/aswe
 docsUrl: https://felixhoffmnn.github.io/aswe/
 ---
@@ -17,7 +22,7 @@ HiBuddy ist ein Sprachassistent, der dir dabei helfen soll, den Alltag zu meiste
 
 Die Architektur des Projekts unterteilt sich in vier Schichten: den User Interaction Layer, den Core Layer, den Business Logic Layer und den API Layer.
 
-![Architektur](../../assets/mermaid/hibuddy.svg)
+![Architektur](/assets/mermaid/hibuddy.svg)
 
 In der User Interaction Layer werden die Spracheingaben des Nutzers in Text umgewandelt, und die Textausgaben des Systems werden in Sprache umgewandelt. Diese Schicht ist für die Kommunikation mit dem Nutzer verantwortlich. Die Spracheingaben werden an den Core Layer weitergeleitet, und die Textausgaben werden vom Core Layer entgegengenommen.
 

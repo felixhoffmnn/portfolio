@@ -38,13 +38,51 @@ const { Content } = await render(entry);
     liveUrl={data.liveUrl}
     docsUrl={data.docsUrl}
   />
-  <BlurImage
-    src={data.thumbnail}
-    alt={data.title}
-    width={800}
-    loading="eager"
-    class="aspect-4/3 overflow-hidden rounded-xl brightness-90 sm:aspect-2/1"
-  />
+  <figure class="space-y-2">
+    <BlurImage
+      src={data.thumbnail}
+      alt={data.title}
+      width={800}
+      loading="eager"
+      class="aspect-4/3 overflow-hidden rounded-xl brightness-90 sm:aspect-2/1"
+    />
+    {
+      data.thumbnailAttribution && (
+        <figcaption class="text-muted-foreground text-sm">
+          Foto von{" "}
+          <a
+            href={data.thumbnailAttribution.authorUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline underline-offset-4"
+            set:text={data.thumbnailAttribution.author}
+          />{" "}
+          auf{" "}
+          <a
+            href={data.thumbnailAttribution.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline underline-offset-4"
+            set:text={data.thumbnailAttribution.source}
+          />
+          {data.thumbnailAttribution.license && (
+            <>
+              {" "}
+              (
+              <a
+                href={data.thumbnailAttribution.license.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline underline-offset-4"
+                set:text={data.thumbnailAttribution.license.name}
+              />
+              )
+            </>
+          )}
+        </figcaption>
+      )
+    }
+  </figure>
   <section class="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
     <dl class="grid grid-cols-1 content-start gap-8 sm:grid-cols-2 md:grid-cols-1">
       <div>

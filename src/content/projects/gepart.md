@@ -7,6 +7,11 @@ featured: true
 year: 2023
 pubDatetime: 2023-03-26
 thumbnail: '@/assets/images/deutscher_bundestag.jpg'
+thumbnailAttribution:
+  author: Tim Simon
+  authorUrl: https://unsplash.com/@tim_si?utm_source=felix_hoffmann_portfolio&utm_medium=referral
+  source: Unsplash
+  sourceUrl: https://unsplash.com/photos/a-glass-building-with-a-german-flag-on-top-of-it--eVHD4G6tCQ?utm_source=felix_hoffmann_portfolio&utm_medium=referral
 githubUrl: https://github.com/felixhoffmnn/gepart
 ---
 

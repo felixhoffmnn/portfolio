@@ -131,7 +131,7 @@ export const info = {
   engagement: [
     {
       name: "Ehrenamtlicher Softwareentwickler",
-      location: "Stuttgart & Potsdam - Deutschland",
+      location: "Stuttgart - Deutschland",
       startDate: "2023",
       endDate: "Heute",
       description: [
@@ -143,7 +143,7 @@ export const info = {
     },
     {
       name: "Bildungs- und Begegnungsreise mit Workcamp",
-      location: "Indien",
+      location: "Coimbatore, Vijayawada, Hyderabad, Mumbai - Indien",
       startDate: "2018",
       endDate: "2018",
       description: [
