@@ -55,18 +55,16 @@ const { Content } = await render(entry);
             target="_blank"
             rel="noopener noreferrer"
             class="underline underline-offset-4"
-          >
-            {data.thumbnailAttribution.author}
-          </a>{" "}
+            set:text={data.thumbnailAttribution.author}
+          />{" "}
           auf{" "}
           <a
             href={data.thumbnailAttribution.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="underline underline-offset-4"
-          >
-            {data.thumbnailAttribution.source}
-          </a>
+            set:text={data.thumbnailAttribution.source}
+          />
           {data.thumbnailAttribution.license && (
             <>
               {" "}
@@ -76,9 +74,8 @@ const { Content } = await render(entry);
                 target="_blank"
                 rel="noopener noreferrer"
                 class="underline underline-offset-4"
-              >
-                {data.thumbnailAttribution.license.name}
-              </a>
+                set:text={data.thumbnailAttribution.license.name}
+              />
               )
             </>
           )}
