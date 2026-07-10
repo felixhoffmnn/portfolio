@@ -6,27 +6,29 @@ interface Props {
 }
 
 const { item } = Astro.props;
-const metadata = [item.venue, item.date].filter(Boolean).join(" · ");
 ---
 
 <div class="grid gap-2">
-  <h3 class="text-xl font-semibold">
-    {
-      item.url ? (
-        <a
-          class="group no-underline!"
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${item.title} (öffnet in einem neuen Tab)`}
-        >
-          <span class="underline-offset-4 group-hover:underline">{item.title}</span>
-        </a>
-      ) : (
-        item.title
-      )
-    }
-  </h3>
-  <p class="text-highlight text-sm">{metadata}</p>
-  <p class="text-muted-foreground text-sm">{item.authors.join(", ")}</p>
+  <div class="flex flex-wrap items-center justify-between gap-1">
+    <h3 class="text-xl font-semibold">
+      {
+        item.url ? (
+          <a
+            class="group no-underline!"
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.title} (öffnet in einem neuen Tab)`}
+          >
+            <span class="underline-offset-4 group-hover:underline">{item.title}</span>
+          </a>
+        ) : (
+          item.title
+        )
+      }
+    </h3>
+    {item.date && <p class="text-muted-foreground text-sm">{item.date}</p>}
+  </div>
+  <p class="text-highlight text-sm">{item.venue}</p>
+  <p class="text-sm">{item.authors.join(", ")}</p>
 </div>
