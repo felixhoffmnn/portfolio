@@ -1,0 +1,17 @@
+---
+import Publication from "@/components/home/Publication.astro";
+import type { IPublication } from "@/types";
+
+interface Props {
+  items: IPublication[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="flex flex-col items-start justify-between gap-8 sm:flex-row md:gap-4">
+  <h2 class="w-60 text-xl uppercase">Publikationen</h2>
+  <div class="w-full space-y-12">
+    {items.map((item) => <Publication item={item} />)}
+  </div>
+</section>

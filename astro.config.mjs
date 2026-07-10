@@ -3,7 +3,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
-import remarkMath from "remark-math";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,7 +17,6 @@ export default defineConfig({
       theme: "one-dark-pro",
       wrap: true,
     },
-    remarkPlugins: [remarkMath],
   },
   vite: {
     plugins: [tailwindcss()],
