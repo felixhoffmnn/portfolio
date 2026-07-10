@@ -4,10 +4,17 @@ export const info = {
   twitterHandle: "@felixhoffmnn",
   jobDescription: "M.Sc. Data Engineering am Hasso-Plattner-Institut",
   about: [
-    "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und arbeite nebenbei als studentische Hilfskraft und Tutor am Lehrstuhl für Data-Intensive Internet Computing. Zuvor habe ich meinen Bachelor in Informatik an der DHBW Stuttgart absolviert und war parallel bei Hewlett Packard Enterprise angestellt.",
+    "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und arbeite nebenbei als Werksstudent bei QuantumBasel. Zuvor war ich als studentische Hilfskraft und Tutor am Lehrstuhl für Data-Intensive Internet Computing tätig. Meinen Bachelor in Informatik habe ich an der DHBW Stuttgart absolviert und war parallel bei Hewlett Packard Enterprise angestellt.",
     "Meine Schwerpunkte liegen in der Daten- und Backend-Entwicklung (Python, Django, SQL, ClickHouse, Polars), Frontend-Entwicklung (TypeScript, React, Figma) sowie UI/UX-Konzeption. Darüber hinaus habe ich Erfahrung mit DevOps und Infrastruktur (Containerisierung, Ansible, CI/CD, Monitoring) sowie im Bereich Networking und Homelab-Betrieb (Virtualisierung, Container-Deployments, Netzwerksegmentierung). Zusätzlich bringe ich Kenntnisse in Projektmanagement (Scrum, Design Thinking), technischer Kommunikation und analytischem Arbeiten mit.",
   ],
   experience: [
+    {
+      name: "Werksstudent",
+      location: "Arlesheim, Basel-Landschaft - Schweiz · Remote",
+      startDate: "Feb 2026",
+      endDate: "Heute",
+      description: ["QuantumBasel"],
+    },
     {
       name: "Tutor",
       location: "Potsdam - Deutschland",
@@ -88,6 +95,27 @@ export const info = {
         "Die Erkenntnisse wurden in einer Tabelle und Projektarbeit dokumentiert.",
       ],
       skills: ["Monitoring", "Open Source"],
+    },
+  ],
+  publications: [
+    {
+      title: "The Fragile Privacy of Encrypted Client Hello: Quantifying Systemic Gaps in a Centralized Ecosystem",
+      venue: "IFIP Networking Conference",
+      date: "24.–27. Mai 2026",
+      authors: ["Jannis Hajda", "Bengin Oezdil", "John Bauer", "Felix Hoffmann", "Vaibhav Bajpai"],
+      url: "https://dl.ifip.org/db/conf/networking/networking2026/1571261276.pdf",
+    },
+    {
+      title: "The Future of DNS Privacy: A Comparison of DNS over QUIC and DNS over HTTP/3",
+      venue: "Passive and Active Measurement Conference",
+      date: "10. März 2026",
+      authors: ["Philipp Bielefeld", "Felix Hoffmann", "Steffen Sasalla", "Vasilis Ververis", "Vaibhav Bajpai"],
+      url: "https://doi.org/10.1007/978-3-032-18268-5_10",
+    },
+    {
+      title: "From robots.txt to ai.txt: Mapping the Evolution of Web Permissions in the Age of AI",
+      venue: "ACM SIGCOMM Computer Communication Review",
+      authors: ["Felix Hoffmann", "Tobias Goergens", "Sonal Khosla", "Vaibhav Bajpai"],
     },
   ],
   education: [

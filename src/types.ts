@@ -11,4 +11,12 @@ interface IExperiences {
   details: IExperience[];
 }
 
-export type { IExperience, IExperiences };
+interface IPublication {
+  title: string;
+  venue: string;
+  date?: string;
+  authors: string[];
+  url?: string;
+}
+
+export type { IExperience, IExperiences, IPublication };
