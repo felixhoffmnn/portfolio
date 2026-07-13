@@ -4,11 +4,14 @@
   "private": true,
   "version": "0.0.0",
   "author": "Felix Hoffmann <post@felix-hoffmann.dev>",
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@11.10.0",
+  "engines": {
+    "node": ">=26 <27"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "wrangler dev",
+    "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
     "format": "prettier --write .",

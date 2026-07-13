@@ -13,10 +13,7 @@ export default defineConfig({
     prefetchAll: true,
   },
   markdown: {
-    shikiConfig: {
-      theme: "one-dark-pro",
-      wrap: true,
-    },
+    syntaxHighlight: false,
   },
   vite: {
     plugins: [tailwindcss()],
@@ -27,4 +24,25 @@ export default defineConfig({
       iconDir: "src/assets/icons",
     }),
   ],
+  security: {
+    csp: {
+      scriptDirective: {
+        resources: ["'self'", "https://static.cloudflareinsights.com"],
+      },
+      styleDirective: {
+        resources: ["'self'"],
+      },
+      directives: [
+        "default-src 'self'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        "connect-src 'self' https://cloudflareinsights.com",
+        "frame-src 'none'",
+        "object-src 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        "upgrade-insecure-requests",
+      ],
+    },
+  },
 });
