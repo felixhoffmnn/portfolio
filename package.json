@@ -27,8 +27,6 @@
     "@tailwindcss/vite": "^4.3.2",
     "@unpic/placeholder": "^0.1.2",
     "astro": "^7.0.6",
-    "astro-icon": "^1.1.5",
-    "astro-seo": "^1.1.0",
     "blurhash": "^2.0.5",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.3.2"

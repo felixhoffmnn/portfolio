@@ -2,7 +2,6 @@ export const info = {
   baseUrl: "https://felix-hoffmann.dev",
   name: "Felix Hoffmann",
   twitterHandle: "@felixhoffmnn",
-  jobDescription: "M.Sc. Data Engineering am Hasso-Plattner-Institut",
   about: [
     "Ich bin Master-Student im Bereich Data Engineering am Hasso-Plattner-Institut in Potsdam und arbeite nebenbei als Werksstudent bei QuantumBasel. Zuvor war ich als studentische Hilfskraft und Tutor am Lehrstuhl für Data-Intensive Internet Computing tätig. Meinen Bachelor in Informatik habe ich an der DHBW Stuttgart absolviert und war parallel bei Hewlett Packard Enterprise angestellt.",
     "Meine Schwerpunkte liegen in der Daten- und Backend-Entwicklung (Python, Django, SQL, ClickHouse, Polars), Frontend-Entwicklung (TypeScript, React, Figma) sowie UI/UX-Konzeption. Darüber hinaus habe ich Erfahrung mit DevOps und Infrastruktur (Containerisierung, Ansible, CI/CD, Monitoring) sowie im Bereich Networking und Homelab-Betrieb (Virtualisierung, Container-Deployments, Netzwerksegmentierung). Zusätzlich bringe ich Kenntnisse in Projektmanagement (Scrum, Design Thinking), technischer Kommunikation und analytischem Arbeiten mit.",
