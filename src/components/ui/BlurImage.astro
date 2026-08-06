@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { generateBlurhashCss } from "@/utils/blurhash";
+import { generateBlurhashDataUri } from "@/utils/blurhash";
 
 interface Props {
   src: ImageMetadata;
@@ -14,19 +14,17 @@ interface Props {
 
 const { src, alt, width, loading = "lazy", quality = "high", class: className, imgClass } = Astro.props;
 
-const blurhashCss = await generateBlurhashCss(src);
+const placeholderSrc = await generateBlurhashDataUri(src);
 ---
 
-<div
-  class:list={["relative overflow-hidden", className]}
-  style={`background-image:${blurhashCss};background-size:cover`}
->
+<div class:list={["relative overflow-hidden", className]}>
+  <img src={placeholderSrc} alt="" aria-hidden="true" class="absolute inset-0 size-full object-cover" />
   <Image
     src={src}
     alt={alt}
     width={width}
     quality={quality}
     loading={loading}
-    class:list={["size-full object-cover object-center text-transparent", imgClass]}
+    class:list={["relative size-full object-cover object-center text-transparent", imgClass]}
   />
 </div>

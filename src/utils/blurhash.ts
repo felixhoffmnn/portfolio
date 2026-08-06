@@ -1,8 +1,8 @@
-import { blurhashToCssGradientString } from "@unpic/placeholder";
+import { blurhashToDataUri } from "@unpic/placeholder";
 import { encode } from "blurhash";
 import sharp from "sharp";
 
-export async function generateBlurhashCss(image: ImageMetadata): Promise<string> {
+export async function generateBlurhashDataUri(image: ImageMetadata): Promise<string> {
   // fsPath is available at runtime via Astro's Proxy but not in the type definition
   const fsPath = (image as ImageMetadata & { fsPath: string }).fsPath;
   const size = 32;
@@ -14,5 +14,5 @@ export async function generateBlurhashCss(image: ImageMetadata): Promise<string>
 
   const hash = encode(new Uint8ClampedArray(data), info.width, info.height, 4, 4);
 
-  return blurhashToCssGradientString(hash);
+  return blurhashToDataUri(hash);
 }

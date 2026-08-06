@@ -6,10 +6,6 @@ interface IExperience {
   description: string[];
   skills?: string[];
 }
-interface IExperiences {
-  title: string;
-  details: IExperience[];
-}
 
 interface IPublication {
   title: string;
@@ -19,4 +15,4 @@ interface IPublication {
   url?: string;
 }
 
-export type { IExperience, IExperiences, IPublication };
+export type { IExperience, IPublication };

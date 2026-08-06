@@ -5,12 +5,11 @@ import ProjectCard from "./ProjectCard.astro";
 const projects = await getCollection("projects");
 
 interface Props {
-  onlyFeatured?: boolean;
   showRecentAndActive?: boolean;
   lazy: boolean;
 }
 
-const { onlyFeatured, showRecentAndActive, lazy } = Astro.props;
+const { showRecentAndActive, lazy } = Astro.props;
 
 let displayProjects = projects;
 
@@ -32,8 +31,6 @@ if (showRecentAndActive) {
 
   // 6. Filter to get final projects, maintaining sort order
   displayProjects = sortedProjects.filter((p) => displayProjectIds.has(p.id));
-} else if (onlyFeatured) {
-  displayProjects = projects.filter((project) => project.data.featured);
 }
 
 const hasProjects = displayProjects.length > 0;

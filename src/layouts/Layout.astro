@@ -4,7 +4,6 @@ import "@fontsource-variable/outfit";
 
 import "@/styles/global.css";
 
-import { SEO } from "astro-seo";
 import laptopImage from "@/assets/images/laptop.jpg";
 import Footer from "@/components/general/Footer.astro";
 import Navbar from "@/components/general/Navbar.astro";
@@ -17,49 +16,35 @@ interface Props {
 const {
   frontmatter: { title, description, ogImageUrl, label },
 } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, info.baseUrl).href;
+const socialImage = ogImageUrl ?? laptopImage.src;
 ---
 
 <html lang="de">
   <head>
-    <SEO
-      title={title}
-      titleTemplate={`%s - ${info.name}`}
-      titleDefault={`${info.name} - Portfolio`}
-      description={description}
-      charset="UTF-8"
-      openGraph={{
-        basic: {
-          type: "website",
-          url: info.baseUrl,
-          title: info.name,
-          image: ogImageUrl ? ogImageUrl : laptopImage.src,
-        },
-        optional: {
-          description: description,
-          locale: "de_DE",
-          siteName: info.name,
-        },
-      }}
-      twitter={{
-        card: "summary_large_image",
-        site: info.twitterHandle,
-        creator: info.twitterHandle,
-        title: info.name,
-        description: description,
-        image: ogImageUrl,
-      }}
-      extend={{
-        link: [
-          { rel: "icon", type: "image/png", href: "/favicon.png" },
-          { rel: "sitemap", href: "/sitemap-index.xml" },
-        ],
-        meta: [
-          { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-          { name: "generator", content: Astro.generator },
-          { name: "theme-color", content: "#ffffff" },
-        ],
-      }}
-    />
+    <title>{title ? `${title} - ${info.name}` : `${info.name} - Portfolio`}</title>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={info.name} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:url" content={info.baseUrl} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={info.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={info.twitterHandle} />
+    <meta name="twitter:title" content={info.name} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:creator" content={info.twitterHandle} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#ffffff" />
     <script is:inline>
       const getThemePreference = () => {
         try {
@@ -69,15 +54,6 @@ const {
         return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       };
       document.documentElement.classList[getThemePreference() === "dark" ? "add" : "remove"]("dark");
-
-      try {
-        const observer = new MutationObserver(() => {
-          try {
-            localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
-          } catch (_) {}
-        });
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-      } catch (_) {}
     </script>
   </head>
   <body class="mx-auto max-w-(--breakpoint-xl) px-6">

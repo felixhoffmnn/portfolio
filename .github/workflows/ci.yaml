@@ -10,36 +10,21 @@ permissions:
   contents: read
 
 jobs:
-  prek:
-    name: Pre-commit (prek)
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-      - uses: j178/prek-action@v1
-
   build:
     name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - uses: j178/prek-action@v2
       - name: Sync Astro types
         run: pnpm astro sync
       - name: Type check
@@ -48,7 +33,7 @@ jobs:
         run: pnpm run build
       - name: Upload build artifact
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: dist
           path: dist/
@@ -63,9 +48,9 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: dist
           path: dist/

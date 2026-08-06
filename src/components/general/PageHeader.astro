@@ -10,6 +10,11 @@ interface Props {
 }
 
 const { title, description, githubUrl, liveUrl, docsUrl } = Astro.props;
+const links = [
+  ["Live", liveUrl],
+  ["Docs", docsUrl],
+  ["GitHub", githubUrl],
+] as const;
 ---
 
 <section class="flex w-full flex-col justify-start gap-4 sm:flex-row sm:justify-between sm:gap-8">
@@ -19,24 +24,13 @@ const { title, description, githubUrl, liveUrl, docsUrl } = Astro.props;
   </div>
   <div class="flex w-min flex-row items-center space-x-4">
     {
-      liveUrl && (
-        <Button as="a" href={liveUrl} target="_blank" variant="primary" size="sm">
-          Live
-        </Button>
-      )
-    }
-    {
-      docsUrl && (
-        <Button as="a" href={docsUrl} target="_blank" variant="primary" size="sm">
-          Docs
-        </Button>
-      )
-    }
-    {
-      githubUrl && (
-        <Button as="a" href={githubUrl} target="_blank" variant="primary" size="sm">
-          GitHub
-        </Button>
+      links.map(
+        ([label, href]) =>
+          href && (
+            <Button href={href} target="_blank" variant="primary" size="sm">
+              {label}
+            </Button>
+          ),
       )
     }
   </div>
