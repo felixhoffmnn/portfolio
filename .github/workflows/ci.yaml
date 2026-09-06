@@ -24,7 +24,7 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - uses: j178/prek-action@v2
+      - uses: j178/prek-action@v3.0.0
       - name: Sync Astro types
         run: pnpm astro sync
       - name: Type check
